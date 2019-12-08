@@ -11,14 +11,17 @@ I am by profession Networking guy. Currently I am working with Juniper Networks 
 I have 15 years of experience in network design, implemetation and debugging. 
 
 Education:
-B.S. Eletectornics and Telecommunications
-North Maharashtra University, India
+
+	B.S. Eletectornics and Telecommunications
+	North Maharashtra University, India
 
 Certifications:
-CCIE-SP
-3xJNCIE(SP/DC/ENT)
+	
+	CCIE-SP
+	3xJNCIE(SP/DC/ENT)
 
 Programing skill:
-Python
+
+	Python
 
 
