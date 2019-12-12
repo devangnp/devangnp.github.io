@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Devang Patel</title>
+    <description>Escalation Engineer MX/PTX
+Juniper Networks Inc.
+</description>
+    <link>http://juniper.net/</link>
+    <atom:link href="http://juniper.net/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 05 Dec 2019 07:59:32 -0800</pubDate>
+    <lastBuildDate>Thu, 05 Dec 2019 07:59:32 -0800</lastBuildDate>
+    <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>Escalation Day to Day tools</title>
+        <description>&lt;p&gt;Escalation Day to Day tools:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://10.85.210.132:4001&quot; target=&quot;_blank&quot;&gt;Tool link&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 05 Dec 2019 00:00:03 -0800</pubDate>
+        <link>http://juniper.net/junos/juniper/2019/12/05/daytoday-tools.html</link>
+        <guid isPermaLink="true">http://juniper.net/junos/juniper/2019/12/05/daytoday-tools.html</guid>
+        
+        <category>junos</category>
+        
+        <category>juniper</category>
+        
+        
+        <category>junos</category>
+        
+        <category>juniper</category>
+        
+      </item>
+    
+      <item>
+        <title>Junos chat bot</title>
+        <description>&lt;p&gt;My Juniper internal chatbot:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://bot.dialogflow.com/devang&quot; target=&quot;_blank&quot;&gt;Click this to chat&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 05 Dec 2019 00:00:02 -0800</pubDate>
+        <link>http://juniper.net/juniper/2019/12/05/mychatbot.html</link>
+        <guid isPermaLink="true">http://juniper.net/juniper/2019/12/05/mychatbot.html</guid>
+        
+        <category>junos</category>
+        
+        
+        <category>juniper</category>
+        
+      </item>
+    
+      <item>
+        <title>JUNOS image names to device mapping</title>
+        <description>&lt;p&gt;Which JUNOS image on which device and RE? This question always comes into the mind whenever I have to update the box.&lt;/p&gt;
+
+&lt;p&gt;Here is the Mapping from the Rahul Unnikrishnan script
+&lt;a href=&quot;https://css-git.juniper.net/rahuluk/mso-static-lab/tree/master/upgrade-device&quot;&gt;Script link&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;junos_image_name_format_map:&lt;/p&gt;
+
+&lt;p&gt;junos_image_name_format_1:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;RE-DUO-2600: jinstall64-VERSION_NUMBER-domestic-signed.tgz
+RE-MX80: jinstall-ppc-VERSION_NUMBER-domestic-signed.tgz
+RE-S-1800x4: jinstall64-VERSION_NUMBER-domestic-signed.tgz
+RE-S-2000: jinstall-VERSION_NUMBER-domestic-signed.tgz
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;junos_image_name_format_2:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;RE-DUO-2600: jinstall64-VERSION_NUMBER-domestic-signed.tgz
+RE-MX80: jinstall-ppc-VERSION_NUMBER-domestic-signed.tgz
+RE-PTX-2X00x4: junos-vmhost-install-ptx-x86-64-VERSION_NUMBER.tgz
+RE-PTX-2X00x6: junos-vmhost-install-ptx-x86-64-VERSION_NUMBER.tgz
+RE-PTX-2X00x8: junos-vmhost-install-ptx-x86-64-VERSION_NUMBER.tgz
+RE-S-1800x4: junos-install-mx-x86-64-VERSION_NUMBER.tgz
+RE-S-2000: junos-install-mx-x86-32-VERSION_NUMBER.tgz
+RE-S-2X00x6: junos-vmhost-install-mx-x86-64-VERSION_NUMBER.tgz
+RE-S-2X00x8: junos-vmhost-install-mx-x86-64-VERSION_NUMBER.tgz
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;junos_image_name_format_3:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;RE-DUO-2600: jinstall64-VERSION_NUMBER-domestic-signed.tgz
+RE-MX80: jinstall-ppc-VERSION_NUMBER-signed.tgz
+RE-PTX-2X00x4: junos-vmhost-install-ptx-x86-64-VERSION_NUMBER.tgz
+RE-PTX-2X00x6: junos-vmhost-install-ptx-x86-64-VERSION_NUMBER.tgz
+RE-PTX-2X00x8: junos-vmhost-install-ptx-x86-64-VERSION_NUMBER.tgz
+RE-S-1800x4: junos-install-mx-x86-64-VERSION_NUMBER.tgz
+RE-S-2000: junos-install-mx-x86-32-VERSION_NUMBER.tgz
+RE-S-2X00x6: junos-vmhost-install-mx-x86-64-VERSION_NUMBER.tgz
+RE-S-2X00x8: junos-vmhost-install-mx-x86-64-VERSION_NUMBER.tgz
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Thu, 05 Dec 2019 00:00:01 -0800</pubDate>
+        <link>http://juniper.net/junos/juniper/2019/12/05/which-junos.html</link>
+        <guid isPermaLink="true">http://juniper.net/junos/juniper/2019/12/05/which-junos.html</guid>
+        
+        
+        <category>junos</category>
+        
+        <category>juniper</category>
+        
+      </item>
+    
+      <item>
+        <title>Let it snow!</title>
+        <description>&lt;p&gt;Picture was created during the thanks giving weekend when we were waiting for the snow storm to arrive. My son had this creative idea and I helped him out on iPad with Apple pencil and it turned out to be really great drawing.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/snow.jpg&quot; alt=&quot;Evergreen Tree with Snow&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Thanks&lt;/p&gt;
+</description>
+        <pubDate>Tue, 03 Dec 2019 05:00:00 -0800</pubDate>
+        <link>http://juniper.net/anish/2019/12/03/snow.html</link>
+        <guid isPermaLink="true">http://juniper.net/anish/2019/12/03/snow.html</guid>
+        
+        <category>Anish</category>
+        
+        
+        <category>Anish</category>
+        
+      </item>
+    
+      <item>
+        <title>Lab access details</title>
+        <description>&lt;p&gt;Router access details:&lt;/p&gt;
+
+&lt;p&gt;Routers:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jtac-PTX1000-r019	qctsg09.ultralab.juniper.net:7013	g08-41.ultralab.juniper.net
+
+jtac-MX480-r042		qctsg14.ultralab.juniper.net:7009	thunder.ultralab.juniper.net
+
+jtac-MX480-r073		qctsg09.ultralab.juniper.net:7018	lisbon.ultralab.juniper.net
+
+jtac-MX80-r098		qctsg09.ultralab.juniper.net:7020	orchard.ultralab.juniper.net
+
+jtac-MX960-r023	        qctsg09.ultralab.juniper.net:7026 	blaster.ultralab.juniper.net
+
+jtac-M7i-r068		qctsg14.ultralab.juniper.net:7015	aditya.ultralab.juniper.net
+
+jtac-MX480-r043		qctsg14.ultralab.juniper.net:7011	zenith.ultralab.juniper.net
+
+jtac-MX80-r020		qctsg14.ultralab.juniper.net:7014	rajini.ultralab.juniper.net
+
+jtac-MX80-r021		qctsg14.ultralab.juniper.net:7013	earth.ultralab.juniper.net
+
+jtac-PTX10003-160C-NPI-r001	ptx10003-160c	qctsg09.ultralab.juniper.net:7028	brackla.ultralab.juniper.net
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Tue, 03 Dec 2019 00:10:07 -0800</pubDate>
+        <link>http://juniper.net/jekyll/update/2019/12/03/routers-access.html</link>
+        <guid isPermaLink="true">http://juniper.net/jekyll/update/2019/12/03/routers-access.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Jekyll Setup!</title>
+        <description>&lt;p&gt;Documenting the steps I used to install the Jekyll:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;  &lt;span class=&quot;mi&quot;&gt;626&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;minimal-mistakes-jekyll&quot;&lt;/span&gt;
+  &lt;span class=&quot;mi&quot;&gt;627&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ruby&lt;/span&gt;
+  &lt;span class=&quot;mi&quot;&gt;628&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;
+  &lt;span class=&quot;mi&quot;&gt;629&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ruby&lt;/span&gt;
+  &lt;span class=&quot;mi&quot;&gt;630&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;bundle&lt;/span&gt;
+  &lt;span class=&quot;mi&quot;&gt;631&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ruby&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bundler&lt;/span&gt;
+  &lt;span class=&quot;mi&quot;&gt;632&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;bundle&lt;/span&gt;
+  &lt;span class=&quot;mi&quot;&gt;633&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;
+  &lt;span class=&quot;mi&quot;&gt;634&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bundle&lt;/span&gt;
+  &lt;span class=&quot;mi&quot;&gt;635&lt;/span&gt;  &lt;span class=&quot;ss&quot;&gt;theme: &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;minimal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mistakes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt;
+  &lt;span class=&quot;mi&quot;&gt;636&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;bundle&lt;/span&gt;
+  &lt;span class=&quot;mi&quot;&gt;637&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;ls&lt;/span&gt;
+  &lt;span class=&quot;mi&quot;&gt;638&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;
+  &lt;span class=&quot;mi&quot;&gt;639&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bundler&lt;/span&gt;
+  &lt;span class=&quot;mi&quot;&gt;640&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;
+  &lt;span class=&quot;mi&quot;&gt;641&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;devang_myblog&lt;/span&gt;
+  &lt;span class=&quot;mi&quot;&gt;642&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt;
+  &lt;span class=&quot;mi&quot;&gt;643&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;devang_myblog&lt;/span&gt;
+  &lt;span class=&quot;mi&quot;&gt;644&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;devang_myblog&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;
+  &lt;span class=&quot;mi&quot;&gt;645&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;bundle&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;serve&lt;/span&gt;
+  &lt;span class=&quot;mi&quot;&gt;646&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ruby&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;full&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;essential&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;zlib1g&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dev&lt;/span&gt;
+  &lt;span class=&quot;mi&quot;&gt;647&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;# Install Ruby Gems to ~/gems&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/.bashrc
+  648  echo &#39;export GEM_HOME=&quot;$HOME/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gems&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&#39; &amp;gt;&amp;gt; ~/.bashrc
+  649  echo &#39;export PATH=&quot;&lt;/span&gt;&lt;span class=&quot;vg&quot;&gt;$HOME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gems&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;vg&quot;&gt;$PATH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&#39; &amp;gt;&amp;gt; ~/.bashrc
+  650  source ~/.bashrc
+  651  gem install jekyll bundler
+  652  pwd
+  653  bundle exec jekyll serve
+  654  bundle exec jekyll build
+  655  bundler exec jekyll build
+  656  bundle exec jekyll serve
+  657  bundle exec
+  658  bundle exec jekyll
+  659  bundle install
+  660  history
+  661  pwd
+  662  bundle install
+  663  ls -l
+  664  gem update --system
+  665  bundle install
+  666  bundle exec jekyll serve
+  667  bundle init      &amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; had to do this to make next command to work
+  668  bundle exec jekyll serve
+  669  ls -l
+  670  cd _posts/
+  671  ls -l
+  672  less 2019-12-01-welcome-to-jekyll.markdown
+  673  vi 2019-12-01-welcome-to-jekyll.markdown
+  674  bundle exec jekyll serve
+  675  ls -l
+  676  ls -l _site/
+  677  cat _site/2019-12-01-welcome-to-jekyll.html
+  678  pwd
+  679  cd ..
+  680  ls -l
+  681  cat _config.yml
+  682  vi _config.yml
+  683  bundle exec jekyll serve
+  684  vi _config.yml
+  685  bundle exec jekyll serve
+  686  cat _config.yml
+  687  vi _config.yml
+  688  bundle exec jekyll serve
+  689  cat _config.yml
+  690  vi _config.yml
+  691  bundle exec jekyll serve
+  692  vi _config.yml
+  693  bundle exec jekyll serve
+  694  ls -l
+  695  cd _posts/
+  696  ls -l
+  697  cat 2019-12-01-welcome-to-jekyll.markdown
+  698  history
+depatel&amp;gt;
+
+
+	627  apt install ruby
+	628  apt-get update
+	629  apt install ruby
+	630  bundle
+	631  apt install ruby-bundler
+	632  bundle
+	633  apt-get update
+	639  gem install jekyll bundler
+	642  apt install jekyll
+	643  jekyll new devang_myblog
+	662  bundle install
+	667  bundle init 
+	668  bundle exec jekyll serve
+	bundle exec jekyll serve --host=0.0.0.0&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 03 Dec 2019 00:10:07 -0800</pubDate>
+        <link>http://juniper.net/jekyll/update/2019/12/03/jekyll-setup.html</link>
+        <guid isPermaLink="true">http://juniper.net/jekyll/update/2019/12/03/jekyll-setup.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Welcome to Jekyll!</title>
+        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Tom&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &#39;Hi, Tom&#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 02 Dec 2019 19:10:07 -0800</pubDate>
+        <link>http://juniper.net/jekyll/update/2019/12/02/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://juniper.net/jekyll/update/2019/12/02/welcome-to-jekyll.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+  </channel>
+</rss>
