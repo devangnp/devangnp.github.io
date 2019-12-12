@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-Design, implement and debugging. 
+Network design, implementation and debugging. 
 
 CCIE-SP
 
