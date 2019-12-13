@@ -9,9 +9,11 @@ Currently I am working as Escalation Engineer in Juniper Networks.
 
 Certification:
 
-   CCIE-SP
-   3xJNCIE
+
+	CCIE-SP
+	3xJNCIE
 
 Education:
 
-   B.S Electronics and Telecommunication
+
+	B.S Electronics and Telecommunication
