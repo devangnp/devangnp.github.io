@@ -7,13 +7,13 @@
 
 # Site settings
 title: Devang Patel
-email: depatel@juniper.net
+email: devangnp@gmail.com
 description: |+ # this means to ignore newlines until "baseurl:"
             My blog page to note down learnings.
             Hello World!
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://juniper.net" # the base hostname & protocol for your site
+url: "https://devangnp.github.io/" # the base hostname & protocol for your site
 github_username: devangnp 
-
+linkedin_username: devangnp
 # Build settings
 markdown: kramdown
