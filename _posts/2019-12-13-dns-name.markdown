@@ -1,0 +1,39 @@
+---
+layout: post
+title:  "DNS name resolution using Python"
+date:   2019-12-13 00:00:01 -0800
+categories: netops
+tags: [netops]
+---
+
+Script I used to resolve DNS name to IP.
+
+```python
+'''
+NetOps
+Given url find out the IP address of it
+Devang Patel
+'''
+```
+
+
+```python
+import socket
+```
+
+
+```python
+ip_add = 'Not a valid name'
+try:
+    ip_add = socket.gethostbyname('www.google.com')
+except socket.gaierror as e:
+    print(e)
+```
+
+
+```python
+print(ip_add)
+```
+
+    172.217.6.68
+
