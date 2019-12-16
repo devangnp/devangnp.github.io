@@ -2,7 +2,7 @@
 layout: post
 title:  "Jekyll Setup!"
 date:   2019-12-03 00:10:07 -0800
-categories: jekyll update
+categories: [jekyll]
 ---
 
 Documenting the steps I used to install the Jekyll:
