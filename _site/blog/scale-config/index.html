@@ -312,6 +312,7 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cmd</span> <span class="o">=</span> <span class="s">"set protocols mpls label-switched-path LSP-{} to 1.11.{}.1 ldp-tunneling"</span>
 <span class="n">myloop</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
 </code></pre></div></div>
+<p>Output:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>set protocols mpls label-switched-path LSP-1 to 1.11.1.1 ldp-tunneling
 </code></pre></div></div>
@@ -322,6 +323,7 @@
 <span class="n">cmd</span> <span class="o">=</span> <span class="s">"set interfaces xe-4/1/0 unit {} vlan-id {} family inet address 1.11.{}.2/24"</span>
 <span class="n">myloop</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
 </code></pre></div></div>
+<p>Output:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>set interfaces xe-4/1/0 flexible-vlan-tagging encapsulation flexible-ethernet-services 
 set interfaces xe-4/1/0 unit 1 vlan-id 1 family inet address 1.11.1.2/24
@@ -332,6 +334,7 @@ set interfaces xe-4/1/0 unit 1 vlan-id 1 family inet address 1.11.1.2/24
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cmd</span> <span class="o">=</span> <span class="s">"set interfaces lo0 unit {} family inet address 192.168.1.{}/32"</span>
 <span class="n">myloop</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
 </code></pre></div></div>
+<p>Output:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>set interfaces lo0 unit 1 family inet address 192.168.1.1/32
 </code></pre></div></div>
@@ -342,6 +345,7 @@ set interfaces xe-4/1/0 unit 1 vlan-id 1 family inet address 1.11.1.2/24
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cmd</span> <span class="o">=</span> <span class="s">"set protocols bgp group ibpg neighbor 192.168.1.{}"</span>
 <span class="n">myloop</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
 </code></pre></div></div>
+<p>Output:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>set protocols bgp group ibpg neighbor 192.168.1.1
 </code></pre></div></div>

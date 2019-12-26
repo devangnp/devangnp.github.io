@@ -28,6 +28,7 @@ def myloop(cmd):
 cmd = "set protocols mpls label-switched-path LSP-{} to 1.11.{}.1 ldp-tunneling"
 myloop(cmd)
 ```
+Output:  
 
     set protocols mpls label-switched-path LSP-1 to 1.11.1.1 ldp-tunneling
 
@@ -40,6 +41,8 @@ print("set interfaces xe-4/1/0 flexible-vlan-tagging encapsulation flexible-ethe
 cmd = "set interfaces xe-4/1/0 unit {} vlan-id {} family inet address 1.11.{}.2/24"
 myloop(cmd)
 ```
+Output:
+
 
     set interfaces xe-4/1/0 flexible-vlan-tagging encapsulation flexible-ethernet-services 
     set interfaces xe-4/1/0 unit 1 vlan-id 1 family inet address 1.11.1.2/24
@@ -52,6 +55,7 @@ myloop(cmd)
 cmd = "set interfaces lo0 unit {} family inet address 192.168.1.{}/32"
 myloop(cmd)
 ```
+Output:  
 
     set interfaces lo0 unit 1 family inet address 192.168.1.1/32
 
@@ -64,6 +68,7 @@ myloop(cmd)
 cmd = "set protocols bgp group ibpg neighbor 192.168.1.{}"
 myloop(cmd)
 ```
+Output:  
 
     set protocols bgp group ibpg neighbor 192.168.1.1
 

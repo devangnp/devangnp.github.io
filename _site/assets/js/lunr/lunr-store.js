@@ -5,12 +5,12 @@ var store = [{
         "url": "http://0.0.0.0:4000/blog/welcome-to-jekyll/",
         "teaser":null},{
         "title": "DNS name resolution using Python",
-        "excerpt":"Script I used to resolve DNS name to IP.   ''' NetOps Given url find out the IP address of it Devang Patel '''   import socket   ip_add = 'Not a valid name' try:     ip_add = socket.gethostbyname('www.google.com') except socket.gaierror as e:     print(e)   print(ip_add)   172.217.6.68   ","categories": ["Blog"],
+        "excerpt":"Script I used to resolve DNS name to IP.   ''' NetOps Given url find out the IP address of it Devang Patel ''' import socket ip_add = 'Not a valid name' try:     ip_add = socket.gethostbyname('www.google.com') except socket.gaierror as e:     print(e) print(ip_add)   Output:   172.217.6.68   ","categories": ["Blog"],
         "tags": ["NetOps","Networking"],
         "url": "http://0.0.0.0:4000/blog/dns-name/",
         "teaser":null},{
         "title": "JUNOS scale config",
-        "excerpt":"JUNOS scale config notebook: def myloop(cmd): i = 1 j = 1 #howmany = int(input()) howmany = 1 while i &lt;= howmany: print(cmd.format(i,i,i)) i = i + 1 LSP config cmd = \"set protocols mpls label-switched-path LSP-{} to 1.11.{}.1 ldp-tunneling\" myloop(cmd) set protocols mpls label-switched-path LSP-1 to 1.11.1.1 ldp-tunneling IFL...","categories": ["Blog"],
+        "excerpt":"JUNOS scale config notebook: def myloop(cmd): i = 1 j = 1 #howmany = int(input()) howmany = 1 while i &lt;= howmany: print(cmd.format(i,i,i)) i = i + 1 LSP config cmd = \"set protocols mpls label-switched-path LSP-{} to 1.11.{}.1 ldp-tunneling\" myloop(cmd) Output: set protocols mpls label-switched-path LSP-1 to 1.11.1.1 ldp-tunneling...","categories": ["Blog"],
         "tags": ["JUNOS"],
         "url": "http://0.0.0.0:4000/blog/scale-config/",
         "teaser":null},{
