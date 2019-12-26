@@ -1,0 +1,182 @@
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:29: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:30: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+NOTE: Gem::Specification#rubyforge_project= is deprecated with no replacement. It will be removed on or after 2019-12-01.
+Gem::Specification#rubyforge_project= called from /usr/share/rubygems-integration/2.3.0/specifications/rdiscount-2.1.8.gemspec:21.
+NOTE: Gem::Specification#rubyforge_project= is deprecated with no replacement. It will be removed on or after 2019-12-01.
+Gem::Specification#rubyforge_project= called from /usr/share/rubygems-integration/2.3.0/specifications/oj-2.12.10.gemspec:21.
+NOTE: Gem::Specification#rubyforge_project= is deprecated with no replacement. It will be removed on or after 2019-12-01.
+Gem::Specification#rubyforge_project= called from /usr/share/rubygems-integration/2.3.0/specifications/mysql-2.9.1.gemspec:21.
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+NOTE: Gem::Specification#rubyforge_project= is deprecated with no replacement. It will be removed on or after 2019-12-01.
+Gem::Specification#rubyforge_project= called from /var/lib/gems/2.3.0/specifications/i18n-0.9.5.gemspec:17.
+NOTE: Gem::Specification#rubyforge_project= is deprecated with no replacement. It will be removed on or after 2019-12-01.
+Gem::Specification#rubyforge_project= called from /var/lib/gems/2.3.0/specifications/coffee-script-source-1.11.1.gemspec:16.
+NOTE: Inheriting Faraday::Error::ClientError is deprecated; use Faraday::ClientError instead. It will be removed in or after version 1.0
+Faraday::Error::ClientError.inherited called from /var/lib/gems/2.3.0/gems/octokit-4.14.0/lib/octokit/middleware/follow_redirects.rb:14.
+Configuration file: /home/labroot/myBlog/etcomblog/_config.yml
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+            Source: /home/labroot/myBlog/etcomblog
+       Destination: /home/labroot/myBlog/etcomblog/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating... 
+[33mInvalid theme folder: _sass[0m
+      Remote Theme: Using theme mmistakes/minimal-mistakes
+       Jekyll Feed: Generating feed for posts
+[33m   GitHub Metadata: No GitHub API authentication could be found. Some fields may be missing or have incorrect data.[0m
+                    done in 7.231 seconds.
+ Auto-regeneration: enabled for '/home/labroot/myBlog/etcomblog'
+    Server address: http://0.0.0.0:4000
+  Server running... press ctrl-c to stop.
+[2019-12-16 09:19:25] ERROR `/favicon.ico' not found.
+[2019-12-16 09:21:54] ERROR `/favicon.ico' not found.
+      Regenerating: 1 file(s) changed at 2019-12-16 12:36:08
+                    assets/images/snow.jpg
+[33mInvalid theme folder: _sass[0m
+      Remote Theme: Using theme mmistakes/minimal-mistakes
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.616783972 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2019-12-16 12:36:56
+                    _posts/2019-12-16-snow.markdown
+[33mInvalid theme folder: _sass[0m
+      Remote Theme: Using theme mmistakes/minimal-mistakes
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.5634106 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2019-12-16 12:38:42
+                    _posts/2019-12-16-snow.markdown
+[33mInvalid theme folder: _sass[0m
+      Remote Theme: Using theme mmistakes/minimal-mistakes
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.275667526 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2019-12-16 12:40:25
+                    _posts/2019-12-16-snow.markdown
+[33mInvalid theme folder: _sass[0m
+      Remote Theme: Using theme mmistakes/minimal-mistakes
+       Jekyll Feed: Generating feed for posts
+                    ...done in 4.222727722 seconds.
+                    
+[2019-12-16 12:42:12] ERROR `/favicon.ico' not found.
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:29: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:30: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+NOTE: Gem::Specification#rubyforge_project= is deprecated with no replacement. It will be removed on or after 2019-12-01.
+Gem::Specification#rubyforge_project= called from /usr/share/rubygems-integration/2.3.0/specifications/rdiscount-2.1.8.gemspec:21.
+NOTE: Gem::Specification#rubyforge_project= is deprecated with no replacement. It will be removed on or after 2019-12-01.
+Gem::Specification#rubyforge_project= called from /usr/share/rubygems-integration/2.3.0/specifications/oj-2.12.10.gemspec:21.
+NOTE: Gem::Specification#rubyforge_project= is deprecated with no replacement. It will be removed on or after 2019-12-01.
+Gem::Specification#rubyforge_project= called from /usr/share/rubygems-integration/2.3.0/specifications/mysql-2.9.1.gemspec:21.
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+NOTE: Gem::Specification#rubyforge_project= is deprecated with no replacement. It will be removed on or after 2019-12-01.
+Gem::Specification#rubyforge_project= called from /var/lib/gems/2.3.0/specifications/i18n-0.9.5.gemspec:17.
+NOTE: Gem::Specification#rubyforge_project= is deprecated with no replacement. It will be removed on or after 2019-12-01.
+Gem::Specification#rubyforge_project= called from /var/lib/gems/2.3.0/specifications/coffee-script-source-1.11.1.gemspec:16.
+NOTE: Inheriting Faraday::Error::ClientError is deprecated; use Faraday::ClientError instead. It will be removed in or after version 1.0
+Faraday::Error::ClientError.inherited called from /var/lib/gems/2.3.0/gems/octokit-4.14.0/lib/octokit/middleware/follow_redirects.rb:14.
+Configuration file: /home/labroot/myBlog/etcomblog/_config.yml
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+            Source: /home/labroot/myBlog/etcomblog
+       Destination: /home/labroot/myBlog/etcomblog/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating... 
+[33mInvalid theme folder: _sass[0m
+      Remote Theme: Using theme mmistakes/minimal-mistakes
+       Jekyll Feed: Generating feed for posts
+[33m   GitHub Metadata: No GitHub API authentication could be found. Some fields may be missing or have incorrect data.[0m
+                    done in 75.526 seconds.
+ Auto-regeneration: enabled for '/home/labroot/myBlog/etcomblog'
+    Server address: http://0.0.0.0:4000
+  Server running... press ctrl-c to stop.
+[2019-12-16 12:46:04] ERROR `/favicon.ico' not found.
+[2019-12-16 13:51:29] ERROR `/favicon.ico' not found.
+[2019-12-16 13:52:30] ERROR `/favicon.ico' not found.
+[2019-12-16 14:18:29] ERROR `/favicon.ico' not found.
+      Regenerating: 4 file(s) changed at 2019-12-16 14:47:42
+                    assets/images/snow.jpg
+                    assets/images/bio-photo.jpg
+                    nohup.out
+                    README.md
+[33mInvalid theme folder: _sass[0m
+      Remote Theme: Using theme mmistakes/minimal-mistakes
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.703404911 seconds.
+                    
+      Regenerating: 16 file(s) changed at 2019-12-16 14:47:46
+                    index.html
+                    _pages/about.md
+                    _pages/404.md
+                    _pages/year-archive.md
+                    _pages/category-archive.md
+                    _pages/tag-archive.md
+                    _posts/2010-01-08-post-chat.md
+                    _posts/2010-02-05-post-quote.md
+                    _posts/2010-01-07-post-standard.md
+                    _posts/2010-02-05-post-notice.md
+                    _posts/2010-01-07-post-modified.md
+                    _posts/2010-03-07-post-link.md
+                    _posts/2019-12-16-snow.markdown
+                    _posts/2019-04-18-welcome-to-jekyll.md
+                    _posts/2019-12-13-dns-name.markdown
+                    _data/navigation.yml
+[33mInvalid theme folder: _sass[0m
+      Remote Theme: Using theme mmistakes/minimal-mistakes
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.267979594 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2019-12-16 14:47:50
+                    _posts/2019-12-13-scale-config.md
+[33mInvalid theme folder: _sass[0m
+      Remote Theme: Using theme mmistakes/minimal-mistakes
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.98108741 seconds.
+                    
+[2019-12-16 14:47:54] ERROR `/favicon.ico' not found.
+      Regenerating: 1 file(s) changed at 2019-12-16 14:51:35
+                    _posts/2019-12-13-scale-config.md
+[33mInvalid theme folder: _sass[0m
+      Remote Theme: Using theme mmistakes/minimal-mistakes
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.847797721 seconds.
+                    
+[2019-12-16 14:51:41] ERROR `/favicon.ico' not found.
+      Regenerating: 1 file(s) changed at 2019-12-16 14:52:08
+                    _posts/2019-12-13-scale-config.md
+[33mInvalid theme folder: _sass[0m
+      Remote Theme: Using theme mmistakes/minimal-mistakes
+       Jekyll Feed: Generating feed for posts
+                    ...done in 2.999589446 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2019-12-16 14:57:11
+                    _posts/2019-12-13-scale-config.md
+[33mInvalid theme folder: _sass[0m
+      Remote Theme: Using theme mmistakes/minimal-mistakes
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.211208603 seconds.
+                    
+[2019-12-16 14:57:16] ERROR `/favicon.ico' not found.
+      Regenerating: 1 file(s) changed at 2019-12-16 14:57:51
+                    _posts/2019-12-13-scale-config.md
+[33mInvalid theme folder: _sass[0m
+      Remote Theme: Using theme mmistakes/minimal-mistakes
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.022491503 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2019-12-16 14:59:22
+                    _posts/2019-12-13-scale-config.md
+[33mInvalid theme folder: _sass[0m
+      Remote Theme: Using theme mmistakes/minimal-mistakes
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.683181939 seconds.
+                    
