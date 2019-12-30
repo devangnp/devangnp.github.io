@@ -45,7 +45,9 @@ result = nr.run(
 
 print_result(result)      
 ```
-Output:  
+Output:
+
+  
 	netmiko_send_command************************************************************
 	* r1 ** changed : False ********************************************************
 	vvvv netmiko_send_command ** changed : False vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv INFO
@@ -97,7 +99,9 @@ result = nr.run(
 print_result(result)
 
 ```
-Output:  
+Output: 
+
+ 
 	napalm_cli**********************************************************************
 	* r1 ** changed : False ********************************************************
 	vvvv napalm_cli ** changed : False vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv INFO
@@ -126,10 +130,10 @@ Output:
 ```python
 print(type(result))
 ```
-Output:  
-<class 'nornir.core.task.AggregatedResult'>
+Output: 
 
-
+ 
+	<class 'nornir.core.task.AggregatedResult'>
 
 ```python
 cmd = "show version"
@@ -139,7 +143,9 @@ result = nr.run(
 
 print_result(result)
 ```
-Output:  
+Output: 
+
+ 
 	napalm_get**********************************************************************
 	* r1 ** changed : False ********************************************************
 	vvvv napalm_get ** changed : False vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv INFO
@@ -215,7 +221,9 @@ Output:
 ```python
 print(result)
 ```
-Output:  
+Output: 
+
+ 
     AggregatedResult (napalm_get): {'r1': MultiResult: [Result: "napalm_get"]}
 
 ```python
@@ -224,6 +232,8 @@ print((((result['r1'][0].result)['bgp_neighbors'])).keys())
 pprint((((result['r1'][0].result)['bgp_neighbors']))['mvpn'])
 ```
 Output:  
+
+
 	<class 'dict'>
 	dict_keys(['global', 'mvpn'])
 	{'peers': {'2.1.1.2': {'address_family': {'ipv4': {'accepted_prefixes': -1,
