@@ -18,4 +18,9 @@ var store = [{
         "excerpt":"Picture of Evergreen Tree, my son and I created during thanks giving break when we were waiting for the snow to arrive.   iPad and pencil was used to draw whole picture.      ","categories": ["Blog"],
         "tags": ["Anish"],
         "url": "http://0.0.0.0:4000/blog/snow/",
+        "teaser":null},{
+        "title": "Trying out Nornir automation",
+        "excerpt":"Trying out the NORNIR network automation and documenting few way to capture data from networking devices. I like the way we can import its different module into the python program that you might already be working on. Nornir is supported with Python 3.6 version and above. Using Nornir, we can...","categories": ["Blog"],
+        "tags": ["Networking","NetOps"],
+        "url": "http://0.0.0.0:4000/blog/nornir-learning/",
         "teaser":null}]
