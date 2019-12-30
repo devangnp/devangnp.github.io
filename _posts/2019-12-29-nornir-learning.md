@@ -1,5 +1,5 @@
 ---
-title: "NORNIR automation learning"
+title: "Trying out Nornir automation"
 last_modified_at: 2016-12-29T22:00:00-00:00
 categories:
   - Blog
@@ -7,7 +7,10 @@ tags:
   - - [Networking,NetOps]
 ---
 
-Trying out the NORNIR network automation and documenting few way to capture data from networking devices.
+	- Trying out the NORNIR network automation and documenting few way to capture data from networking devices.
+	- I like the way we can import its different module into the python program that you might already be working on.
+	- Nornir is supported with Python 3.6 version and above. 
+	- Using Nornir, we can call netmiko module to capture data from router using command, we can also use napalm module as well for same task.
 
 ```python
 #Required imports
