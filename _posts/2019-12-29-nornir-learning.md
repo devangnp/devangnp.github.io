@@ -32,7 +32,7 @@ nr = InitNornir()
 print(nr.inventory.hosts)
 print(nr.inventory.groups)
 ```
-###Output:  
+Output:  
 	{'r1': Host: r1}
 	{'mylab': Group: mylab}
 
@@ -45,7 +45,7 @@ result = nr.run(
 
 print_result(result)      
 ```
-###Output:  
+Output:  
 	netmiko_send_command************************************************************
 	* r1 ** changed : False ********************************************************
 	vvvv netmiko_send_command ** changed : False vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv INFO
@@ -97,7 +97,7 @@ result = nr.run(
 print_result(result)
 
 ```
-###Output:  
+Output:  
 	napalm_cli**********************************************************************
 	* r1 ** changed : False ********************************************************
 	vvvv napalm_cli ** changed : False vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv INFO
@@ -126,7 +126,7 @@ print_result(result)
 ```python
 print(type(result))
 ```
-###Output:  
+Output:  
 <class 'nornir.core.task.AggregatedResult'>
 
 
@@ -139,7 +139,7 @@ result = nr.run(
 
 print_result(result)
 ```
-###Output:  
+Output:  
 	napalm_get**********************************************************************
 	* r1 ** changed : False ********************************************************
 	vvvv napalm_get ** changed : False vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv INFO
@@ -215,7 +215,7 @@ print_result(result)
 ```python
 print(result)
 ```
-###Output:  
+Output:  
     AggregatedResult (napalm_get): {'r1': MultiResult: [Result: "napalm_get"]}
 
 ```python
@@ -223,7 +223,7 @@ print(type((result['r1'][0].result)))
 print((((result['r1'][0].result)['bgp_neighbors'])).keys())
 pprint((((result['r1'][0].result)['bgp_neighbors']))['mvpn'])
 ```
-###Output:  
+Output:  
 	<class 'dict'>
 	dict_keys(['global', 'mvpn'])
 	{'peers': {'2.1.1.2': {'address_family': {'ipv4': {'accepted_prefixes': -1,
