@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2019-12-30T09:52:58-08:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Devang Patel</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>Devang Patel</name></author><entry><title type="html">Trying out Nornir automation</title><link href="http://0.0.0.0:4000/blog/nornir-learning/" rel="alternate" type="text/html" title="Trying out Nornir automation" /><published>2019-12-29T00:00:00-08:00</published><updated>2016-12-29T14:00:00-08:00</updated><id>http://0.0.0.0:4000/blog/nornir-learning</id><content type="html" xml:base="http://0.0.0.0:4000/blog/nornir-learning/">&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2019-12-30T10:01:12-08:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Devang Patel</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>Devang Patel</name></author><entry><title type="html">Trying out Nornir automation</title><link href="http://0.0.0.0:4000/blog/nornir-learning/" rel="alternate" type="text/html" title="Trying out Nornir automation" /><published>2019-12-29T00:00:00-08:00</published><updated>2016-12-29T14:00:00-08:00</updated><id>http://0.0.0.0:4000/blog/nornir-learning</id><content type="html" xml:base="http://0.0.0.0:4000/blog/nornir-learning/">&lt;ul&gt;
   &lt;li&gt;Trying out the NORNIR network automation and documenting few way to capture data from networking devices.&lt;/li&gt;
   &lt;li&gt;I like the way we can import its different module into the python program that you might already be working on.&lt;/li&gt;
   &lt;li&gt;Nornir is supported with Python 3.6 version and above.&lt;/li&gt;
@@ -23,10 +23,17 @@ groups.yaml files to
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inventory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hosts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inventory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;groups&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;«««&amp;lt; HEAD&lt;/p&gt;
 
 &lt;p&gt;Output:&lt;/p&gt;
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{'r1': Host: r1}
 {'mylab': Group: mylab}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;=======
+Output:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{'r1': Host: r1}
+{'mylab': Group: mylab} &amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; 4ce6b71b3b628dc7349e2789c263c7d407fdaf28
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Using netmiko module in nornir to capture BGP summary output:&lt;/p&gt;
@@ -37,9 +44,15 @@ groups.yaml files to
 
 &lt;span class=&quot;n&quot;&gt;print_result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;      
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;«««&amp;lt; HEAD&lt;/p&gt;
 
 &lt;p&gt;Output:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	netmiko_send_command************************************************************
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;=======
+Output:
+
+  
+&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; 4ce6b71b3b628dc7349e2789c263c7d407fdaf28
+	netmiko_send_command************************************************************
 	* r1 ** changed : False ********************************************************
 	vvvv netmiko_send_command ** changed : False vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv INFO
 
@@ -81,43 +94,83 @@ groups.yaml files to
 	2001:1:1::1               1          0          0       0       0 1w3d 8:25:11 Idle  
 
 	^^^^ END netmiko_send_command ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Using napalm in nornir to execult the JUNOS cli command:&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-             &lt;span class=&quot;n&quot;&gt;napalm_cli&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-             &lt;span class=&quot;n&quot;&gt;commands&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'show system processes extensive | match rpd'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'show system processes extensive | match mem'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;p&gt;=======&lt;/p&gt;
 
-&lt;span class=&quot;n&quot;&gt;print_result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;blockquote&gt;
+  &lt;blockquote&gt;
+    &lt;blockquote&gt;
+      &lt;blockquote&gt;
+        &lt;blockquote&gt;
+          &lt;blockquote&gt;
+            &lt;blockquote&gt;
+              &lt;p&gt;4ce6b71b3b628dc7349e2789c263c7d407fdaf28
+Using napalm in nornir to execult the JUNOS cli command:
+```python
+result = nr.run(
+             napalm_cli,
+             commands=[‘show system processes extensive | match rpd’, ‘show system processes extensive | match mem’])&lt;/p&gt;
+            &lt;/blockquote&gt;
+          &lt;/blockquote&gt;
+        &lt;/blockquote&gt;
+      &lt;/blockquote&gt;
+    &lt;/blockquote&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
 
+&lt;p&gt;print_result(result)&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Output: 
+
+&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Output:&lt;/p&gt;
+&lt;p&gt;=======&lt;/p&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	napalm_cli**********************************************************************
-	* r1 ** changed : False ********************************************************
+&lt;blockquote&gt;
+  &lt;blockquote&gt;
+    &lt;blockquote&gt;
+      &lt;blockquote&gt;
+        &lt;blockquote&gt;
+          &lt;blockquote&gt;
+            &lt;blockquote&gt;
+              &lt;p&gt;4ce6b71b3b628dc7349e2789c263c7d407fdaf28
+	napalm_cli&lt;strong&gt;**&lt;/strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;strong&gt;**
+	* r1 ** changed : False **&lt;/strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;strong&gt;**&lt;/strong&gt;&lt;em&gt;**&lt;/em&gt;
 	vvvv napalm_cli ** changed : False vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv INFO
-	{ 'show system processes extensive | match mem': 'Mem: 146M Active, 3462M '
-													 'Inact, 927M Wired, 530M Buf, '
-													 '11G Free',
-	  'show system processes extensive | match rpd': '96074 root      20    0  '
-													 '1152M   176M kqread  1   '
-													 '7:58   0.00% rpd{rpd}\n'
-													 '96074 root      20    0  '
-													 '1152M   176M kqread  0   '
-													 '7:37   0.00% '
-													 'rpd{TraceThread}\n'
-													 '96074 root      20    0  '
-													 '1152M   176M kqread  1   '
-													 '1:27   0.00% rpd{rsvp-io}\n'
-													 '96074 root      20    0  '
-													 '1152M   176M kqread  1   '
-													 '1:11   0.00% '
-													 'rpd{bgpio-0-th}\n'
-													 '96074 root      20    0  '
-													 '1152M   176M kqread  0   '
-													 '0:09   0.00% rpd{krtio-th}'}
+	{ ‘show system processes extensive | match mem’: ‘Mem: 146M Active, 3462M ‘
+													 ‘Inact, 927M Wired, 530M Buf, ‘
+													 ‘11G Free’,
+	  ‘show system processes extensive | match rpd’: ‘96074 root      20    0  ‘
+													 ‘1152M   176M kqread  1   ‘
+													 ‘7:58   0.00% rpd{rpd}\n’
+													 ‘96074 root      20    0  ‘
+													 ‘1152M   176M kqread  0   ‘
+													 ‘7:37   0.00% ‘
+													 ‘rpd{TraceThread}\n’
+													 ‘96074 root      20    0  ‘
+													 ‘1152M   176M kqread  1   ‘
+													 ‘1:27   0.00% rpd{rsvp-io}\n’
+													 ‘96074 root      20    0  ‘
+													 ‘1152M   176M kqread  1   ‘
+													 ‘1:11   0.00% ‘
+													 ‘rpd{bgpio-0-th}\n’
+													 ‘96074 root      20    0  ‘
+													 ‘1152M   176M kqread  0   ‘
+													 ‘0:09   0.00% rpd{krtio-th}’}
 	^^^^ END napalm_cli ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+«««&amp;lt; HEAD
+```
+=======
+4ce6b71b3b628dc7349e2789c263c7d407fdaf28&lt;/p&gt;
+            &lt;/blockquote&gt;
+          &lt;/blockquote&gt;
+        &lt;/blockquote&gt;
+      &lt;/blockquote&gt;
+    &lt;/blockquote&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;Identify type of result to read output further:&lt;/p&gt;
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
@@ -135,8 +188,13 @@ groups.yaml files to
 
 &lt;span class=&quot;n&quot;&gt;print_result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Output:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	napalm_get**********************************************************************
+&lt;p&gt;Output: 
+«««&amp;lt; HEAD&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;=======
+
+ 
+&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; 4ce6b71b3b628dc7349e2789c263c7d407fdaf28
+	napalm_get**********************************************************************
 	* r1 ** changed : False ********************************************************
 	vvvv napalm_get ** changed : False vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv INFO
 	{ 'bgp_neighbors': { 'global': { 'peers': { '1.1.11.2': { 'address_family': { 'ipv4': { 'accepted_prefixes': -1,
@@ -178,7 +236,23 @@ groups.yaml files to
 																   'remote_as': 100,
 																   'remote_id': '192.168.200.1',
 																   'uptime': 279779},
+&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD
                                                                     ...
+=======
+												'2001:1:1::1': { 'address_family': { 'ipv4': { 'accepted_prefixes': -1,
+																							   'received_prefixes': -1,
+																							   'sent_prefixes': -1},
+																					 'ipv6': { 'accepted_prefixes': -1,
+																							   'received_prefixes': -1,
+																							   'sent_prefixes': -1}},
+																 'description': '',
+																 'is_enabled': True,
+																 'is_up': False,
+																 'local_as': 100,
+																 'remote_as': 1,
+																 'remote_id': '',
+																 'uptime': 894325}},
+&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; 4ce6b71b3b628dc7349e2789c263c7d407fdaf28
 									 'router_id': ''},
 						 'mvpn': { 'peers': { '2.1.1.2': { 'address_family': { 'ipv4': { 'accepted_prefixes': -1,
 																						 'received_prefixes': -1,
@@ -195,12 +269,34 @@ groups.yaml files to
 														   'uptime': 894325}},
 								   'router_id': ''}}}
 	^^^^ END napalm_get ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;=======&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;blockquote&gt;
+    &lt;blockquote&gt;
+      &lt;blockquote&gt;
+        &lt;blockquote&gt;
+          &lt;blockquote&gt;
+            &lt;blockquote&gt;
+              &lt;p&gt;4ce6b71b3b628dc7349e2789c263c7d407fdaf28&lt;/p&gt;
+            &lt;/blockquote&gt;
+          &lt;/blockquote&gt;
+        &lt;/blockquote&gt;
+      &lt;/blockquote&gt;
+    &lt;/blockquote&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Output:&lt;/p&gt;
+&lt;p&gt;Output: 
+«««&amp;lt; HEAD&lt;/p&gt;
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;AggregatedResult (napalm_get): {'r1': MultiResult: [Result: &quot;napalm_get&quot;]}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;=======&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;AggregatedResult (napalm_get): {'r1': MultiResult: [Result: &quot;napalm_get&quot;]} &amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; 4ce6b71b3b628dc7349e2789c263c7d407fdaf28
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Pythonic way to extract the specific details of BGP neighbor:&lt;/p&gt;
@@ -208,8 +304,13 @@ groups.yaml files to
 &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'r1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'bgp_neighbors'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;pprint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'r1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'bgp_neighbors'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'mvpn'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Output:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&amp;lt;class 'dict'&amp;gt;
+&lt;p&gt;Output:&lt;br /&gt;
+«««&amp;lt; HEAD&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;=======
+
+
+&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; 4ce6b71b3b628dc7349e2789c263c7d407fdaf28
+	&amp;lt;class 'dict'&amp;gt;
 	dict_keys(['global', 'mvpn'])
 	{'peers': {'2.1.1.2': {'address_family': {'ipv4': {'accepted_prefixes': -1,
 													   'received_prefixes': -1,
@@ -224,8 +325,26 @@ groups.yaml files to
 						   'remote_as': 200,
 						   'remote_id': '',
 						   'uptime': 894325}},
+&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD
 	 'router_id': ''}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Devang Patel</name></author><category term="Networking" /><category term="NetOps" /><summary type="html">Trying out the NORNIR network automation and documenting few way to capture data from networking devices. I like the way we can import its different module into the python program that you might already be working on. Nornir is supported with Python 3.6 version and above. Using Nornir, we can call netmiko module to capture data from router using command, we can also use napalm module as well for same task.</summary></entry><entry><title type="html">Let it snow!</title><link href="http://0.0.0.0:4000/blog/snow/" rel="alternate" type="text/html" title="Let it snow!" /><published>2019-12-16T00:00:00-08:00</published><updated>2016-12-15T21:00:01-08:00</updated><id>http://0.0.0.0:4000/blog/snow</id><content type="html" xml:base="http://0.0.0.0:4000/blog/snow/">&lt;p&gt;Picture of Evergreen Tree, my son and I created during thanks giving break when we were waiting for the snow to arrive.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;=======
+	 ‘router_id’: ‘’}&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;blockquote&gt;
+    &lt;blockquote&gt;
+      &lt;blockquote&gt;
+        &lt;blockquote&gt;
+          &lt;blockquote&gt;
+            &lt;blockquote&gt;
+              &lt;p&gt;4ce6b71b3b628dc7349e2789c263c7d407fdaf28&lt;/p&gt;
+            &lt;/blockquote&gt;
+          &lt;/blockquote&gt;
+        &lt;/blockquote&gt;
+      &lt;/blockquote&gt;
+    &lt;/blockquote&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;</content><author><name>Devang Patel</name></author><category term="Networking" /><category term="NetOps" /><summary type="html">Trying out the NORNIR network automation and documenting few way to capture data from networking devices. I like the way we can import its different module into the python program that you might already be working on. Nornir is supported with Python 3.6 version and above. Using Nornir, we can call netmiko module to capture data from router using command, we can also use napalm module as well for same task.</summary></entry><entry><title type="html">Let it snow!</title><link href="http://0.0.0.0:4000/blog/snow/" rel="alternate" type="text/html" title="Let it snow!" /><published>2019-12-16T00:00:00-08:00</published><updated>2016-12-15T21:00:01-08:00</updated><id>http://0.0.0.0:4000/blog/snow</id><content type="html" xml:base="http://0.0.0.0:4000/blog/snow/">&lt;p&gt;Picture of Evergreen Tree, my son and I created during thanks giving break when we were waiting for the snow to arrive.&lt;/p&gt;
 
 &lt;p&gt;iPad and pencil was used to draw whole picture.&lt;/p&gt;
 

@@ -35,12 +35,20 @@ nr = InitNornir()
 print(nr.inventory.hosts)
 print(nr.inventory.groups)
 ```
+<<<<<<< HEAD
 
 Output:  
 ```
 {'r1': Host: r1}
 {'mylab': Group: mylab}
 ```
+=======
+Output:  
+
+
+	{'r1': Host: r1}
+	{'mylab': Group: mylab}
+>>>>>>> 4ce6b71b3b628dc7349e2789c263c7d407fdaf28
 
 Using netmiko module in nornir to capture BGP summary output:
 ```python
@@ -51,9 +59,15 @@ result = nr.run(
 
 print_result(result)      
 ```
+<<<<<<< HEAD
 
 Output:
 ```  
+=======
+Output:
+
+  
+>>>>>>> 4ce6b71b3b628dc7349e2789c263c7d407fdaf28
 	netmiko_send_command************************************************************
 	* r1 ** changed : False ********************************************************
 	vvvv netmiko_send_command ** changed : False vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv INFO
@@ -96,8 +110,12 @@ Output:
 	2001:1:1::1               1          0          0       0       0 1w3d 8:25:11 Idle  
 
 	^^^^ END netmiko_send_command ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<<<<<<< HEAD
 ```
     
+=======
+
+>>>>>>> 4ce6b71b3b628dc7349e2789c263c7d407fdaf28
 Using napalm in nornir to execult the JUNOS cli command:
 ```python
 result = nr.run(
@@ -109,7 +127,11 @@ print_result(result)
 ```
 Output: 
 
+<<<<<<< HEAD
 ``` 
+=======
+ 
+>>>>>>> 4ce6b71b3b628dc7349e2789c263c7d407fdaf28
 	napalm_cli**********************************************************************
 	* r1 ** changed : False ********************************************************
 	vvvv napalm_cli ** changed : False vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv INFO
@@ -134,7 +156,10 @@ Output:
 													 '1152M   176M kqread  0   '
 													 '0:09   0.00% rpd{krtio-th}'}
 	^^^^ END napalm_cli ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<<<<<<< HEAD
 ```
+=======
+>>>>>>> 4ce6b71b3b628dc7349e2789c263c7d407fdaf28
 
 Identify type of result to read output further:
 ```python
@@ -155,7 +180,12 @@ result = nr.run(
 print_result(result)
 ```
 Output: 
+<<<<<<< HEAD
 ``` 
+=======
+
+ 
+>>>>>>> 4ce6b71b3b628dc7349e2789c263c7d407fdaf28
 	napalm_get**********************************************************************
 	* r1 ** changed : False ********************************************************
 	vvvv napalm_get ** changed : False vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv INFO
@@ -198,7 +228,23 @@ Output:
 																   'remote_as': 100,
 																   'remote_id': '192.168.200.1',
 																   'uptime': 279779},
+<<<<<<< HEAD
                                                                     ...
+=======
+												'2001:1:1::1': { 'address_family': { 'ipv4': { 'accepted_prefixes': -1,
+																							   'received_prefixes': -1,
+																							   'sent_prefixes': -1},
+																					 'ipv6': { 'accepted_prefixes': -1,
+																							   'received_prefixes': -1,
+																							   'sent_prefixes': -1}},
+																 'description': '',
+																 'is_enabled': True,
+																 'is_up': False,
+																 'local_as': 100,
+																 'remote_as': 1,
+																 'remote_id': '',
+																 'uptime': 894325}},
+>>>>>>> 4ce6b71b3b628dc7349e2789c263c7d407fdaf28
 									 'router_id': ''},
 						 'mvpn': { 'peers': { '2.1.1.2': { 'address_family': { 'ipv4': { 'accepted_prefixes': -1,
 																						 'received_prefixes': -1,
@@ -215,15 +261,24 @@ Output:
 														   'uptime': 894325}},
 								   'router_id': ''}}}
 	^^^^ END napalm_get ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<<<<<<< HEAD
 ```
+=======
+>>>>>>> 4ce6b71b3b628dc7349e2789c263c7d407fdaf28
 
 ```python
 print(result)
 ```
 Output: 
+<<<<<<< HEAD
 ```
 AggregatedResult (napalm_get): {'r1': MultiResult: [Result: "napalm_get"]}
 ```
+=======
+
+ 
+    AggregatedResult (napalm_get): {'r1': MultiResult: [Result: "napalm_get"]}
+>>>>>>> 4ce6b71b3b628dc7349e2789c263c7d407fdaf28
 
 Pythonic way to extract the specific details of BGP neighbor:
 ```python
@@ -232,7 +287,12 @@ print((((result['r1'][0].result)['bgp_neighbors'])).keys())
 pprint((((result['r1'][0].result)['bgp_neighbors']))['mvpn'])
 ```
 Output:  
+<<<<<<< HEAD
 ```
+=======
+
+
+>>>>>>> 4ce6b71b3b628dc7349e2789c263c7d407fdaf28
 	<class 'dict'>
 	dict_keys(['global', 'mvpn'])
 	{'peers': {'2.1.1.2': {'address_family': {'ipv4': {'accepted_prefixes': -1,
@@ -248,5 +308,9 @@ Output:
 						   'remote_as': 200,
 						   'remote_id': '',
 						   'uptime': 894325}},
+<<<<<<< HEAD
 	 'router_id': ''}
 ```
+=======
+	 'router_id': ''}
+>>>>>>> 4ce6b71b3b628dc7349e2789c263c7d407fdaf28

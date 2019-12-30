@@ -286,7 +286,7 @@
 
 
 
-  3 minute read
+  4 minute read
 
 </p>
           
@@ -320,10 +320,17 @@ groups.yaml files to
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">nr</span><span class="o">.</span><span class="n">inventory</span><span class="o">.</span><span class="n">hosts</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">nr</span><span class="o">.</span><span class="n">inventory</span><span class="o">.</span><span class="n">groups</span><span class="p">)</span>
 </code></pre></div></div>
+<p>«««&lt; HEAD</p>
 
 <p>Output:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{'r1': Host: r1}
 {'mylab': Group: mylab}
+</code></pre></div></div>
+<p>=======
+Output:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{'r1': Host: r1}
+{'mylab': Group: mylab} &gt;&gt;&gt;&gt;&gt;&gt;&gt; 4ce6b71b3b628dc7349e2789c263c7d407fdaf28
 </code></pre></div></div>
 
 <p>Using netmiko module in nornir to capture BGP summary output:</p>
@@ -334,9 +341,15 @@ groups.yaml files to
 
 <span class="n">print_result</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>      
 </code></pre></div></div>
+<p>«««&lt; HEAD</p>
 
 <p>Output:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	netmiko_send_command************************************************************
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>=======
+Output:
+
+  
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 4ce6b71b3b628dc7349e2789c263c7d407fdaf28
+	netmiko_send_command************************************************************
 	* r1 ** changed : False ********************************************************
 	vvvv netmiko_send_command ** changed : False vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv INFO
 
@@ -378,43 +391,83 @@ groups.yaml files to
 	2001:1:1::1               1          0          0       0       0 1w3d 8:25:11 Idle  
 
 	^^^^ END netmiko_send_command ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
 </code></pre></div></div>
 
-<p>Using napalm in nornir to execult the JUNOS cli command:</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">result</span> <span class="o">=</span> <span class="n">nr</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
-             <span class="n">napalm_cli</span><span class="p">,</span>
-             <span class="n">commands</span><span class="o">=</span><span class="p">[</span><span class="s">'show system processes extensive | match rpd'</span><span class="p">,</span> <span class="s">'show system processes extensive | match mem'</span><span class="p">])</span>
+<p>=======</p>
 
-<span class="n">print_result</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <blockquote>
+        <blockquote>
+          <blockquote>
+            <blockquote>
+              <p>4ce6b71b3b628dc7349e2789c263c7d407fdaf28
+Using napalm in nornir to execult the JUNOS cli command:
+```python
+result = nr.run(
+             napalm_cli,
+             commands=[‘show system processes extensive | match rpd’, ‘show system processes extensive | match mem’])</p>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
 
+<p>print_result(result)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Output: 
+
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
 </code></pre></div></div>
-<p>Output:</p>
+<p>=======</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	napalm_cli**********************************************************************
-	* r1 ** changed : False ********************************************************
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <blockquote>
+        <blockquote>
+          <blockquote>
+            <blockquote>
+              <p>4ce6b71b3b628dc7349e2789c263c7d407fdaf28
+	napalm_cli<strong>**</strong><strong>**</strong><strong>**</strong><strong>**</strong><strong>**</strong><strong>**</strong><strong>**</strong><strong>**</strong><strong>**</strong><strong>**</strong><strong>**</strong><strong>**
+	* r1 ** changed : False **</strong><strong>**</strong><strong>**</strong><strong>**</strong><strong>**</strong><strong>**</strong><strong>**</strong><strong>**</strong><strong>**</strong><em>**</em>
 	vvvv napalm_cli ** changed : False vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv INFO
-	{ 'show system processes extensive | match mem': 'Mem: 146M Active, 3462M '
-													 'Inact, 927M Wired, 530M Buf, '
-													 '11G Free',
-	  'show system processes extensive | match rpd': '96074 root      20    0  '
-													 '1152M   176M kqread  1   '
-													 '7:58   0.00% rpd{rpd}\n'
-													 '96074 root      20    0  '
-													 '1152M   176M kqread  0   '
-													 '7:37   0.00% '
-													 'rpd{TraceThread}\n'
-													 '96074 root      20    0  '
-													 '1152M   176M kqread  1   '
-													 '1:27   0.00% rpd{rsvp-io}\n'
-													 '96074 root      20    0  '
-													 '1152M   176M kqread  1   '
-													 '1:11   0.00% '
-													 'rpd{bgpio-0-th}\n'
-													 '96074 root      20    0  '
-													 '1152M   176M kqread  0   '
-													 '0:09   0.00% rpd{krtio-th}'}
+	{ ‘show system processes extensive | match mem’: ‘Mem: 146M Active, 3462M ‘
+													 ‘Inact, 927M Wired, 530M Buf, ‘
+													 ‘11G Free’,
+	  ‘show system processes extensive | match rpd’: ‘96074 root      20    0  ‘
+													 ‘1152M   176M kqread  1   ‘
+													 ‘7:58   0.00% rpd{rpd}\n’
+													 ‘96074 root      20    0  ‘
+													 ‘1152M   176M kqread  0   ‘
+													 ‘7:37   0.00% ‘
+													 ‘rpd{TraceThread}\n’
+													 ‘96074 root      20    0  ‘
+													 ‘1152M   176M kqread  1   ‘
+													 ‘1:27   0.00% rpd{rsvp-io}\n’
+													 ‘96074 root      20    0  ‘
+													 ‘1152M   176M kqread  1   ‘
+													 ‘1:11   0.00% ‘
+													 ‘rpd{bgpio-0-th}\n’
+													 ‘96074 root      20    0  ‘
+													 ‘1152M   176M kqread  0   ‘
+													 ‘0:09   0.00% rpd{krtio-th}’}
 	^^^^ END napalm_cli ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-</code></pre></div></div>
+«««&lt; HEAD
+```
+=======
+4ce6b71b3b628dc7349e2789c263c7d407fdaf28</p>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
 
 <p>Identify type of result to read output further:</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
@@ -432,8 +485,13 @@ groups.yaml files to
 
 <span class="n">print_result</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </code></pre></div></div>
-<p>Output:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	napalm_get**********************************************************************
+<p>Output: 
+«««&lt; HEAD</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>=======
+
+ 
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 4ce6b71b3b628dc7349e2789c263c7d407fdaf28
+	napalm_get**********************************************************************
 	* r1 ** changed : False ********************************************************
 	vvvv napalm_get ** changed : False vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv INFO
 	{ 'bgp_neighbors': { 'global': { 'peers': { '1.1.11.2': { 'address_family': { 'ipv4': { 'accepted_prefixes': -1,
@@ -475,7 +533,23 @@ groups.yaml files to
 																   'remote_as': 100,
 																   'remote_id': '192.168.200.1',
 																   'uptime': 279779},
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
                                                                     ...
+=======
+												'2001:1:1::1': { 'address_family': { 'ipv4': { 'accepted_prefixes': -1,
+																							   'received_prefixes': -1,
+																							   'sent_prefixes': -1},
+																					 'ipv6': { 'accepted_prefixes': -1,
+																							   'received_prefixes': -1,
+																							   'sent_prefixes': -1}},
+																 'description': '',
+																 'is_enabled': True,
+																 'is_up': False,
+																 'local_as': 100,
+																 'remote_as': 1,
+																 'remote_id': '',
+																 'uptime': 894325}},
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 4ce6b71b3b628dc7349e2789c263c7d407fdaf28
 									 'router_id': ''},
 						 'mvpn': { 'peers': { '2.1.1.2': { 'address_family': { 'ipv4': { 'accepted_prefixes': -1,
 																						 'received_prefixes': -1,
@@ -492,12 +566,34 @@ groups.yaml files to
 														   'uptime': 894325}},
 								   'router_id': ''}}}
 	^^^^ END napalm_get ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
 </code></pre></div></div>
+<p>=======</p>
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <blockquote>
+        <blockquote>
+          <blockquote>
+            <blockquote>
+              <p>4ce6b71b3b628dc7349e2789c263c7d407fdaf28</p>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </code></pre></div></div>
-<p>Output:</p>
+<p>Output: 
+«««&lt; HEAD</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AggregatedResult (napalm_get): {'r1': MultiResult: [Result: "napalm_get"]}
+</code></pre></div></div>
+<p>=======</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AggregatedResult (napalm_get): {'r1': MultiResult: [Result: "napalm_get"]} &gt;&gt;&gt;&gt;&gt;&gt;&gt; 4ce6b71b3b628dc7349e2789c263c7d407fdaf28
 </code></pre></div></div>
 
 <p>Pythonic way to extract the specific details of BGP neighbor:</p>
@@ -505,8 +601,13 @@ groups.yaml files to
 <span class="k">print</span><span class="p">((((</span><span class="n">result</span><span class="p">[</span><span class="s">'r1'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">result</span><span class="p">)[</span><span class="s">'bgp_neighbors'</span><span class="p">]))</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 <span class="n">pprint</span><span class="p">((((</span><span class="n">result</span><span class="p">[</span><span class="s">'r1'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">result</span><span class="p">)[</span><span class="s">'bgp_neighbors'</span><span class="p">]))[</span><span class="s">'mvpn'</span><span class="p">])</span>
 </code></pre></div></div>
-<p>Output:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	&lt;class 'dict'&gt;
+<p>Output:<br />
+«««&lt; HEAD</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>=======
+
+
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 4ce6b71b3b628dc7349e2789c263c7d407fdaf28
+	&lt;class 'dict'&gt;
 	dict_keys(['global', 'mvpn'])
 	{'peers': {'2.1.1.2': {'address_family': {'ipv4': {'accepted_prefixes': -1,
 													   'received_prefixes': -1,
@@ -521,8 +622,26 @@ groups.yaml files to
 						   'remote_as': 200,
 						   'remote_id': '',
 						   'uptime': 894325}},
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
 	 'router_id': ''}
 </code></pre></div></div>
+<p>=======
+	 ‘router_id’: ‘’}</p>
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <blockquote>
+        <blockquote>
+          <blockquote>
+            <blockquote>
+              <p>4ce6b71b3b628dc7349e2789c263c7d407fdaf28</p>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
 
         
       </section>
