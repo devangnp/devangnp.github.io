@@ -106,7 +106,6 @@ Output:
 	2001:1:1::1               1          0          0       0       0 1w3d 8:25:11 Idle  
 
 	^^^^ END netmiko_send_command ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-<<<<<<< HEAD
 ```
     
 =======
@@ -122,7 +121,6 @@ print_result(result)
 ```
 Output: 
 
-<<<<<<< HEAD
 ``` 
 =======
  
@@ -172,7 +170,6 @@ result = nr.run(
 print_result(result)
 ```
 Output: 
-<<<<<<< HEAD
 ``` 
 =======
 
@@ -291,8 +288,5 @@ Output:
 						   'remote_as': 200,
 						   'remote_id': '',
 						   'uptime': 894325}},
-<<<<<<< HEAD
 	 'router_id': ''}
 ```
-=======
-	 'router_id': ''}
