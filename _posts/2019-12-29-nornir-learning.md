@@ -41,7 +41,7 @@ Output:
 {'r1': Host: r1}
 {'mylab': Group: mylab}
 ```
-=======
+
 Output:  
 
 
@@ -60,7 +60,7 @@ print_result(result)
 
 Output:
 ```  
-=======
+
 Output:
 
   
@@ -74,16 +74,7 @@ Output:
 						   0          0          0          0          0          0
 	bgp.l3vpn.0          
 						   2          2          0          0          0          0
-	bgp.l2vpn.0          
-						   0          0          0          0          0          0
-	bgp.evpn.0           
-						   0          0          0          0          0          0
-	bgp.mvpn.0           
-						   0          0          0          0          0          0
-	bgp.mdt.0            
-						   0          0          0          0          0          0
-	inet6.0              
-						   0          0          0          0          0          0
+    ...
 	Peer                     AS      InPkt     OutPkt    OutQ   Flaps Last Up/Dwn State|#Active/Received/Accepted/Damped...
 	1.1.11.2                200          0          0       0       0 1w3d 8:25:11 Idle  
 	2.1.1.2                 200          0          0       0       0 1w3d 8:25:11 Idle  
@@ -107,8 +98,6 @@ Output:
 
 	^^^^ END netmiko_send_command ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ```
-    
-=======
 
 Using napalm in nornir to execult the JUNOS cli command:
 ```python
@@ -179,68 +168,16 @@ Output:
 	vvvv napalm_get ** changed : False vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv INFO
 	{ 'bgp_neighbors': { 'global': { 'peers': { '1.1.11.2': { 'address_family': { 'ipv4': { 'accepted_prefixes': -1,
 																							'received_prefixes': -1,
-																							'sent_prefixes': -1},
-																				  'ipv6': { 'accepted_prefixes': -1,
-																							'received_prefixes': -1,
-																							'sent_prefixes': -1}},
-															  'description': '',
-															  'is_enabled': True,
-															  'is_up': False,
+    ...
 															  'local_as': 100,
 															  'remote_as': 200,
 															  'remote_id': '',
 															  'uptime': 894325},
-												'192.168.1.2': { 'address_family': { 'ipv4': { 'accepted_prefixes': 0,
-																							   'received_prefixes': 0,
-																							   'sent_prefixes': 1},
-																					 'ipv6': { 'accepted_prefixes': -1,
-																							   'received_prefixes': -1,
-																							   'sent_prefixes': -1}},
-																 'description': '',
-																 'is_enabled': True,
-																 'is_up': True,
-																 'local_as': 100,
-																 'remote_as': 100,
-																 'remote_id': '192.168.1.2',
-																 'uptime': 277455},
-												'192.168.200.1': { 'address_family': { 'ipv4': { 'accepted_prefixes': 0,
-																								 'received_prefixes': 0,
-																								 'sent_prefixes': 1},
-																					   'ipv6': { 'accepted_prefixes': -1,
-																								 'received_prefixes': -1,
-																								 'sent_prefixes': -1}},
-																   'description': '',
-																   'is_enabled': True,
-																   'is_up': True,
-																   'local_as': 100,
-																   'remote_as': 100,
-																   'remote_id': '192.168.200.1',
-																   'uptime': 279779},
-                                                                    ...
-=======
-												'2001:1:1::1': { 'address_family': { 'ipv4': { 'accepted_prefixes': -1,
-																							   'received_prefixes': -1,
-																							   'sent_prefixes': -1},
-																					 'ipv6': { 'accepted_prefixes': -1,
-																							   'received_prefixes': -1,
-																							   'sent_prefixes': -1}},
-																 'description': '',
-																 'is_enabled': True,
-																 'is_up': False,
-																 'local_as': 100,
-																 'remote_as': 1,
-																 'remote_id': '',
-																 'uptime': 894325}},
+    ...
 									 'router_id': ''},
 						 'mvpn': { 'peers': { '2.1.1.2': { 'address_family': { 'ipv4': { 'accepted_prefixes': -1,
 																						 'received_prefixes': -1,
-																						 'sent_prefixes': -1},
-																			   'ipv6': { 'accepted_prefixes': -1,
-																						 'received_prefixes': -1,
-																						 'sent_prefixes': -1}},
-														   'description': '',
-														   'is_enabled': True,
-														   'is_up': False,
+    ...
 														   'local_as': 100,
 														   'remote_as': 200,
 														   'remote_id': '',
@@ -248,7 +185,6 @@ Output:
 								   'router_id': ''}}}
 	^^^^ END napalm_get ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ```
-=======
 
 ```python
 print(result)
@@ -257,10 +193,6 @@ Output:
 ```
 AggregatedResult (napalm_get): {'r1': MultiResult: [Result: "napalm_get"]}
 ```
-=======
-
- 
-    AggregatedResult (napalm_get): {'r1': MultiResult: [Result: "napalm_get"]}
 
 Pythonic way to extract the specific details of BGP neighbor:
 ```python
@@ -277,13 +209,7 @@ Output:
 	dict_keys(['global', 'mvpn'])
 	{'peers': {'2.1.1.2': {'address_family': {'ipv4': {'accepted_prefixes': -1,
 													   'received_prefixes': -1,
-													   'sent_prefixes': -1},
-											  'ipv6': {'accepted_prefixes': -1,
-													   'received_prefixes': -1,
-													   'sent_prefixes': -1}},
-						   'description': '',
-						   'is_enabled': True,
-						   'is_up': False,
+    ...
 						   'local_as': 100,
 						   'remote_as': 200,
 						   'remote_id': '',
