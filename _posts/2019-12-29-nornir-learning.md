@@ -7,10 +7,10 @@ tags:
   - - [Networking,NetOps]
 ---
 
-	- Trying out the NORNIR network automation and documenting few way to capture data from networking devices.
-	- I like the way we can import its different module into the python program that you might already be working on.
-	- Nornir is supported with Python 3.6 version and above. 
-	- Using Nornir, we can call netmiko module to capture data from router using command, we can also use napalm module as well for same task.
+- Trying out the NORNIR network automation and documenting few way to capture data from networking devices.
+- I like the way we can import its different module into the python program that you might already be working on.
+- Nornir is supported with Python 3.6 version and above. 
+- Using Nornir, we can call netmiko module to capture data from router using command, we can also use napalm module as well for same task.
 
 ```python
 #Required imports
@@ -41,7 +41,7 @@ Output:
 	{'r1': Host: r1}
 	{'mylab': Group: mylab}
 
-
+Using netmiko module in nornir to capture BGP summary output:
 ```python
 result = nr.run(
     task=netmiko_send_command,
@@ -96,6 +96,7 @@ Output:
 
 	^^^^ END netmiko_send_command ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Using napalm in nornir to execult the JUNOS cli command:
 ```python
 result = nr.run(
              napalm_cli,
@@ -132,6 +133,7 @@ Output:
 													 '0:09   0.00% rpd{krtio-th}'}
 	^^^^ END napalm_cli ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Identify type of result to read output further:
 ```python
 print(type(result))
 ```
@@ -140,6 +142,7 @@ Output:
  
 	<class 'nornir.core.task.AggregatedResult'>
 
+Using napalm getters in nornir:
 ```python
 cmd = "show version"
 result = nr.run(
@@ -231,6 +234,7 @@ Output:
  
     AggregatedResult (napalm_get): {'r1': MultiResult: [Result: "napalm_get"]}
 
+Pythonic way to extract the specific details of BGP neighbor:
 ```python
 print(type((result['r1'][0].result)))
 print((((result['r1'][0].result)['bgp_neighbors'])).keys())
