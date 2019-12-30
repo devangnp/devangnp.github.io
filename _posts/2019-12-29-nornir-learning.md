@@ -33,6 +33,8 @@ print(nr.inventory.hosts)
 print(nr.inventory.groups)
 ```
 Output:  
+
+
 	{'r1': Host: r1}
 	{'mylab': Group: mylab}
 
