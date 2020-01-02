@@ -180,3 +180,63 @@ Configuration file: /home/labroot/myBlog/etcomblog/_config.yml
        Jekyll Feed: Generating feed for posts
                     ...done in 3.683181939 seconds.
                     
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:29: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:30: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:29: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:30: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+NOTE: Gem::Specification#rubyforge_project= is deprecated with no replacement. It will be removed on or after 2019-12-01.
+Gem::Specification#rubyforge_project= called from /usr/share/rubygems-integration/2.3.0/specifications/rdiscount-2.1.8.gemspec:21.
+NOTE: Gem::Specification#rubyforge_project= is deprecated with no replacement. It will be removed on or after 2019-12-01.
+Gem::Specification#rubyforge_project= called from /usr/share/rubygems-integration/2.3.0/specifications/oj-2.12.10.gemspec:21.
+NOTE: Gem::Specification#rubyforge_project= is deprecated with no replacement. It will be removed on or after 2019-12-01.
+Gem::Specification#rubyforge_project= called from /usr/share/rubygems-integration/2.3.0/specifications/mysql-2.9.1.gemspec:21.
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+NOTE: Gem::Specification#rubyforge_project= is deprecated with no replacement. It will be removed on or after 2019-12-01.
+Gem::Specification#rubyforge_project= called from /var/lib/gems/2.3.0/specifications/i18n-0.9.5.gemspec:17.
+NOTE: Gem::Specification#rubyforge_project= is deprecated with no replacement. It will be removed on or after 2019-12-01.
+Gem::Specification#rubyforge_project= called from /var/lib/gems/2.3.0/specifications/coffee-script-source-1.11.1.gemspec:16.
+NOTE: Inheriting Faraday::Error::ClientError is deprecated; use Faraday::ClientError instead. It will be removed in or after version 1.0
+Faraday::Error::ClientError.inherited called from /var/lib/gems/2.3.0/gems/octokit-4.14.0/lib/octokit/middleware/follow_redirects.rb:14.
+Configuration file: /home/labroot/myBlog/devangnp.github.io/_config.yml
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+            Source: /home/labroot/myBlog/devangnp.github.io
+       Destination: /home/labroot/myBlog/devangnp.github.io/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating... 
+[33mInvalid theme folder: _sass[0m
+      Remote Theme: Using theme mmistakes/minimal-mistakes
+       Jekyll Feed: Generating feed for posts
+[33m   GitHub Metadata: No GitHub API authentication could be found. Some fields may be missing or have incorrect data.[0m
+                    done in 73.198 seconds.
+ Auto-regeneration: enabled for '/home/labroot/myBlog/devangnp.github.io'
+    Server address: http://0.0.0.0:4000
+  Server running... press ctrl-c to stop.
+      Regenerating: 1 file(s) changed at 2020-01-01 19:47:19
+                    _posts/2019-12-31-csv-stats.md
+[33mInvalid theme folder: _sass[0m
+      Remote Theme: Using theme mmistakes/minimal-mistakes
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.618736177 seconds.
+                    
+[2020-01-01 20:23:41] ERROR `/favicon.ico' not found.
+      Regenerating: 1 file(s) changed at 2020-01-01 20:26:58
+                    _posts/2020-01-01-nornir-textfsm.md
+[33mInvalid theme folder: _sass[0m
+      Remote Theme: Using theme mmistakes/minimal-mistakes
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.508667982 seconds.
+                    
+[2020-01-01 20:27:05] ERROR `/favicon.ico' not found.
+      Regenerating: 1 file(s) changed at 2020-01-01 20:29:21
+                    _posts/2020-01-01-nornir-textfsm.md
+[33mInvalid theme folder: _sass[0m
+      Remote Theme: Using theme mmistakes/minimal-mistakes
+       Jekyll Feed: Generating feed for posts

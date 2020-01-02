@@ -213,3 +213,32 @@ Configuration file: /home/labroot/myBlog/devangnp.github.io/_config.yml
       Generating... 
 [33mInvalid theme folder: _sass[0m
       Remote Theme: Using theme mmistakes/minimal-mistakes
+       Jekyll Feed: Generating feed for posts
+[33m   GitHub Metadata: No GitHub API authentication could be found. Some fields may be missing or have incorrect data.[0m
+                    done in 73.198 seconds.
+ Auto-regeneration: enabled for '/home/labroot/myBlog/devangnp.github.io'
+    Server address: http://0.0.0.0:4000
+  Server running... press ctrl-c to stop.
+      Regenerating: 1 file(s) changed at 2020-01-01 19:47:19
+                    _posts/2019-12-31-csv-stats.md
+[33mInvalid theme folder: _sass[0m
+      Remote Theme: Using theme mmistakes/minimal-mistakes
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.618736177 seconds.
+                    
+[2020-01-01 20:23:41] ERROR `/favicon.ico' not found.
+      Regenerating: 1 file(s) changed at 2020-01-01 20:26:58
+                    _posts/2020-01-01-nornir-textfsm.md
+[33mInvalid theme folder: _sass[0m
+      Remote Theme: Using theme mmistakes/minimal-mistakes
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.508667982 seconds.
+                    
+[2020-01-01 20:27:05] ERROR `/favicon.ico' not found.
+      Regenerating: 1 file(s) changed at 2020-01-01 20:29:21
+                    _posts/2020-01-01-nornir-textfsm.md
+[33mInvalid theme folder: _sass[0m
+      Remote Theme: Using theme mmistakes/minimal-mistakes
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.531067358 seconds.
+                    

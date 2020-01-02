@@ -20,6 +20,9 @@ Address          Interface              State     ID               Pri  Dead
 1.1.13.2         xe-0/1/0.0             Full      192.168.1.3      128    39
 ```
 
+
+Telling netmiko where to look for textFSM templates: ```export NET_TEXTFSM=/home/user/ntc-templates/templates/```
+
 ```python
 #Required imports
 from nornir import InitNornir
@@ -68,7 +71,7 @@ result = nr.run(
 print_result(result)  
 ```
 
-#### Output of script without TextFSM use looks plain text:
+#### Output of script without TextFSM usage, it looks like a plain text output:
 
 ```
 netmiko_send_command************************************************************
