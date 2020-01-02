@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Let it snow! - Devang Patel</title>
-<meta name="description" content="Picture of Evergreen Tree, my son and I created during thanks giving break when we were waiting for the snow to arrive.">
+<!-- begin _includes/seo.html --><title>TextFSM with Nornir - Devang Patel</title>
+<meta name="description" content="TextFSM has been useful in network automation when you have unstructured data or cli output and want to convert them into Python data structured formatted data.">
 
 
   <meta name="author" content="Devang Patel">
@@ -19,28 +19,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Devang Patel">
-<meta property="og:title" content="Let it snow!">
-<meta property="og:url" content="http://0.0.0.0:4000/blog/snow/">
+<meta property="og:title" content="TextFSM with Nornir">
+<meta property="og:url" content="http://0.0.0.0:4000/blog/nornir-textfsm/">
 
 
-  <meta property="og:description" content="Picture of Evergreen Tree, my son and I created during thanks giving break when we were waiting for the snow to arrive.">
-
-
-
+  <meta property="og:description" content="TextFSM has been useful in network automation when you have unstructured data or cli output and want to convert them into Python data structured formatted data.">
 
 
 
 
-  <meta property="article:published_time" content="2019-12-16T00:00:00-08:00">
 
 
 
-  <meta property="article:modified_time" content="2016-12-15T21:00:01-08:00">
+  <meta property="article:published_time" content="2020-01-01T00:00:00-08:00">
+
+
+
+  <meta property="article:modified_time" content="2011-12-31T21:00:01-08:00">
 
 
 
 
-<link rel="canonical" href="http://0.0.0.0:4000/blog/snow/">
+<link rel="canonical" href="http://0.0.0.0:4000/blog/nornir-textfsm/">
 
 
 
@@ -270,15 +270,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Let it snow!">
-    <meta itemprop="description" content="Picture of Evergreen Tree, my son and I created during thanks giving break when we were waiting for the snow to arrive.">
-    <meta itemprop="datePublished" content="2019-12-16T00:00:00-08:00">
-    <meta itemprop="dateModified" content="2016-12-15T21:00:01-08:00">
+    <meta itemprop="headline" content="TextFSM with Nornir">
+    <meta itemprop="description" content="TextFSM has been useful in network automation when you have unstructured data or cli output and want to convert them into Python data structured formatted data.">
+    <meta itemprop="datePublished" content="2020-01-01T00:00:00-08:00">
+    <meta itemprop="dateModified" content="2011-12-31T21:00:01-08:00">
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Let it snow!
+          <h1 id="page-title" class="page__title" itemprop="headline">TextFSM with Nornir
 </h1>
           
             <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
@@ -286,7 +286,7 @@
 
 
 
-  less than 1 minute read
+  1 minute read
 
 </p>
           
@@ -295,12 +295,74 @@
 
       <section class="page__content" itemprop="text">
         
-        <p>Picture of Evergreen Tree, my son and I created during thanks giving break when we were waiting for the snow to arrive.</p>
+        <p>TextFSM has been useful in network automation when you have unstructured data or cli output and want to convert them into Python data structured formatted data.</p>
 
-<p>iPad and pencil was used to draw whole picture.</p>
+<p>By importing netmiko plugin in nornir we can use its capability of parsing the unstructured data using TextFsm.</p>
 
-<p><img src="/assets/images/snow.jpg" alt="Evergreen Tree with Snow" /></p>
+<p>In this example, we will try to extract the OSPF neighbor details from Juniper router and read it in TextFSM formatted data model/structure. I am using existing <a href="https://github.com/networktocode/ntc-templates" target="_blank">TextFsm template defined here</a></p>
 
+<p>Router r1’s OSPF neighbor output in plain text is as follow:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lab@r1&gt; show ospf neighbor 
+Address          Interface              State     ID               Pri  Dead
+1.1.13.2         xe-0/1/0.0             Full      192.168.1.3      128    39
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#Required imports
+</span><span class="kn">from</span> <span class="nn">nornir</span> <span class="kn">import</span> <span class="n">InitNornir</span>
+<span class="kn">from</span> <span class="nn">nornir.plugins.tasks.networking</span> <span class="kn">import</span> <span class="n">netmiko_send_command</span><span class="p">,</span>
+<span class="kn">from</span> <span class="nn">nornir.plugins.tasks.networking</span> <span class="kn">import</span> <span class="n">napalm_get</span><span class="p">,</span> <span class="n">napalm_cli</span>
+<span class="kn">from</span> <span class="nn">nornir.plugins.functions.text</span> <span class="kn">import</span> <span class="n">print_result</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span> <span class="k">as</span> <span class="n">pprint</span>
+
+<span class="s">'''
+Create nornir object which will use the hosts.yaml and 
+groups.yaml files to 
+'''</span>
+<span class="n">nr</span> <span class="o">=</span> <span class="n">InitNornir</span><span class="p">()</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">nr</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+    <span class="n">task</span><span class="o">=</span><span class="n">netmiko_send_command</span><span class="p">,</span>
+    <span class="n">command_string</span><span class="o">=</span><span class="s">"show ospf neighbor"</span><span class="p">,</span>
+    <span class="n">use_textfsm</span><span class="o">=</span><span class="bp">True</span>
+<span class="p">)</span>
+
+<span class="n">print_result</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>      
+
+</code></pre></div></div>
+
+<h4 id="textfsm-parse-output">TextFSM parse output:</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>netmiko_send_command************************************************************
+* r1 ** changed : False ********************************************************
+vvvv netmiko_send_command ** changed : False vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv INFO
+[ { 'address': '1.1.13.2',
+    'dead_time': '33',
+    'interface': 'xe-0/1/0.0',
+    'neighbor_id': '192.168.1.3',
+    'priority': '128',
+    'state': 'Full'}]
+^^^^ END netmiko_send_command ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+</code></pre></div></div>
+
+<p>If we remove <code class="language-plaintext highlighter-rouge">use_textfsm=True</code> from the script:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">result</span> <span class="o">=</span> <span class="n">nr</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+    <span class="n">task</span><span class="o">=</span><span class="n">netmiko_send_command</span><span class="p">,</span>
+    <span class="n">command_string</span><span class="o">=</span><span class="s">"show ospf neighbor"</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">print_result</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  
+</code></pre></div></div>
+
+<h4 id="output-of-script-without-textfsm-use-looks-plain-text">Output of script without TextFSM use looks plain text:</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>netmiko_send_command************************************************************
+* r1 ** changed : False ********************************************************
+vvvv netmiko_send_command ** changed : False vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv INFO
+
+Address          Interface              State     ID               Pri  Dead
+1.1.13.2         xe-0/1/0.0             Full      192.168.1.3      128    33
+
+^^^^ END netmiko_send_command ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+</code></pre></div></div>
 
         
       </section>
@@ -321,7 +383,7 @@
     
       
       
-      <a href="/tags/#anish" class="page__taxonomy-item" rel="tag">Anish</a>
+      <a href="/tags/#netops" class="page__taxonomy-item" rel="tag">NetOps</a>
     
     </span>
   </p>
@@ -349,30 +411,29 @@
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2016-12-15">December 15, 2016</time></p>
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2011-12-31">December 31, 2011</time></p>
         
       </footer>
 
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=Let+it+snow%21%20http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fsnow%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=TextFSM+with+Nornir%20http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fnornir-textfsm%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fsnow%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fnornir-textfsm%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fsnow%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fnornir-textfsm%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/blog/scale-config/" class="pagination--pager" title="JUNOS scale config
+      <a href="/blog/csv-stats/" class="pagination--pager" title="CSV Network device stats calculation
 ">Previous</a>
     
     
-      <a href="/blog/nornir-learning/" class="pagination--pager" title="Trying out Nornir automation
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -386,34 +447,6 @@
     <div class="page__related">
       <h4 class="page__related-title">You May Also Enjoy</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/blog/nornir-textfsm/" rel="permalink">TextFSM with Nornir
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  1 minute read
-
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">TextFSM has been useful in network automation when you have unstructured data or cli output and want to convert them into Python data structured formatted da...</p>
-  </article>
-</div>
-
         
           
 
@@ -464,13 +497,43 @@
 
 
 
-  3 minute read
+  2 minute read
 
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">
   Trying out the NORNIR network automation and documenting few way to capture data from networking devices.
   I like the way we can import its different mod...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/snow/" rel="permalink">Let it snow!
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Picture of Evergreen Tree, my son and I created during thanks giving break when we were waiting for the snow to arrive.
+
+</p>
   </article>
 </div>
 

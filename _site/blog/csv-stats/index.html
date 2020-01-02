@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Let it snow! - Devang Patel</title>
-<meta name="description" content="Picture of Evergreen Tree, my son and I created during thanks giving break when we were waiting for the snow to arrive.">
+<!-- begin _includes/seo.html --><title>CSV Network device stats calculation - Devang Patel</title>
+<meta name="description" content="Given a CSV file with stats, how would you calculate the traffic stats? This is what I am trying to document:">
 
 
   <meta name="author" content="Devang Patel">
@@ -19,28 +19,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Devang Patel">
-<meta property="og:title" content="Let it snow!">
-<meta property="og:url" content="http://0.0.0.0:4000/blog/snow/">
+<meta property="og:title" content="CSV Network device stats calculation">
+<meta property="og:url" content="http://0.0.0.0:4000/blog/csv-stats/">
 
 
-  <meta property="og:description" content="Picture of Evergreen Tree, my son and I created during thanks giving break when we were waiting for the snow to arrive.">
-
-
-
+  <meta property="og:description" content="Given a CSV file with stats, how would you calculate the traffic stats? This is what I am trying to document:">
 
 
 
 
-  <meta property="article:published_time" content="2019-12-16T00:00:00-08:00">
 
 
 
-  <meta property="article:modified_time" content="2016-12-15T21:00:01-08:00">
+  <meta property="article:published_time" content="2019-12-31T00:00:00-08:00">
+
+
+
+  <meta property="article:modified_time" content="2016-12-30T21:00:02-08:00">
 
 
 
 
-<link rel="canonical" href="http://0.0.0.0:4000/blog/snow/">
+<link rel="canonical" href="http://0.0.0.0:4000/blog/csv-stats/">
 
 
 
@@ -270,15 +270,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Let it snow!">
-    <meta itemprop="description" content="Picture of Evergreen Tree, my son and I created during thanks giving break when we were waiting for the snow to arrive.">
-    <meta itemprop="datePublished" content="2019-12-16T00:00:00-08:00">
-    <meta itemprop="dateModified" content="2016-12-15T21:00:01-08:00">
+    <meta itemprop="headline" content="CSV Network device stats calculation">
+    <meta itemprop="description" content="Given a CSV file with stats, how would you calculate the traffic stats? This is what I am trying to document:">
+    <meta itemprop="datePublished" content="2019-12-31T00:00:00-08:00">
+    <meta itemprop="dateModified" content="2016-12-30T21:00:02-08:00">
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Let it snow!
+          <h1 id="page-title" class="page__title" itemprop="headline">CSV Network device stats calculation
 </h1>
           
             <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
@@ -295,11 +295,62 @@
 
       <section class="page__content" itemprop="text">
         
-        <p>Picture of Evergreen Tree, my son and I created during thanks giving break when we were waiting for the snow to arrive.</p>
+        <p>Given a CSV file with stats, how would you calculate the traffic stats? This is what I am trying to document:</p>
 
-<p>iPad and pencil was used to draw whole picture.</p>
+<p>My CSV file looks like:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>device,intf,input,output
+r1,et1,blah,110
+r1,et2,102,112
+r1,et3,103,113
+r2,et1,200,210
+r2,et2,202,212
+r2,et3,203,213
+r3,et1,300,blah
+r3,et2,302,312
+r3,et3,303,313
 
-<p><img src="/assets/images/snow.jpg" alt="Evergreen Tree with Snow" /></p>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">'''
+Reading CSV and cleaning the value
+'''</span>
+<span class="n">total_input</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">total_output</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">devices</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'stats.csv'</span><span class="p">,</span><span class="s">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+    <span class="n">csv_reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">fh</span><span class="p">)</span>
+     
+    <span class="k">for</span> <span class="n">sw</span> <span class="ow">in</span> <span class="n">csv_reader</span><span class="p">:</span>
+        
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">sw</span><span class="p">[</span><span class="s">'output'</span><span class="p">]</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span>
+            <span class="n">sw</span><span class="p">[</span><span class="s">'output'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+            
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">sw</span><span class="p">[</span><span class="s">'input'</span><span class="p">]</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span>
+            <span class="n">sw</span><span class="p">[</span><span class="s">'input'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        
+        <span class="k">if</span> <span class="n">sw</span><span class="p">[</span><span class="s">'device'</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">devices</span><span class="p">:</span>
+            <span class="n">devices</span><span class="p">[</span><span class="n">sw</span><span class="p">[</span><span class="s">'device'</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+        
+        <span class="k">if</span> <span class="n">sw</span><span class="p">[</span><span class="s">'device'</span><span class="p">]</span> <span class="ow">in</span> <span class="n">devices</span><span class="p">:</span>
+            <span class="n">devices</span><span class="p">[</span><span class="n">sw</span><span class="p">[</span><span class="s">'device'</span><span class="p">]][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">devices</span><span class="p">[</span><span class="n">sw</span><span class="p">[</span><span class="s">'device'</span><span class="p">]][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">sw</span><span class="p">[</span><span class="s">'input'</span><span class="p">])</span>
+            <span class="n">devices</span><span class="p">[</span><span class="n">sw</span><span class="p">[</span><span class="s">'device'</span><span class="p">]][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">devices</span><span class="p">[</span><span class="n">sw</span><span class="p">[</span><span class="s">'device'</span><span class="p">]][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">sw</span><span class="p">[</span><span class="s">'output'</span><span class="p">])</span>
+            
+<span class="k">for</span> <span class="n">device</span><span class="p">,</span><span class="n">traffic</span> <span class="ow">in</span> <span class="n">devices</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">device</span><span class="p">,</span><span class="n">traffic</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Total traffic on {device} is {traffic[0]+traffic[1]}'</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p>Output:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>r1 [205, 335]
+Total traffic on r1 is 540
+r2 [605, 635]
+Total traffic on r2 is 1240
+r3 [905, 625]
+Total traffic on r3 is 1530
+</code></pre></div></div>
+
+<p>Is there a better way?</p>
 
 
         
@@ -321,7 +372,7 @@
     
       
       
-      <a href="/tags/#anish" class="page__taxonomy-item" rel="tag">Anish</a>
+      <a href="/tags/#netops" class="page__taxonomy-item" rel="tag">NetOps</a>
     
     </span>
   </p>
@@ -349,29 +400,29 @@
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2016-12-15">December 15, 2016</time></p>
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2016-12-30">December 30, 2016</time></p>
         
       </footer>
 
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=Let+it+snow%21%20http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fsnow%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=CSV+Network+device+stats+calculation%20http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fcsv-stats%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fsnow%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fcsv-stats%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fsnow%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fcsv-stats%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/blog/scale-config/" class="pagination--pager" title="JUNOS scale config
+      <a href="/blog/nornir-learning/" class="pagination--pager" title="Trying out Nornir automation
 ">Previous</a>
     
     
-      <a href="/blog/nornir-learning/" class="pagination--pager" title="Trying out Nornir automation
+      <a href="/blog/nornir-textfsm/" class="pagination--pager" title="TextFSM with Nornir
 ">Next</a>
     
   </nav>
@@ -424,7 +475,7 @@
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/blog/csv-stats/" rel="permalink">CSV Network device stats calculation
+        <a href="/blog/nornir-learning/" rel="permalink">Trying out Nornir automation
 </a>
       
     </h2>
@@ -434,13 +485,13 @@
 
 
 
-  less than 1 minute read
+  2 minute read
 
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">Given a CSV file with stats, how would you calculate the traffic stats? This is what I am trying to document:
-
-</p>
+    <p class="archive__item-excerpt" itemprop="description">
+  Trying out the NORNIR network automation and documenting few way to capture data from networking devices.
+  I like the way we can import its different mod...</p>
   </article>
 </div>
 
@@ -454,7 +505,7 @@
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/blog/nornir-learning/" rel="permalink">Trying out Nornir automation
+        <a href="/blog/snow/" rel="permalink">Let it snow!
 </a>
       
     </h2>
@@ -464,13 +515,13 @@
 
 
 
-  3 minute read
+  less than 1 minute read
 
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">
-  Trying out the NORNIR network automation and documenting few way to capture data from networking devices.
-  I like the way we can import its different mod...</p>
+    <p class="archive__item-excerpt" itemprop="description">Picture of Evergreen Tree, my son and I created during thanks giving break when we were waiting for the snow to arrive.
+
+</p>
   </article>
 </div>
 

@@ -180,3 +180,36 @@ Configuration file: /home/labroot/myBlog/etcomblog/_config.yml
        Jekyll Feed: Generating feed for posts
                     ...done in 3.683181939 seconds.
                     
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:29: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:30: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:29: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:30: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+NOTE: Gem::Specification#rubyforge_project= is deprecated with no replacement. It will be removed on or after 2019-12-01.
+Gem::Specification#rubyforge_project= called from /usr/share/rubygems-integration/2.3.0/specifications/rdiscount-2.1.8.gemspec:21.
+NOTE: Gem::Specification#rubyforge_project= is deprecated with no replacement. It will be removed on or after 2019-12-01.
+Gem::Specification#rubyforge_project= called from /usr/share/rubygems-integration/2.3.0/specifications/oj-2.12.10.gemspec:21.
+NOTE: Gem::Specification#rubyforge_project= is deprecated with no replacement. It will be removed on or after 2019-12-01.
+Gem::Specification#rubyforge_project= called from /usr/share/rubygems-integration/2.3.0/specifications/mysql-2.9.1.gemspec:21.
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+NOTE: Gem::Specification#rubyforge_project= is deprecated with no replacement. It will be removed on or after 2019-12-01.
+Gem::Specification#rubyforge_project= called from /var/lib/gems/2.3.0/specifications/i18n-0.9.5.gemspec:17.
+NOTE: Gem::Specification#rubyforge_project= is deprecated with no replacement. It will be removed on or after 2019-12-01.
+Gem::Specification#rubyforge_project= called from /var/lib/gems/2.3.0/specifications/coffee-script-source-1.11.1.gemspec:16.
+NOTE: Inheriting Faraday::Error::ClientError is deprecated; use Faraday::ClientError instead. It will be removed in or after version 1.0
+Faraday::Error::ClientError.inherited called from /var/lib/gems/2.3.0/gems/octokit-4.14.0/lib/octokit/middleware/follow_redirects.rb:14.
+Configuration file: /home/labroot/myBlog/devangnp.github.io/_config.yml
+/usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+            Source: /home/labroot/myBlog/devangnp.github.io
+       Destination: /home/labroot/myBlog/devangnp.github.io/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating... 
+[33mInvalid theme folder: _sass[0m
+      Remote Theme: Using theme mmistakes/minimal-mistakes
