@@ -1,4 +1,175 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2020-01-01T20:29:21-08:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Devang Patel</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>Devang Patel</name></author><entry><title type="html">TextFSM with Nornir</title><link href="http://0.0.0.0:4000/blog/nornir-textfsm/" rel="alternate" type="text/html" title="TextFSM with Nornir" /><published>2020-01-01T00:00:00-08:00</published><updated>2011-12-31T21:00:01-08:00</updated><id>http://0.0.0.0:4000/blog/nornir-textfsm</id><content type="html" xml:base="http://0.0.0.0:4000/blog/nornir-textfsm/">&lt;p&gt;TextFSM has been useful in network automation when you have unstructured data or cli output and want to convert them into Python data structured formatted data.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2020-01-03T12:29:05-08:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Devang Patel</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>Devang Patel</name></author><entry><title type="html">Learning Ansible automation to manage network devices in the lab</title><link href="http://0.0.0.0:4000/blog/ansible-learning/" rel="alternate" type="text/html" title="Learning Ansible automation to manage network devices in the lab" /><published>2020-01-03T00:00:00-08:00</published><updated>2020-01-02T21:00:01-08:00</updated><id>http://0.0.0.0:4000/blog/ansible-learning</id><content type="html" xml:base="http://0.0.0.0:4000/blog/ansible-learning/">&lt;p&gt;With so many tools available, I decided to try out the Ansible to see how it works and what can I do with it so documenting few things that I tried with it.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;my Ansible directory tree structure&lt;/li&gt;
+  &lt;li&gt;Ansible default config file and modification&lt;/li&gt;
+  &lt;li&gt;creating inventory&lt;/li&gt;
+  &lt;li&gt;defining variables in inventory as well as global variables, I decided to use username and password which I can supply to all my hosts in variable&lt;/li&gt;
+  &lt;li&gt;Different example of play books:
+    &lt;ul&gt;
+      &lt;li&gt;Capturing data using show commands&lt;/li&gt;
+      &lt;li&gt;Configure device using set commands in separate files&lt;/li&gt;
+      &lt;li&gt;How to pass username and password as variable&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;How to execute the play book and various options.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;my-ansible-dir-structure-looks-like-this&quot;&gt;My ansible dir structure looks like this:&lt;/h4&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ansible/
+|-- ansible.cfg
+|-- ansible_inventory
+|   |-- group_vars
+|   |   `-- all.yaml
+|   `-- inventory
+|-- ansible_playbooks
+|   |-- playbook_filter_file.yaml
+|   |-- playbook_lo0_desc.yaml
+|   |-- playbook_uptime_prompt.yaml
+|   `-- playbook_version_uptime.yaml
+|-- router_config
+|   `-- r1_filter.conf
+`-- uptime.yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;ansible-config-file&quot;&gt;Ansible config file&lt;/h4&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root@ubuntu:~# cat ansible/ansible.cfg 
+[defaults]
+
+inventory = /home/lab/ansible/ansible_inventory/inventory
+host_key_checking = False
+
+[ssh_connection]
+scp_if_ssh=True
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;ansible-inventory-and-groups-variables&quot;&gt;Ansible inventory and groups variables:&lt;/h4&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root@ubuntu:~# cat ansible/ansible_inventory/group_vars/all.yaml 
+username: lab
+password: lab123
+
+root@ubuntu:~# cat ansible/ansible_inventory/inventory 
+[lab]
+r1 ansible_host=10.1.1.1 device_role=router
+
+[routers:children]
+lab
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;example-playbook-file&quot;&gt;Example playbook file:&lt;/h4&gt;
+
+&lt;p&gt;In this example, we are going to configure the router with few filter terms using set commands. Configuration set commands are stored in separate file named &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;r1_filter.conf&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root@ubuntu:~# cat ansible/ansible_playbooks/playbook_filter_file.yaml 
+---
+- name: Filter config from file
+  hosts: 
+    - lab
+  roles:
+    - Juniper.junos
+  connection: local
+  gather_facts: no
+
+  tasks:
+  
+    - name: config firewall filter from file
+      juniper_junos_config:
+        load: set
+        src: /home/lab/ansible/router_config/r1_filter.conf
+        comment: configuring filter from file
+
+    - name: verify firewall
+      juniper_junos_command:
+        commands:
+          - &quot;show configuration firewall&quot;
+      register: junos_result
+
+    - name: Print response
+      debug:
+        var: junos_result
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;r1_filter.conf&lt;/code&gt; file content:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root@ubuntu:~# cat ansible/router_config/r1_filter.conf 
+set firewall family inet filter scale term 1 from destination-address 192.168.1.1
+set firewall family inet filter scale term 1 then accept
+set firewall family inet filter scale term 2 from destination-address 192.168.1.2
+set firewall family inet filter scale term 2 then accept
+set firewall family inet filter scale term 3 from destination-address 192.168.1.3
+set firewall family inet filter scale term 3 then accept
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Another example playbook file where we are just reading the show commands and supplying username and password from variable file:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root@ubuntu:~# cat ansible/ansible_playbooks/playbook_version_uptime.yaml 
+---
+- name: Get device information
+  hosts: 
+    - lab
+  roles:
+    - Juniper.junos
+  connection: local
+  gather_facts: no
+
+  tasks:
+    - name: Get software and uptime information
+      juniper_junos_command:        
+        user: &quot;&quot;
+        passwd: &quot;&quot;
+        commands: 
+          - &quot;show system uptime&quot;
+      register: junos_result
+
+    - name: Print response
+      debug:
+        var: junos_result
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Complete output of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;playbook_version_uptime.yaml&lt;/code&gt; playbook execution:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+root@ubuntu:~/ansible# ansible-playbook playbook_version_uptime.yaml 
+
+PLAY [Get device information] ***************************************************************************************************************************************************************************************
+
+TASK [Get software and uptime information] **************************************************************************************************************************************************************************
+ok: [r1]
+
+TASK [Print response] ***********************************************************************************************************************************************************************************************
+ok: [r1] =&amp;gt; {
+    &quot;junos_result&quot;: {
+        &quot;changed&quot;: false,
+        &quot;command&quot;: &quot;show system uptime&quot;,
+        &quot;failed&quot;: false,
+        &quot;format&quot;: &quot;text&quot;,
+        &quot;msg&quot;: &quot;The command executed successfully.&quot;,
+        &quot;stdout&quot;: &quot;\nCurrent time: 2020-01-03 11:08:04 PST\nTime Source:  NTP CLOCK \nSystem booted: 2019-11-20 13:39:36 PST (6w1d 21:28 ago)\nProtocols started: 2019-12-19 10:17:01 PST (2w1d 00:51 ago)\nLast configured: 2020-01-03 10:38:36 PST (00:29:28 ago) by lab\n11:08AM  up 43 days, 21:28, 1 users, load averages: 4.54, 4.33, 4.28\n&quot;,
+        &quot;stdout_lines&quot;: [
+            &quot;&quot;,
+            &quot;Current time: 2020-01-03 11:08:04 PST&quot;,
+            &quot;Time Source:  NTP CLOCK &quot;,
+            &quot;System booted: 2019-11-20 13:39:36 PST (6w1d 21:28 ago)&quot;,
+            &quot;Protocols started: 2019-12-19 10:17:01 PST (2w1d 00:51 ago)&quot;,
+            &quot;Last configured: 2020-01-03 10:38:36 PST (00:29:28 ago) by lab&quot;,
+            &quot;11:08AM  up 43 days, 21:28, 1 users, load averages: 4.54, 4.33, 4.28&quot;
+        ]
+    }
+}
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************
+r1                         : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+root@ubuntu:~/ansible# 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Few more ways to execute the playbook where you supply the username and password separately:
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2010  ansible-playbook -i inventory playbook_filter_file.yaml -u labroot -k&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Documenting data for my own reference in future as well as to help others if they are looking for something and may find it useful.&lt;/p&gt;</content><author><name>Devang Patel</name></author><category term="NetOps" /><summary type="html">With so many tools available, I decided to try out the Ansible to see how it works and what can I do with it so documenting few things that I tried with it.</summary></entry><entry><title type="html">TextFSM with Nornir</title><link href="http://0.0.0.0:4000/blog/nornir-textfsm/" rel="alternate" type="text/html" title="TextFSM with Nornir" /><published>2020-01-01T00:00:00-08:00</published><updated>2011-12-31T21:00:01-08:00</updated><id>http://0.0.0.0:4000/blog/nornir-textfsm</id><content type="html" xml:base="http://0.0.0.0:4000/blog/nornir-textfsm/">&lt;p&gt;TextFSM has been useful in network automation when you have unstructured data or cli output and want to convert them into Python data structured formatted data.&lt;/p&gt;
 
 &lt;p&gt;By importing netmiko plugin in nornir we can use its capability of parsing the unstructured data using TextFsm.&lt;/p&gt;
 

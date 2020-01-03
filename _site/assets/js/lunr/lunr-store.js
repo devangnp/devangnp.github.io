@@ -33,4 +33,9 @@ var store = [{
         "excerpt":"TextFSM has been useful in network automation when you have unstructured data or cli output and want to convert them into Python data structured formatted data. By importing netmiko plugin in nornir we can use its capability of parsing the unstructured data using TextFsm. In this example, we will try...","categories": ["Blog"],
         "tags": ["NetOps"],
         "url": "http://0.0.0.0:4000/blog/nornir-textfsm/",
+        "teaser":null},{
+        "title": "Learning Ansible automation to manage network devices in the lab",
+        "excerpt":"With so many tools available, I decided to try out the Ansible to see how it works and what can I do with it so documenting few things that I tried with it. my Ansible directory tree structure Ansible default config file and modification creating inventory defining variables in inventory...","categories": ["Blog"],
+        "tags": ["NetOps"],
+        "url": "http://0.0.0.0:4000/blog/ansible-learning/",
         "teaser":null}]
