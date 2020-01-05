@@ -15,7 +15,7 @@ var store = [{
         "url": "http://0.0.0.0:4000/blog/scale-config/",
         "teaser":null},{
         "title": "Let it snow!",
-        "excerpt":"Picture of Evergreen Tree, my son and I created during thanks giving break when we were waiting for the snow to arrive.   iPad and pencil was used to draw whole picture.      ","categories": ["Blog"],
+        "excerpt":"Picture of Evergreen Tree, my son and we(wife and I) created during thanks giving break when we were waiting for the snow to arrive.   iPad and pencil was used to draw whole picture.      ","categories": ["Blog"],
         "tags": ["Anish"],
         "url": "http://0.0.0.0:4000/blog/snow/",
         "teaser":null},{
