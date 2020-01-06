@@ -24,8 +24,8 @@ var store = [{
         "tags": ["Networking","NetOps"],
         "url": "http://0.0.0.0:4000/blog/nornir-learning/",
         "teaser":null},{
-        "title": "CSV Network device stats calculation",
-        "excerpt":"Given a CSV file with stats, how would you calculate the traffic stats? This is what I am trying to document: My CSV file looks like: device,intf,input,output r1,et1,blah,110 r1,et2,102,112 r1,et3,103,113 r2,et1,200,210 r2,et2,202,212 r2,et3,203,213 r3,et1,300,blah r3,et2,302,312 r3,et3,303,313 ''' Reading CSV and cleaning the value ''' import csv from collections import defaultdict...","categories": ["Blog"],
+        "title": "CSV Network device stats calculation and top talkers",
+        "excerpt":"Given a CSV file with stats, we might have to perform following tasks: How would you calculate the traffic stats? Who are the top talkers based on input or output or total? This is what I am trying to document: My CSV file looks like: device,intf,input,output r1,et1,blah,110 r1,et2,102,112 r1,et3,103,113 r2,et1,200,210...","categories": ["Blog"],
         "tags": ["NetOps"],
         "url": "http://0.0.0.0:4000/blog/csv-stats/",
         "teaser":null},{
