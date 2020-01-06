@@ -510,3 +510,10 @@ Configuration file: /home/labroot/myBlog/devangnp.github.io/_config.yml
        Jekyll Feed: Generating feed for posts
                     ...done in 3.196730507 seconds.
                     
+      Regenerating: 1 file(s) changed at 2020-01-05 18:21:55
+                    _pages/about.md
+[33mInvalid theme folder: _sass[0m
+      Remote Theme: Using theme mmistakes/minimal-mistakes
+       Jekyll Feed: Generating feed for posts
+                    ...done in 3.70988273 seconds.
+                    
