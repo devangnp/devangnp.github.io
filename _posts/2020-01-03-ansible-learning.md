@@ -56,8 +56,10 @@ scp_if_ssh=True
 root@ubuntu:~# cat ansible/ansible_inventory/group_vars/all.yaml 
 username: lab
 password: lab123
+```
 
-root@ubuntu:~# cat ansible/ansible_inventory/inventory 
+```
+root@ubuntu:~# cat ansible/ansible_inventory/inventory
 [lab]
 r1 ansible_host=10.1.1.1 device_role=router
 

@@ -38,4 +38,14 @@ var store = [{
         "excerpt":"With so many tools available, I decided to try out the Ansible to see how it works and what can I do with it so documenting few things that I tried with it. my Ansible directory tree structure Ansible default config file and modification creating inventory defining variables in inventory...","categories": ["Blog"],
         "tags": ["NetOps"],
         "url": "http://0.0.0.0:4000/blog/ansible-learning/",
+        "teaser":null},{
+        "title": "itemgetter and itertools ",
+        "excerpt":"Documenting the learning on itemgetter and itertools module for network stats analysis. To make this blog more relevant, I am using the data from one of my previous post later in this blog. As name suggest, groupby is used to group the items based on given parameters and that parameters...","categories": ["Blog"],
+        "tags": ["NetOps"],
+        "url": "http://0.0.0.0:4000/blog/itertool-itemgetter/",
+        "teaser":null},{
+        "title": "Netmiko SSH connection handling using with statement",
+        "excerpt":"While working on Python program to connect to multiple lab devices and capture data, I faced the issue (due to bug in my program) where router was rejecting SSH connection request. As one might have guessed, it was issue due to the number of SSH connection limit reached! Upon investigation,...","categories": ["Blog"],
+        "tags": ["NetOps"],
+        "url": "http://0.0.0.0:4000/blog/ssh-netmiko-cntxmngr/",
         "teaser":null}]

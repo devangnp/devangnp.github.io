@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Let it snow! - Devang Patel</title>
-<meta name="description" content="Picture of Evergreen Tree, my son and we(wife and I) created during thanks giving break when we were waiting for the snow to arrive.">
+<!-- begin _includes/seo.html --><title>Netmiko SSH connection handling using with statement - Devang Patel</title>
+<meta name="description" content="While working on Python program to connect to multiple lab devices and capture data, I faced the issue (due to bug in my program) where router was rejecting SSH connection request.">
 
 
   <meta name="author" content="Devang Patel">
@@ -19,28 +19,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Devang Patel">
-<meta property="og:title" content="Let it snow!">
-<meta property="og:url" content="http://0.0.0.0:4000/blog/snow/">
+<meta property="og:title" content="Netmiko SSH connection handling using with statement">
+<meta property="og:url" content="http://0.0.0.0:4000/blog/ssh-netmiko-cntxmngr/">
 
 
-  <meta property="og:description" content="Picture of Evergreen Tree, my son and we(wife and I) created during thanks giving break when we were waiting for the snow to arrive.">
-
-
-
+  <meta property="og:description" content="While working on Python program to connect to multiple lab devices and capture data, I faced the issue (due to bug in my program) where router was rejecting SSH connection request.">
 
 
 
 
-  <meta property="article:published_time" content="2019-12-16T00:00:00-08:00">
 
 
 
-  <meta property="article:modified_time" content="2016-12-15T21:00:01-08:00">
+  <meta property="article:published_time" content="2020-01-19T00:00:00-08:00">
+
+
+
+  <meta property="article:modified_time" content="2020-01-18T21:00:01-08:00">
 
 
 
 
-<link rel="canonical" href="http://0.0.0.0:4000/blog/snow/">
+<link rel="canonical" href="http://0.0.0.0:4000/blog/ssh-netmiko-cntxmngr/">
 
 
 
@@ -270,15 +270,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Let it snow!">
-    <meta itemprop="description" content="Picture of Evergreen Tree, my son and we(wife and I) created during thanks giving break when we were waiting for the snow to arrive.">
-    <meta itemprop="datePublished" content="2019-12-16T00:00:00-08:00">
-    <meta itemprop="dateModified" content="2016-12-15T21:00:01-08:00">
+    <meta itemprop="headline" content="Netmiko SSH connection handling using with statement">
+    <meta itemprop="description" content="While working on Python program to connect to multiple lab devices and capture data, I faced the issue (due to bug in my program) where router was rejecting SSH connection request.">
+    <meta itemprop="datePublished" content="2020-01-19T00:00:00-08:00">
+    <meta itemprop="dateModified" content="2020-01-18T21:00:01-08:00">
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Let it snow!
+          <h1 id="page-title" class="page__title" itemprop="headline">Netmiko SSH connection handling using with statement
 </h1>
           
             <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
@@ -286,7 +286,7 @@
 
 
 
-  less than 1 minute read
+  2 minute read
 
 </p>
           
@@ -295,12 +295,65 @@
 
       <section class="page__content" itemprop="text">
         
-        <p>Picture of Evergreen Tree, my son and we(wife and I) created during thanks giving break when we were waiting for the snow to arrive.</p>
+        <p>While working on Python program to connect to multiple lab devices and capture data, I faced the issue (due to bug in my program) where router was rejecting SSH connection request.</p>
 
-<p>iPad and pencil was used to draw whole picture.</p>
+<p>As one might have guessed, it was issue due to the number of SSH connection limit reached! Upon investigation, I saw so many user logins were left stale on router due to my experiment of writing script and testing it again and again.</p>
 
-<p><img src="/assets/images/snow.jpg" alt="Evergreen Tree with Snow" /></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lab@R1&gt; show system users  
+lab  pts/15   10.0.0.132                    8:39AM     23 -cl           
+lab  pts/16   10.0.0.132                    8:42AM     20 -cl           
+lab  pts/17   10.0.0.132                    8:43AM     19 -cl           
+lab  pts/18   10.0.0.132                    8:45AM     17 -cl           
+lab  pts/19   10.0.0.132                    8:47AM     16 -cl           
+lab  pts/20   10.0.0.132                    8:48AM     15 -cl           
+lab  pts/21   10.0.0.132                    8:48AM     14 -cl           
+lab  pts/22   10.0.0.132                    8:49AM     13 -cl           
+lab  pts/23   10.0.0.132                    8:50AM     12 -cl           
+lab  pts/24   10.0.0.132                    8:53AM      9 -cl           
+lab  pts/25   10.0.0.132                    8:55AM      7 -cl           
+lab  pts/26   10.0.0.132                    8:56AM      6 -cl           
+lab  pts/27   10.0.0.132                    8:57AM      5 -cl           
+lab  pts/28   10.0.0.132                    8:58AM      4 -cl           
+lab  pts/29   10.0.0.132                    9:01AM      1 -cl
+</code></pre></div></div>
 
+<p>Good part is, it was easy to isolate and identify this problem.</p>
+
+<p>In script, I was doing opening connection, capturing data and script just ends with out closing the connections.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="k">try</span><span class="p">:</span> 
+   <span class="o">...</span><span class="p">:</span>     <span class="n">ssh_conn</span> <span class="o">=</span> <span class="n">ConnectHandler</span><span class="p">(</span><span class="o">**</span><span class="n">R1</span><span class="p">)</span> 
+   <span class="o">...</span><span class="p">:</span>      
+   <span class="o">...</span><span class="p">:</span> <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span> 
+   <span class="o">...</span><span class="p">:</span>     <span class="k">print</span><span class="p">(</span><span class="n">err</span><span class="p">)</span> 
+   <span class="o">...</span><span class="p">:</span>                      
+</code></pre></div></div>
+
+<p>Adding simple statement to disconnect the session resolved the issue. However I started looking at how to handle it better.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">In</span> <span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="n">ssh_conn</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>I ended up with following way to manage it better. Using context manager, it will open connection and once we are done with data collection, it will automatically close or disconnect the connection as well.</p>
+
+<p>Disadvantage is that we have to execute the command capture code inside the with context manager or you can use earlier mentioned mathod and just close the session at the end once you are done capturing command.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>In [25]: try: 
+    ...:     with ConnectHandler(**R1) as ssh_conn: 
+    ...:         output = ssh_conn.send_command('show rsvp interface') 
+    ...:         import time 
+    ...:         time.sleep(10) 
+    ...: except Exception as err: 
+    ...:     print(err) 
+</code></pre></div></div>
+
+<p>Router logs:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Jan 19 17:17:59  R1 mgd[15886]: UI_LOGIN_EVENT: User 'lab' login, class 'j-super-user' [15886], ssh-connection '10.0.0.132 57238 10.0.0.1 22', client-mode 'cli'   &lt;&lt;&lt; opening ssh connection
+Jan 19 17:18:03  R1 mgd[15886]: UI_CMDLINE_READ_LINE: User 'lab', command 'set cli screen-length 0 '
+Jan 19 17:18:03  R1 mgd[15886]: UI_CMDLINE_READ_LINE: User 'lab', command 'set cli screen-width 511 '
+Jan 19 17:18:04  R1 mgd[15886]: UI_CMDLINE_READ_LINE: User 'lab', command 'show rsvp interface '  &lt;&lt;&lt; collecting the data
+Jan 19 17:18:14  R1 mgd[15886]: UI_LOGOUT_EVENT: User 'lab' logout   &lt;&lt;&lt; closing connection
+</code></pre></div></div>
+
+<p>Do you have any better idea or way to handle it?</p>
 
         
       </section>
@@ -321,7 +374,7 @@
     
       
       
-      <a href="/tags/#anish" class="page__taxonomy-item" rel="tag">Anish</a>
+      <a href="/tags/#netops" class="page__taxonomy-item" rel="tag">NetOps</a>
     
     </span>
   </p>
@@ -349,30 +402,29 @@
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2016-12-15">December 15, 2016</time></p>
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-01-18">January 18, 2020</time></p>
         
       </footer>
 
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=Let+it+snow%21%20http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fsnow%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Netmiko+SSH+connection+handling+using+with+statement%20http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fssh-netmiko-cntxmngr%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fsnow%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fssh-netmiko-cntxmngr%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fsnow%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fssh-netmiko-cntxmngr%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/blog/scale-config/" class="pagination--pager" title="JUNOS scale config
+      <a href="/blog/itertool-itemgetter/" class="pagination--pager" title="itemgetter and itertools
 ">Previous</a>
     
     
-      <a href="/blog/nornir-learning/" class="pagination--pager" title="Trying out Nornir automation
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -386,34 +438,6 @@
     <div class="page__related">
       <h4 class="page__related-title">You May Also Enjoy</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/blog/ssh-netmiko-cntxmngr/" rel="permalink">Netmiko SSH connection handling using with statement
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  2 minute read
-
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">While working on Python program to connect to multiple lab devices and capture data, I faced the issue (due to bug in my program) where router was rejecting ...</p>
-  </article>
-</div>
-
         
           
 
@@ -499,6 +523,37 @@
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">TextFSM has been useful in network automation when you have unstructured data or cli output and want to convert them into Python data structured formatted da...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/csv-stats/" rel="permalink">CSV Network device stats calculation and top talkers
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Given a CSV file with stats, we might have to perform following tasks:
+
+  How would you calculate the traffic stats?
+  Who are the top talkers based on input...</p>
   </article>
 </div>
 
