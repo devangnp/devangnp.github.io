@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Netmiko SSH connection handling using with statement - Devang Patel</title>
-<meta name="description" content="While working on Python program to connect to multiple lab devices and capture data, I faced the issue (due to bug in my program) where router was rejecting SSH connection request.">
+<!-- begin _includes/seo.html --><title>IPv4 and IPv6 address validation using Python netaddr - Devang Patel</title>
+<meta name="description" content="On and off I had a need to verify if given string is valid IP or not.">
 
 
   <meta name="author" content="Devang Patel">
@@ -19,28 +19,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Devang Patel">
-<meta property="og:title" content="Netmiko SSH connection handling using with statement">
-<meta property="og:url" content="http://0.0.0.0:4000/blog/ssh-netmiko-cntxmngr/">
+<meta property="og:title" content="IPv4 and IPv6 address validation using Python netaddr">
+<meta property="og:url" content="http://0.0.0.0:4000/blog/is-ip-valid/">
 
 
-  <meta property="og:description" content="While working on Python program to connect to multiple lab devices and capture data, I faced the issue (due to bug in my program) where router was rejecting SSH connection request.">
-
-
-
+  <meta property="og:description" content="On and off I had a need to verify if given string is valid IP or not.">
 
 
 
 
-  <meta property="article:published_time" content="2020-01-19T00:00:00-08:00">
 
 
 
-  <meta property="article:modified_time" content="2020-01-18T21:00:01-08:00">
+  <meta property="article:published_time" content="2020-01-20T00:00:00-08:00">
+
+
+
+  <meta property="article:modified_time" content="2020-01-19T21:00:03-08:00">
 
 
 
 
-<link rel="canonical" href="http://0.0.0.0:4000/blog/ssh-netmiko-cntxmngr/">
+<link rel="canonical" href="http://0.0.0.0:4000/blog/is-ip-valid/">
 
 
 
@@ -270,15 +270,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Netmiko SSH connection handling using with statement">
-    <meta itemprop="description" content="While working on Python program to connect to multiple lab devices and capture data, I faced the issue (due to bug in my program) where router was rejecting SSH connection request.">
-    <meta itemprop="datePublished" content="2020-01-19T00:00:00-08:00">
-    <meta itemprop="dateModified" content="2020-01-18T21:00:01-08:00">
+    <meta itemprop="headline" content="IPv4 and IPv6 address validation using Python netaddr">
+    <meta itemprop="description" content="On and off I had a need to verify if given string is valid IP or not.">
+    <meta itemprop="datePublished" content="2020-01-20T00:00:00-08:00">
+    <meta itemprop="dateModified" content="2020-01-19T21:00:03-08:00">
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Netmiko SSH connection handling using with statement
+          <h1 id="page-title" class="page__title" itemprop="headline">IPv4 and IPv6 address validation using Python netaddr
 </h1>
           
             <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
@@ -286,7 +286,7 @@
 
 
 
-  2 minute read
+  1 minute read
 
 </p>
           
@@ -295,65 +295,45 @@
 
       <section class="page__content" itemprop="text">
         
-        <p>While working on Python program to connect to multiple lab devices and capture data, I faced the issue (due to bug in my program) where router was rejecting SSH connection request.</p>
+        <p>On and off I had a need to verify if given string is valid IP or not.</p>
 
-<p>As one might have guessed, it was issue due to the number of SSH connection limit reached! Upon investigation, I saw so many user logins were left stale on router due to my experiment of writing script and testing it again and again.</p>
+<p>May be you are reading devices or host name files and you want to make sure that the given string is actually well formated IPv4 or IPv6 address before you start further processing in Python program then netaddr module may be very helpful.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lab@R1&gt; show system users  
-lab  pts/15   10.0.0.132                    8:39AM     23 -cl           
-lab  pts/16   10.0.0.132                    8:42AM     20 -cl           
-lab  pts/17   10.0.0.132                    8:43AM     19 -cl           
-lab  pts/18   10.0.0.132                    8:45AM     17 -cl           
-lab  pts/19   10.0.0.132                    8:47AM     16 -cl           
-lab  pts/20   10.0.0.132                    8:48AM     15 -cl           
-lab  pts/21   10.0.0.132                    8:48AM     14 -cl           
-lab  pts/22   10.0.0.132                    8:49AM     13 -cl           
-lab  pts/23   10.0.0.132                    8:50AM     12 -cl           
-lab  pts/24   10.0.0.132                    8:53AM      9 -cl           
-lab  pts/25   10.0.0.132                    8:55AM      7 -cl           
-lab  pts/26   10.0.0.132                    8:56AM      6 -cl           
-lab  pts/27   10.0.0.132                    8:57AM      5 -cl           
-lab  pts/28   10.0.0.132                    8:58AM      4 -cl           
-lab  pts/29   10.0.0.132                    9:01AM      1 -cl
+<p>Install the netaddr module using pip and then import it. Here we will mostly talk about the usage for validating if the IP is valid IPv4 or IPv6.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">netaddr</span> <span class="kn">import</span> <span class="o">*</span>
+</code></pre></div></div>
+<p>We will use the <code class="language-plaintext highlighter-rouge">valid_ipv4</code> and <code class="language-plaintext highlighter-rouge">valid_ipv6</code> methods to validate if given element is valid IPv4 or IPv6 address or not. Method will return the <code class="language-plaintext highlighter-rouge">True</code> or <code class="language-plaintext highlighter-rouge">False</code>.</p>
+
+<h4 id="ipv4-address-validation">IPv4 address validation:</h4>
+<p>Here I have defined a list with valid and invalid pattern and we will iterate over each element to validate if its actually an IPv4 address or not.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ip1</span> <span class="o">=</span> <span class="p">[</span><span class="s">'192.168.1.1'</span><span class="p">,</span> <span class="s">'300.1.1.1'</span><span class="p">,</span> <span class="s">'a.1.1.1'</span><span class="p">,</span> <span class="s">'abc'</span><span class="p">,</span> <span class="mi">123</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">ip</span> <span class="ow">in</span> <span class="n">ip1</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Is {ip} valid IPv4 add?:'</span><span class="p">,</span> <span class="n">valid_ipv4</span><span class="p">(</span><span class="n">ip</span><span class="p">))</span>
+</code></pre></div></div>
+<p>Output:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Is 192.168.1.1 valid IPv4 add?: True
+Is 300.1.1.1 valid IPv4 add?: False
+Is a.1.1.1 valid IPv4 add?: False
+Is abc valid IPv4 add?: False
+Is 123 valid IPv4 add?: False
 </code></pre></div></div>
 
-<p>Good part is, it was easy to isolate and identify this problem.</p>
-
-<p>In script, I was doing opening connection, capturing data and script just ends with out closing the connections.</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="k">try</span><span class="p">:</span> 
-   <span class="o">...</span><span class="p">:</span>     <span class="n">ssh_conn</span> <span class="o">=</span> <span class="n">ConnectHandler</span><span class="p">(</span><span class="o">**</span><span class="n">R1</span><span class="p">)</span> 
-   <span class="o">...</span><span class="p">:</span>      
-   <span class="o">...</span><span class="p">:</span> <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span> 
-   <span class="o">...</span><span class="p">:</span>     <span class="k">print</span><span class="p">(</span><span class="n">err</span><span class="p">)</span> 
-   <span class="o">...</span><span class="p">:</span>                      
+<h4 id="ipv6-address-validation">IPv6 address validation:</h4>
+<p>Same way I have defined a list with combination of valid IPv6 and invalid elements to check.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ip2</span> <span class="o">=</span> <span class="p">[</span><span class="s">'2000:1::1'</span><span class="p">,</span> <span class="s">'g001::1'</span><span class="p">,</span> <span class="s">'abc'</span><span class="p">,</span> <span class="mi">123</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">ip</span> <span class="ow">in</span> <span class="n">ip2</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Is {ip} valid IPv6 add?:'</span><span class="p">,</span> <span class="n">valid_ipv6</span><span class="p">(</span><span class="n">ip</span><span class="p">))</span>
 </code></pre></div></div>
+<p>Output:</p>
 
-<p>Adding simple statement to disconnect the session resolved the issue. However I started looking at how to handle it better.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">In</span> <span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="n">ssh_conn</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Is 2000:1::1 valid IPv6 add?: True
+Is g001::1 valid IPv6 add?: False
+Is abc valid IPv6 add?: False
+Is 123 valid IPv6 add?: False
 </code></pre></div></div>
-
-<p>I ended up with following way to manage it better. Using context manager, it will open connection and once we are done with data collection, it will automatically close or disconnect the connection as well.</p>
-
-<p>Disadvantage is that we have to execute the command capture code inside the with context manager or you can use earlier mentioned mathod and just close the session at the end once you are done capturing command.</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>In [25]: try: 
-    ...:     with ConnectHandler(**R1) as ssh_conn: 
-    ...:         output = ssh_conn.send_command('show rsvp interface') 
-    ...:         import time 
-    ...:         time.sleep(10) 
-    ...: except Exception as err: 
-    ...:     print(err) 
-</code></pre></div></div>
-
-<p>Router logs:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Jan 19 17:17:59  R1 mgd[15886]: UI_LOGIN_EVENT: User 'lab' login, class 'j-super-user' [15886], ssh-connection '10.0.0.132 57238 10.0.0.1 22', client-mode 'cli'   &lt;&lt;&lt; opening ssh connection
-Jan 19 17:18:03  R1 mgd[15886]: UI_CMDLINE_READ_LINE: User 'lab', command 'set cli screen-length 0 '
-Jan 19 17:18:03  R1 mgd[15886]: UI_CMDLINE_READ_LINE: User 'lab', command 'set cli screen-width 511 '
-Jan 19 17:18:04  R1 mgd[15886]: UI_CMDLINE_READ_LINE: User 'lab', command 'show rsvp interface '  &lt;&lt;&lt; collecting the data
-Jan 19 17:18:14  R1 mgd[15886]: UI_LOGOUT_EVENT: User 'lab' logout   &lt;&lt;&lt; closing connection
-</code></pre></div></div>
-
-<p>Do you have any better idea or way to handle it?</p>
+<p>I will blog more about <code class="language-plaintext highlighter-rouge">netaddr</code> module methods in future posts.</p>
 
         
       </section>
@@ -402,30 +382,29 @@ Jan 19 17:18:14  R1 mgd[15886]: UI_LOGOUT_EVENT: User 'lab' logout   &lt;&lt;&lt
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-01-18">January 18, 2020</time></p>
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-01-19">January 19, 2020</time></p>
         
       </footer>
 
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=Netmiko+SSH+connection+handling+using+with+statement%20http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fssh-netmiko-cntxmngr%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=IPv4+and+IPv6+address+validation+using+Python+netaddr%20http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fis-ip-valid%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fssh-netmiko-cntxmngr%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fis-ip-valid%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fssh-netmiko-cntxmngr%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fis-ip-valid%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/blog/itertool-itemgetter/" class="pagination--pager" title="itemgetter and itertools
+      <a href="/blog/ssh-netmiko-cntxmngr/" class="pagination--pager" title="Netmiko SSH connection handling using with statement
 ">Previous</a>
     
     
-      <a href="/blog/is-ip-valid/" class="pagination--pager" title="IPv4 and IPv6 address validation using Python netaddr
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -449,7 +428,7 @@ Jan 19 17:18:14  R1 mgd[15886]: UI_LOGOUT_EVENT: User 'lab' logout   &lt;&lt;&lt
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/blog/is-ip-valid/" rel="permalink">IPv4 and IPv6 address validation using Python netaddr
+        <a href="/blog/ssh-netmiko-cntxmngr/" rel="permalink">Netmiko SSH connection handling using with statement
 </a>
       
     </h2>
@@ -459,13 +438,11 @@ Jan 19 17:18:14  R1 mgd[15886]: UI_LOGOUT_EVENT: User 'lab' logout   &lt;&lt;&lt
 
 
 
-  1 minute read
+  2 minute read
 
 </p>
     
-    <p class="archive__item-excerpt" itemprop="description">On and off I had a need to verify if given string is valid IP or not.
-
-</p>
+    <p class="archive__item-excerpt" itemprop="description">While working on Python program to connect to multiple lab devices and capture data, I faced the issue (due to bug in my program) where router was rejecting ...</p>
   </article>
 </div>
 
