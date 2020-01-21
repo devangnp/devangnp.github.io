@@ -9,7 +9,7 @@ tags:
 
 On and off I had a need to verify if given string is valid IP or not. 
 
-May be you are reading devices or host name files and you want to make sure that the given string is actually well formated IPv4 or IPv6 address before you start further processing in Python program then netaddr module may be very helpful. 
+May be you are reading devices or host name files and you want to make sure that the given string is actually well formatted IPv4 or IPv6 address before you start further processing in Python program then netaddr module may be very helpful. 
 
 Install the netaddr module using pip and then import it. Here we will mostly talk about the usage for validating if the IP is valid IPv4 or IPv6.
 

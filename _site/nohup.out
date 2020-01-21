@@ -953,3 +953,11 @@ Configuration file: /home/labroot/myBlog/devangnp.github.io/_config.yml
 [33mInvalid theme folder: _sass[0m
       Remote Theme: Using theme mmistakes/minimal-mistakes
        Jekyll Feed: Generating feed for posts
+                    ...done in 3.855132676 seconds.
+                    
+[2020-01-20 20:29:19] ERROR `/favicon.ico' not found.
+      Regenerating: 1 file(s) changed at 2020-01-20 20:34:05
+                    _posts/2020-01-20-is-ip-valid.md
+[33mInvalid theme folder: _sass[0m
+      Remote Theme: Using theme mmistakes/minimal-mistakes
+       Jekyll Feed: Generating feed for posts

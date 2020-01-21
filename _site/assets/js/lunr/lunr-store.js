@@ -50,7 +50,7 @@ var store = [{
         "url": "http://0.0.0.0:4000/blog/ssh-netmiko-cntxmngr/",
         "teaser":null},{
         "title": "IPv4 and IPv6 address validation using Python netaddr",
-        "excerpt":"On and off I had a need to verify if given string is valid IP or not. May be you are reading devices or host name files and you want to make sure that the given string is actually well formated IPv4 or IPv6 address before you start further processing...","categories": ["Blog"],
+        "excerpt":"On and off I had a need to verify if given string is valid IP or not. May be you are reading devices or host name files and you want to make sure that the given string is actually well formatted IPv4 or IPv6 address before you start further processing...","categories": ["Blog"],
         "tags": ["NetOps"],
         "url": "http://0.0.0.0:4000/blog/is-ip-valid/",
         "teaser":null}]
