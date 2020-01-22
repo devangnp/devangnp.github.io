@@ -7,14 +7,15 @@ tags:
   - - NetOps
 ---
 
-I was looking for data structure which is like key and value pair and it would be even better if I can access it using "." or dot notation for easy and clean acess so few such data structure I was exploring:
+I was looking for data structure which can store data in key and value pair, it would be even better if I can access it using ```"."``` or ```dot``` notation for easy and clean acess so few such data structures I was exploring:
+
    - dictionary
    - class
    - namedtuple
    
-Dictionary is very useful data structure, however accessing its elements using dot notation is not possible. 
 
 #### Using Dictionary:
+Dictionary is very useful data structure, however accessing its elements using dot notation is not possible. 
 ```python
 In [22]: person = {'first': 'Dev', 'last': 'Pat', 'age': 3}
 
