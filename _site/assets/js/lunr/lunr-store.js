@@ -54,7 +54,7 @@ var store = [{
         "tags": ["NetOps"],
         "url": "http://0.0.0.0:4000/blog/is-ip-valid/",
         "teaser":null},{
-        "title": "Data store and easy access",
+        "title": "Data store and easy access data structures",
         "excerpt":"I was looking for data structure which is like key and value pair and it would be even better if I can access it using “.” or dot notation for easy and clean acess so few such data structure I was exploring: dictionary class namedtuple Dictionary is very useful data...","categories": ["Blog"],
         "tags": ["NetOps"],
         "url": "http://0.0.0.0:4000/blog/data-store-access/",

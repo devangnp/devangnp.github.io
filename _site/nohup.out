@@ -1175,3 +1175,10 @@ Configuration file: /home/labroot/myBlog/devangnp.github.io/_config.yml
 [33mInvalid theme folder: _sass[0m
       Remote Theme: Using theme mmistakes/minimal-mistakes
        Jekyll Feed: Generating feed for posts
+                    ...done in 5.027149625 seconds.
+                    
+      Regenerating: 1 file(s) changed at 2020-01-21 19:33:41
+                    _posts/2020-01-21-data-store-access.md
+[33mInvalid theme folder: _sass[0m
+      Remote Theme: Using theme mmistakes/minimal-mistakes
+       Jekyll Feed: Generating feed for posts

@@ -1,5 +1,5 @@
 ---
-title: "Data store and easy access"
+title: "Data store and easy access data structures"
 last_modified_at: 2020-01-21T00:00:00-05:00
 categories:
   - Blog
