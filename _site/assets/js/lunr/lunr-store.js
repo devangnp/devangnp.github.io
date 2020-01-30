@@ -58,4 +58,14 @@ var store = [{
         "excerpt":"I was looking for data structure which can store data in key and value pair, it would be even better if I can access it using \".\" or dot notation for easy and clean acess so few such data structures I was exploring: dictionary class namedtuple Using Dictionary: Dictionary is...","categories": ["Blog"],
         "tags": ["NetOps"],
         "url": "http://0.0.0.0:4000/blog/data-store-access/",
+        "teaser":null},{
+        "title": "Managing JUNOS device using Netmiko",
+        "excerpt":"Documenting the way I learned to use Netmiko with JUNOS device. Required imports to start with: In [1]: from netmiko import juniper In [2]: from netmiko import ConnectHandler In [4]: from netmiko import file_transfer In [39]: from pprint import pprint Router details as dictionary which will be used by netmiko...","categories": ["Blog"],
+        "tags": ["NetOps"],
+        "url": "http://0.0.0.0:4000/blog/netmiko-junos/",
+        "teaser":null},{
+        "title": "Netmiko multithreading with Junos devices",
+        "excerpt":"Automation of networking is always comes with scale requirement, manage or connect or capture data from so many devices, create reports of each device in separate files etc. Such requirements demands for multithreading or multiprocessing. Since connecting to routers or capturing data, storing collected data to the different files has...","categories": ["Blog"],
+        "tags": ["NetOps"],
+        "url": "http://0.0.0.0:4000/blog/netmiko-multithreading/",
         "teaser":null}]

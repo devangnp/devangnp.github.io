@@ -1,0 +1,691 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.17.2 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Managing JUNOS device using Netmiko - Devang Patel</title>
+<meta name="description" content="Documenting the way I learned to use Netmiko with JUNOS device.">
+
+
+  <meta name="author" content="Devang Patel">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Devang Patel">
+<meta property="og:title" content="Managing JUNOS device using Netmiko">
+<meta property="og:url" content="http://0.0.0.0:4000/blog/netmiko-junos/">
+
+
+  <meta property="og:description" content="Documenting the way I learned to use Netmiko with JUNOS device.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-01-29T00:00:00-08:00">
+
+
+
+  <meta property="article:modified_time" content="2020-01-28T21:00:00-08:00">
+
+
+
+
+<link rel="canonical" href="http://0.0.0.0:4000/blog/netmiko-junos/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "http://0.0.0.0:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Devang Patel Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Devang Patel
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/posts/" >Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/" >Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/" >Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/" >About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/snow.jpg" alt="Devang Patel" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Devang Patel</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Network Professional CCIE/3xJNCIE Python</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="https://github.com/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+          
+        
+          
+            <li><a href="https://www.linkedin.com/in/devangnp/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Managing JUNOS device using Netmiko">
+    <meta itemprop="description" content="Documenting the way I learned to use Netmiko with JUNOS device.">
+    <meta itemprop="datePublished" content="2020-01-29T00:00:00-08:00">
+    <meta itemprop="dateModified" content="2020-01-28T21:00:00-08:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Managing JUNOS device using Netmiko
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>Documenting the way I learned to use Netmiko with JUNOS device.</p>
+
+<p>Required imports to start with:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">netmiko</span> <span class="kn">import</span> <span class="n">juniper</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">netmiko</span> <span class="kn">import</span> <span class="n">ConnectHandler</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">netmiko</span> <span class="kn">import</span> <span class="n">file_transfer</span>
+<span class="n">In</span> <span class="p">[</span><span class="mi">39</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+</code></pre></div></div>
+
+<p>Router details as dictionary which will be used by netmiko as device parameters:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">In</span> <span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="n">ptxrtr</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="o">...</span><span class="p">:</span> <span class="s">'device_type'</span><span class="p">:</span> <span class="s">'juniper_junos'</span><span class="p">,</span> 
+    <span class="o">...</span><span class="p">:</span> <span class="s">'ip'</span><span class="p">:</span> <span class="s">'10.85.162.140'</span><span class="p">,</span> 
+    <span class="o">...</span><span class="p">:</span> <span class="s">'username'</span><span class="p">:</span> <span class="s">'lab'</span><span class="p">,</span> 
+    <span class="o">...</span><span class="p">:</span> <span class="s">'password'</span><span class="p">:</span> <span class="s">'mypassword'</span> 
+    <span class="o">...</span><span class="p">:</span> <span class="p">}</span> 
+    <span class="o">...</span><span class="p">:</span>  
+</code></pre></div></div>
+
+<p>Establishing the connection with router, sending dictionary as kwargs with ** which acts as an unpacking operator:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">In</span> <span class="p">[</span><span class="mi">21</span><span class="p">]:</span> <span class="n">ptx</span> <span class="o">=</span> <span class="n">ConnectHandler</span><span class="p">(</span><span class="o">**</span><span class="n">ptxrtr</span><span class="p">)</span>
+</code></pre></div></div>
+<p>Checking if connection is established and alive:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">In</span> <span class="p">[</span><span class="mi">22</span><span class="p">]:</span> <span class="n">ptx</span><span class="o">.</span><span class="n">is_alive</span><span class="p">()</span>     
+<span class="n">Out</span><span class="p">[</span><span class="mi">22</span><span class="p">]:</span> <span class="bp">True</span>
+</code></pre></div></div>
+<p>Changing router config by sending just one command:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">In</span> <span class="p">[</span><span class="mi">23</span><span class="p">]:</span> <span class="n">ptx</span><span class="o">.</span><span class="n">send_config_set</span><span class="p">(</span><span class="s">'set interfaces lo0 description netmiko_config_change_test2'</span><span class="p">)</span>
+
+<span class="n">Out</span><span class="p">[</span><span class="mi">23</span><span class="p">]:</span> <span class="s">'configure </span><span class="se">\n</span><span class="s">Entering configuration mode</span><span class="se">\n\n</span><span class="s">[edit]</span><span class="se">\n</span><span class="s">lab@r1# set interfaces lo0 description netmiko_config_change_test2 </span><span class="se">\n\n</span><span class="s">[edit]</span><span class="se">\n</span><span class="s">lab@r1# exit configuration-mode </span><span class="se">\n</span><span class="s">The configuration has been changed but not committed</span><span class="se">\n</span><span class="s">Exiting configuration mode</span><span class="se">\n\n</span><span class="s">lab@r1&gt; '</span>
+</code></pre></div></div>
+<p>Commiting the configuration:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">In</span> <span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="n">ptx</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>     
+<span class="n">Out</span><span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="s">'configure </span><span class="se">\r\n</span><span class="s">Entering configuration mode</span><span class="se">\r\n</span><span class="s">The configuration has been changed but not committed</span><span class="se">\r\n\r\n</span><span class="s">[edit]</span><span class="se">\r\n</span><span class="s">lab@r1# commit </span><span class="se">\n</span><span class="s">commit complete</span><span class="se">\n\n</span><span class="s">[edit]</span><span class="se">\n</span><span class="s">lab@r1# '</span>
+</code></pre></div></div>
+
+<p>How to copy the file on to the router?</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">In</span> <span class="p">[</span><span class="mi">30</span><span class="p">]:</span> <span class="n">file_transfer</span><span class="p">(</span><span class="n">ptx</span><span class="p">,</span> <span class="s">'transfer.txt'</span><span class="p">,</span><span class="s">'transfer.txt'</span><span class="p">,</span><span class="n">direction</span> <span class="o">=</span> <span class="s">'put'</span><span class="p">,</span> <span class="n">file_system</span> <span class="o">=</span> <span class="s">'/var/tmp/'</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">30</span><span class="p">]:</span> <span class="p">{</span><span class="s">'file_exists'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span> <span class="s">'file_transferred'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span> <span class="s">'file_verified'</span><span class="p">:</span> <span class="bp">True</span><span class="p">}</span>
+</code></pre></div></div>
+
+<p>Configuration changes from file, lets find a way to check the current working directory and if we are not in proper directory then go to the directory where we have config file:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">In</span> <span class="p">[</span><span class="mi">27</span><span class="p">]:</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>     
+<span class="n">Out</span><span class="p">[</span><span class="mi">27</span><span class="p">]:</span> <span class="s">'/home/lab'</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">28</span><span class="p">]:</span> <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s">'/home/lab/PythonMyProg/py_networking/NetOps/netmiko_examples'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>How to check which router prompt I am on?:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">In</span> <span class="p">[</span><span class="mi">29</span><span class="p">]:</span> <span class="n">mx</span><span class="o">.</span><span class="n">find_prompt</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">29</span><span class="p">]:</span> <span class="s">'lab@r1-re0#'</span>
+</code></pre></div></div>
+<p>Pushing configuration from local server router config file:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">In</span> <span class="p">[</span><span class="mi">32</span><span class="p">]:</span> <span class="n">ptx</span><span class="o">.</span><span class="n">send_config_from_file</span><span class="p">(</span><span class="s">'transfer.txt'</span><span class="p">)</span>
+
+<span class="n">Out</span><span class="p">[</span><span class="mi">32</span><span class="p">]:</span> <span class="s">'configure </span><span class="se">\n</span><span class="s">Entering configuration mode</span><span class="se">\n\n</span><span class="s">[edit]</span><span class="se">\n</span><span class="s">lab@r1# set interfaces lo0 description netmiko_config_change_test3 </span><span class="se">\n\n</span><span class="s">[edit]</span><span class="se">\n</span><span class="s">lab@r1# exit configuration-mode </span><span class="se">\n</span><span class="s">The configuration has been changed but not committed</span><span class="se">\n</span><span class="s">Exiting configuration mode</span><span class="se">\n\n</span><span class="s">lab@r1&gt; '</span>
+</code></pre></div></div>
+<p>Commiting the configuration:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">In</span> <span class="p">[</span><span class="mi">33</span><span class="p">]:</span> <span class="n">ptx</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">33</span><span class="p">]:</span> <span class="s">'configure </span><span class="se">\r\n</span><span class="s">Entering configuration mode</span><span class="se">\r\n</span><span class="s">The configuration has been changed but not committed</span><span class="se">\r\n\r\n</span><span class="s">[edit]</span><span class="se">\r\n</span><span class="s">lab@r1# commit </span><span class="se">\n</span><span class="s">commit complete</span><span class="se">\n\n</span><span class="s">[edit]</span><span class="se">\n</span><span class="s">lab@r1# '</span>
+</code></pre></div></div>
+<p>Checking the prompt of the router:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">In</span> <span class="p">[</span><span class="mi">41</span><span class="p">]:</span> <span class="n">ptx</span><span class="o">.</span><span class="n">find_prompt</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">41</span><span class="p">]:</span> <span class="s">'lab@r1#'</span>
+</code></pre></div></div>
+<p>Since, I am in configuration mode, I can’t run the show commands directly, router is sending back the syntax error:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">In</span> <span class="p">[</span><span class="mi">45</span><span class="p">]:</span> <span class="n">ptx</span><span class="o">.</span><span class="n">send_command</span><span class="p">(</span><span class="s">'show rsvp interfaces'</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">45</span><span class="p">]:</span> <span class="s">'                     ^</span><span class="se">\n</span><span class="s">syntax error.</span><span class="se">\n\n</span><span class="s">lab@r1# show rsvp   interfaces</span><span class="se">\n</span><span class="s">                     ^</span><span class="se">\n</span><span class="s">syntax error.</span><span class="se">\n</span><span class="s">'</span>
+</code></pre></div></div>
+<p>Exiting the configuration mode to run show command afterwards:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">In</span> <span class="p">[</span><span class="mi">47</span><span class="p">]:</span> <span class="n">ptx</span><span class="o">.</span><span class="n">exit_config_mode</span><span class="p">()</span>     
+<span class="n">Out</span><span class="p">[</span><span class="mi">47</span><span class="p">]:</span> <span class="s">'exit configuration-mode </span><span class="se">\n</span><span class="s">Exiting configuration mode</span><span class="se">\n\n</span><span class="s">lab@r1&gt; '</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">48</span><span class="p">]:</span> <span class="n">ptx</span><span class="o">.</span><span class="n">find_prompt</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">48</span><span class="p">]:</span> <span class="s">'lab@r1&gt;'</span>
+</code></pre></div></div>
+<p>Sending show command to catpure RSVP interfaces information:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">In</span> <span class="p">[</span><span class="mi">49</span><span class="p">]:</span> <span class="n">ptx</span><span class="o">.</span><span class="n">send_command</span><span class="p">(</span><span class="s">'show rsvp interface'</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">49</span><span class="p">]:</span> <span class="s">'</span><span class="se">\n</span><span class="s">RSVP interface: 8 active</span><span class="se">\n</span><span class="s">                          Active  Subscr- Static      Available   Reserved    Highwater</span><span class="se">\n</span><span class="s">Interface          State  resv    iption  BW          BW          BW          mark</span><span class="se">\n</span><span class="s">ae0.0                  Up       0   100</span><span class="si">%  20</span><span class="s">Gbps      20Gbps      0bps        0bps       </span><span class="se">\n</span><span class="s">ae2.1000               Up       0   100</span><span class="si">%  20</span><span class="s">Gbps      20Gbps      0bps        0bps       </span><span class="se">\n</span><span class="s">ae2.112                Up       0   100</span><span class="si">%  20</span><span class="s">Gbps      20Gbps      0bps        0bps       </span><span class="se">\n</span><span class="s">em0.0                  Up       0   100</span><span class="si">%  1000</span><span class="s">Mbps    1000Mbps    0bps        0bps       </span><span class="se">\n</span><span class="s">et-0/0/1:2.0           Up       0   100</span><span class="si">%  10</span><span class="s">Gbps      10Gbps      0bps        0bps       </span><span class="se">\n</span><span class="s">et-0/0/1:3.0           Up       1   100</span><span class="si">%  10</span><span class="s">Gbps      10Gbps      0bps        0bps       </span><span class="se">\n</span><span class="s">et-0/0/3:1.1000      Down       0   100</span><span class="si">%  10</span><span class="s">Gbps      10Gbps      0bps        0bps       </span><span class="se">\n</span><span class="s">lo0.0                  Up       0   100</span><span class="si">%  0</span><span class="s">bps        0bps        0bps        0bps       </span><span class="se">\n</span><span class="s">'</span>
+</code></pre></div></div>
+
+<p>Printing pretty using pprint:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">In</span> <span class="p">[</span><span class="mi">50</span><span class="p">]:</span> <span class="n">pprint</span><span class="p">(</span><span class="n">ptx</span><span class="o">.</span><span class="n">send_command</span><span class="p">(</span><span class="s">'show rsvp interface'</span><span class="p">))</span>
+<span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span>
+ <span class="s">'RSVP interface: 8 active</span><span class="se">\n</span><span class="s">'</span>
+ <span class="s">'                          Active  Subscr- Static      Available   '</span>
+ <span class="s">'Reserved    Highwater</span><span class="se">\n</span><span class="s">'</span>
+ <span class="s">'Interface          State  resv    iption  BW          BW          '</span>
+ <span class="s">'BW          mark</span><span class="se">\n</span><span class="s">'</span>
+ <span class="s">'ae0.0                  Up       0   100</span><span class="si">%  20</span><span class="s">Gbps      20Gbps      '</span>
+ <span class="s">'0bps        0bps       </span><span class="se">\n</span><span class="s">'</span>
+ <span class="s">'ae2.1000               Up       0   100</span><span class="si">%  20</span><span class="s">Gbps      20Gbps      '</span>
+ <span class="s">'0bps        0bps       </span><span class="se">\n</span><span class="s">'</span>
+ <span class="s">'ae2.112                Up       0   100</span><span class="si">%  20</span><span class="s">Gbps      20Gbps      '</span>
+ <span class="s">'0bps        0bps       </span><span class="se">\n</span><span class="s">'</span>
+ <span class="s">'em0.0                  Up       0   100</span><span class="si">%  1000</span><span class="s">Mbps    1000Mbps    '</span>
+ <span class="s">'0bps        0bps       </span><span class="se">\n</span><span class="s">'</span>
+ <span class="s">'et-0/0/1:2.0           Up       0   100</span><span class="si">%  10</span><span class="s">Gbps      10Gbps      '</span>
+ <span class="s">'0bps        0bps       </span><span class="se">\n</span><span class="s">'</span>
+ <span class="s">'et-0/0/1:3.0           Up       1   100</span><span class="si">%  10</span><span class="s">Gbps      10Gbps      '</span>
+ <span class="s">'0bps        0bps       </span><span class="se">\n</span><span class="s">'</span>
+ <span class="s">'et-0/0/3:1.1000      Down       0   100</span><span class="si">%  10</span><span class="s">Gbps      10Gbps      '</span>
+ <span class="s">'0bps        0bps       </span><span class="se">\n</span><span class="s">'</span>
+ <span class="s">'lo0.0                  Up       0   100</span><span class="si">%  0</span><span class="s">bps        0bps        '</span>
+ <span class="s">'0bps        0bps       </span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Storing output in variable named output:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">In</span> <span class="p">[</span><span class="mi">51</span><span class="p">]:</span> <span class="n">output</span> <span class="o">=</span> <span class="n">ptx</span><span class="o">.</span><span class="n">send_command</span><span class="p">(</span><span class="s">'show rsvp interface'</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">54</span><span class="p">]:</span>  <span class="k">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>    
+</code></pre></div></div>
+<p>Output:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>RSVP interface: 8 active
+                          Active  Subscr- Static      Available   Reserved    Highwater
+Interface          State  resv    iption  BW          BW          BW          mark
+ae0.0                  Up       0   100%  20Gbps      20Gbps      0bps        0bps       
+ae2.1000               Up       0   100%  20Gbps      20Gbps      0bps        0bps       
+ae2.112                Up       0   100%  20Gbps      20Gbps      0bps        0bps       
+em0.0                  Up       0   100%  1000Mbps    1000Mbps    0bps        0bps       
+et-0/0/1:2.0           Up       0   100%  10Gbps      10Gbps      0bps        0bps       
+et-0/0/1:3.0           Up       1   100%  10Gbps      10Gbps      0bps        0bps       
+et-0/0/3:1.1000      Down       0   100%  10Gbps      10Gbps      0bps        0bps       
+lo0.0                  Up       0   100%  0bps        0bps        0bps        0bps       
+</code></pre></div></div>
+<p>Do not forget to close or disconnect the connection with router:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">In</span> <span class="p">[</span><span class="mi">55</span><span class="p">]:</span> <span class="n">ptx</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#netops" class="page__taxonomy-item" rel="tag">NetOps</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#blog" class="page__taxonomy-item" rel="tag">Blog</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-01-28">January 28, 2020</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Managing+JUNOS+device+using+Netmiko%20http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fnetmiko-junos%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fnetmiko-junos%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fnetmiko-junos%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/blog/data-store-access/" class="pagination--pager" title="Data store and easy access data structures
+">Previous</a>
+    
+    
+      <a href="/blog/netmiko-multithreading/" class="pagination--pager" title="Netmiko multithreading with Junos devices
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/netmiko-multithreading/" rel="permalink">Netmiko multithreading with Junos devices
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Automation of networking is always comes with scale requirement, manage or connect or capture data from so many devices, create reports of each device in sep...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/data-store-access/" rel="permalink">Data store and easy access data structures
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">I was looking for data structure which can store data in key and value pair, it would be even better if I can access it using "." or dot notation for easy an...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/is-ip-valid/" rel="permalink">IPv4 and IPv6 address validation using Python netaddr
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">On and off I had a need to verify if given string is valid IP or not.
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/ssh-netmiko-cntxmngr/" rel="permalink">Netmiko SSH connection handling using with statement
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">While working on Python program to connect to multiple lab devices and capture data, I faced the issue (due to bug in my program) where router was rejecting ...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://github.com/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Devang Patel. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>
