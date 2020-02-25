@@ -1,4 +1,243 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2020-01-29T19:18:46-08:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Devang Patel</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>Devang Patel</name></author><entry><title type="html">Managing JUNOS device using Netmiko</title><link href="http://0.0.0.0:4000/blog/netmiko-junos/" rel="alternate" type="text/html" title="Managing JUNOS device using Netmiko" /><published>2020-01-29T00:00:00-08:00</published><updated>2020-01-28T21:00:00-08:00</updated><id>http://0.0.0.0:4000/blog/netmiko-junos</id><content type="html" xml:base="http://0.0.0.0:4000/blog/netmiko-junos/">&lt;p&gt;Documenting the way I learned to use Netmiko with JUNOS device.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2020-02-25T15:54:08-08:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Devang Patel</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>Devang Patel</name></author><entry><title type="html">BGP route reflector reflection in picture</title><link href="http://0.0.0.0:4000/blog/bgp-rr-update/" rel="alternate" type="text/html" title="BGP route reflector reflection in picture" /><published>2020-02-25T00:00:00-08:00</published><updated>2020-02-24T21:00:01-08:00</updated><id>http://0.0.0.0:4000/blog/bgp-rr-update</id><content type="html" xml:base="http://0.0.0.0:4000/blog/bgp-rr-update/">&lt;p&gt;When you have a route reflector, we always have many questions like:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;What is a purpose of it?&lt;/li&gt;
+  &lt;li&gt;Which route will it reflect?&lt;/li&gt;
+  &lt;li&gt;What will it do with the update from non-client?&lt;/li&gt;
+  &lt;li&gt;Will it send update to the non-client?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/RR1.jpg&quot; alt=&quot;Route reflection 1&quot; /&gt;
+&lt;img src=&quot;/assets/images/RR2.jpg&quot; alt=&quot;Route reflection 2&quot; /&gt;
+&lt;img src=&quot;/assets/images/rr3.jpg&quot; alt=&quot;Route reflection 3&quot; /&gt;&lt;/p&gt;</content><author><name>Devang Patel</name></author><category term="Networking" /><category term="JUNOS" /><summary type="html">When you have a route reflector, we always have many questions like: What is a purpose of it? Which route will it reflect? What will it do with the update from non-client? Will it send update to the non-client?</summary></entry><entry><title type="html">The Router I know</title><link href="http://0.0.0.0:4000/blog/the-router-asiknow/" rel="alternate" type="text/html" title="The Router I know" /><published>2020-02-25T00:00:00-08:00</published><updated>2020-02-24T21:00:02-08:00</updated><id>http://0.0.0.0:4000/blog/the-router-asiknow</id><content type="html" xml:base="http://0.0.0.0:4000/blog/the-router-asiknow/">&lt;p&gt;Tried to picturize the router as I know, at least the Juniper router with control and forwarding plane traffic.&lt;/p&gt;
+
+&lt;p&gt;I have also highlighted the traffic flow and try to show which traffic is known as transit and host traffic.&lt;/p&gt;
+
+&lt;p&gt;Picture shows one control plane or in Juniper terms its Routing-Engine(RE) and two forwarding plane or card or FPCs.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/router_asiknow.jpg&quot; alt=&quot;Router as I know&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Few acronyms used in picture:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;cchip: Center chip or buffer chip&lt;/li&gt;
+  &lt;li&gt;LUKP: Lookup chip&lt;/li&gt;
+  &lt;li&gt;RtNH: Route Next-hop database or memory&lt;/li&gt;
+  &lt;li&gt;CPU: It is a processor on FPC&lt;/li&gt;
+  &lt;li&gt;intf: Interfaces&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Devang Patel</name></author><category term="Networking" /><category term="JUNOS" /><summary type="html">Tried to picturize the router as I know, at least the Juniper router with control and forwarding plane traffic.</summary></entry><entry><title type="html">BGP Multipath in Junos - IPv4 routes</title><link href="http://0.0.0.0:4000/blog/bgp-multipath/" rel="alternate" type="text/html" title="BGP Multipath in Junos - IPv4 routes" /><published>2020-02-20T00:00:00-08:00</published><updated>2020-02-19T21:00:01-08:00</updated><id>http://0.0.0.0:4000/blog/bgp-multipath</id><content type="html" xml:base="http://0.0.0.0:4000/blog/bgp-multipath/">&lt;p&gt;Optimizing network resources is ongoing improvement process in any network deployment. Networks are deployed with redundant links, line cards, devices, CPU etc. to cover the failover, quick migration or adding capacity or introducing new feature or upgrading device to new software release related scenarios. In this blog post we will cover the optimal usage of network paths or links as well as nodes available using BGP.&lt;/p&gt;
+
+&lt;p&gt;BGP has the multipath capabilities which can be used to utilize the available links or nodes to load share the traffic or use resources optimally. BGP is widely deployed protocol and carries many address families so multipath can be used for different address families to achieve the load balancing.&lt;/p&gt;
+
+&lt;p&gt;Multipath can be used with iBGP or eBGP both and all families which are supported with BGP can benefit from it.&lt;/p&gt;
+
+&lt;h4 id=&quot;lets-consider-the-following-route&quot;&gt;Lets consider the following route:&lt;/h4&gt;
+
+&lt;p&gt;Route &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;192.168.200.1&lt;/code&gt; is learned from route reflector and it is originated by two different source routers or protocol next hops(PNH) &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;192.168.1.2&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;192.168.1.3&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[edit]
+root@r6# run show route 192.168.200.1 
+
+inet.0: 30 destinations, 31 routes (30 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+192.168.200.1/32   *[BGP/170] 06:39:51, localpref 100, from 192.168.1.4
+                      AS path: I, validation-state: unverified
+                    &amp;gt; to 1.1.46.1 via ge-0/0/0.46, Push 299888
+                      to 1.1.56.1 via ge-0/0/1.56, Push 300000
+                    [BGP/170] 06:39:47, localpref 100, from 192.168.1.4
+                      AS path: I, validation-state: unverified
+                    &amp;gt; to 1.1.46.1 via ge-0/0/0.46, Push 299904
+                      to 1.1.56.1 via ge-0/0/1.56, Push 300080
+
+[edit]
+root@r6# run show route 192.168.200.1 extensive | match &quot;Protocol next hop&quot; 
+                Protocol next hop: 192.168.1.2
+                        Protocol next hop: 192.168.1.2 Metric: 1
+                Protocol next hop: 192.168.1.3
+                        Protocol next hop: 192.168.1.3 Metric: 1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/multipath1.jpg&quot; alt=&quot;IGP loadbalancing and next hop&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now to reach each PNH, we have two IGP labeled path. In IGP if you have multiple equal cost paths then we use both the paths to send the traffic as seen in following output. To reach prefix &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;192.168.1.2&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;192.168.1.3&lt;/code&gt; we can use path via interfaces &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ge-0/0/0.46&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ge-0/0/1.56&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root@r6# run show route 192.168.1.2 
+
+inet.0: 30 destinations, 31 routes (30 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+192.168.1.2/32     *[OSPF/10] 05:28:38, metric 2
+                      to 1.1.46.1 via ge-0/0/0.46
+                    &amp;gt; to 1.1.56.1 via ge-0/0/1.56
+
+inet.3: 4 destinations, 4 routes (4 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+192.168.1.2/32     *[LDP/9] 05:28:38, metric 1
+                      to 1.1.46.1 via ge-0/0/0.46, Push 299888
+                    &amp;gt; to 1.1.56.1 via ge-0/0/1.56, Push 300000
+
+[edit]
+root@r6# run show route 192.168.1.3    
+
+inet.0: 30 destinations, 31 routes (30 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+192.168.1.3/32     *[OSPF/10] 06:39:36, metric 2
+                      to 1.1.46.1 via ge-0/0/0.46
+                    &amp;gt; to 1.1.56.1 via ge-0/0/1.56
+
+inet.3: 4 destinations, 4 routes (4 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+192.168.1.3/32     *[LDP/9] 06:39:36, metric 1
+                      to 1.1.46.1 via ge-0/0/0.46, Push 299904
+                    &amp;gt; to 1.1.56.1 via ge-0/0/1.56, Push 300080
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Going back to the BGP route &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;192.168.200.1&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Do we have multipath in play by default?&lt;/li&gt;
+  &lt;li&gt;Are we using both the PNH to send traffic?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We can get answer by inspecting following output:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[edit]
+root@r6# run show bgp neighbor | match multipath 
+
+
+[edit]
+root@r6# run show route 192.168.200.1 extensive | match multipath 
+
+[edit]
+root@r6# run show route forwarding-table destination 192.168.200.1 table default 
+Routing table: default.inet
+Internet:
+Enabled protocols: Bridging, 
+Destination        Type RtRef Next hop           Type Index    NhRef Netif
+192.168.200.1/32   user     0                    indr  1048575     2
+                                                 ulst  1048585     2
+                              1.1.46.1          Push 299888      659     2 ge-0/0/0.46
+                              1.1.56.1          Push 300000      647     2 ge-0/0/1.56
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Looking at above output, it doesn’t look like we have multipath in play and we are not using both the PNHs to forward the traffic.&lt;/p&gt;
+
+&lt;p&gt;We are using only one PNH to send traffic, however we are using both the IGP paths of that selected PNH to send traffic so at this point we have ECMP or resources being used optimally at the IGP level but not yet at the BGP level.&lt;/p&gt;
+
+&lt;h4 id=&quot;enable-bgp-multipath&quot;&gt;Enable BGP multipath:&lt;/h4&gt;
+&lt;p&gt;Let’s enable BGP multipath, to enable and verify if multipath is enabled or not you can use following commands:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+root@r6# set protocols bgp group rrclient multipath  
+
+[edit]
+root@r6# commit 
+commit complete
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Lets verify if multipath is enabled or not:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[edit]
+root@r6# run show bgp neighbor | match multipath    
+  Options: &amp;lt;Preference LocalAddress AddressFamily Multipath Rib-group Refresh&amp;gt;
+
+[edit]
+root@r6# run show bgp summary | match 192.168       
+192.168.1.4             100       2870       2903       0       0    21:39:34 Establ
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Lets verify the BGP route after enabling the multipath:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[edit]
+root@r6# run show route 192.168.200.1                      
+
+inet.0: 30 destinations, 31 routes (30 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+192.168.200.1/32   *[BGP/170] 00:00:13, localpref 100, from 192.168.1.4
+                      AS path: I, validation-state: unverified
+                    &amp;gt; to 1.1.46.1 via ge-0/0/0.46, Push 299888
+                      to 1.1.56.1 via ge-0/0/1.56, Push 300000
+                      to 1.1.46.1 via ge-0/0/0.46, Push 299904
+                      to 1.1.56.1 via ge-0/0/1.56, Push 300080
+                    [BGP/170] 06:47:45, localpref 100, from 192.168.1.4
+                      AS path: I, validation-state: unverified
+                    &amp;gt; to 1.1.46.1 via ge-0/0/0.46, Push 299904
+                      to 1.1.56.1 via ge-0/0/1.56, Push 300080
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Both the PNHs are now the multipath and multipath contributing routes:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root@r6# run show route 192.168.200.1 extensive | match multipath 
+                Accepted Multipath
+                Accepted MultipathContrib
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/multipath2.jpg&quot; alt=&quot;BGP multipath and next hops&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;After enabling the multipath the output of the route looks different then the earlier one. Here we started using the IGP/Label forwarding routes of both the PNHs. Let’s check how forwarding table looks like now:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root@r6# run show route forwarding-table destination 192.168.200.1 table default 
+Routing table: default.inet
+Internet:
+Enabled protocols: Bridging, 
+Destination        Type RtRef Next hop           Type Index    NhRef Netif
+192.168.200.1/32   user     0                    ulst  1048587     2
+                                                 indr  1048574     2
+                                                 ulst  1048582     2
+                              1.1.46.1          Push 299904      660     2 ge-0/0/0.46
+                              1.1.56.1          Push 300080      651     2 ge-0/0/1.56 -
+                                                 indr  1048575     2
+                                                 ulst  1048585     2
+                              1.1.46.1          Push 299888      659     2 ge-0/0/0.46 -
+                              1.1.56.1          Push 300000      647     2 ge-0/0/1.56
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;As we can see in above output, we have programmed both the PNHs and its IGP/labeled routes to reach that PNH in forwarding table so now route’s forwarding plane will start using all four forwarding paths to send traffic to destination &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;192.168.200.1&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Next post I will cover the multipath with L3VPN routes.&lt;/p&gt;</content><author><name>Devang Patel</name></author><category term="Networking" /><category term="JUNOS" /><summary type="html">Optimizing network resources is ongoing improvement process in any network deployment. Networks are deployed with redundant links, line cards, devices, CPU etc. to cover the failover, quick migration or adding capacity or introducing new feature or upgrading device to new software release related scenarios. In this blog post we will cover the optimal usage of network paths or links as well as nodes available using BGP.</summary></entry><entry><title type="html">Working with files in Python</title><link href="http://0.0.0.0:4000/blog/files-rename/" rel="alternate" type="text/html" title="Working with files in Python" /><published>2020-01-30T00:00:00-08:00</published><updated>2020-01-29T21:00:01-08:00</updated><id>http://0.0.0.0:4000/blog/files-rename</id><content type="html" xml:base="http://0.0.0.0:4000/blog/files-rename/">&lt;p&gt;Working with files and directories is everyday work so how can we create, rename, traverse through different level of directories and files is what I am trying to learn and document in this blog post.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt;                  
+&lt;span class=&quot;n&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sys&lt;/span&gt;                  
+&lt;span class=&quot;n&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;glob&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;How do I create 5000 empty files?&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; 
+    &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;     &lt;span class=&quot;n&quot;&gt;fname&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'touch '&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'hi'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+    &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;     &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+    &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;How can I iterate over all the files?&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;33&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myfile&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;glob&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;glob&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'*'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;                                                                                                                       &lt;span class=&quot;sb&quot;&gt;``&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;              
+&lt;span class=&quot;sb&quot;&gt;```glob.glob```&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;reads&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;all&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;same&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;dir&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;creates&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Pathlib&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;glob&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;can&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;be&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;used&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;generator&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;         
+
+&lt;span class=&quot;n&quot;&gt;Here&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;glob&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;will&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;all&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;given&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;dir&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;I&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;have&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;let&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'s check the size of the list.&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;```python&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;In [35]: sys.getsizeof(myfile)                                                                                                                                       &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Out[35]: 40808&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;In [39]: len(myfile)                                                                                                                                                 &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Out[39]: 5001&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;In [37]: ls -l | wc -l                                                                                                                                               &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;5002&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Next goal is to renaming all the files by appending &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;d_&lt;/code&gt; at the beginning of the file name:&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;36&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;file&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myfile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; 
+    &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;     &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'d_'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+
+
+&lt;span class=&quot;n&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;total&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Jan&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;55&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d_hi10&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Jan&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;55&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d_hi100&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Jan&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;55&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d_hi1000&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;How to search for the file recursively with specific patter or extension from given or current directory:&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;43&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;glob&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;glob&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'PythonMyProg/py_networking/**/*.ipynb'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;recursive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    
+&lt;span class=&quot;n&quot;&gt;Out&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;43&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; 
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'PythonMyProg/py_networking/NetOps/threading_1.ipynb'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;'PythonMyProg/py_networking/NetOps/router_textFsm/netmiko_jnpr.ipynb'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;'PythonMyProg/py_networking/NetOps/router_textFsm/netmiko_textfsm.ipynb'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+ &lt;span class=&quot;s&quot;&gt;'PythonMyProg/py_networking/NetOps/logparsing/log_parsing.ipynb'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Devang Patel</name></author><category term="NetOps" /><summary type="html">Working with files and directories is everyday work so how can we create, rename, traverse through different level of directories and files is what I am trying to learn and document in this blog post.</summary></entry><entry><title type="html">Managing JUNOS device using Netmiko</title><link href="http://0.0.0.0:4000/blog/netmiko-junos/" rel="alternate" type="text/html" title="Managing JUNOS device using Netmiko" /><published>2020-01-29T00:00:00-08:00</published><updated>2020-01-28T21:00:00-08:00</updated><id>http://0.0.0.0:4000/blog/netmiko-junos</id><content type="html" xml:base="http://0.0.0.0:4000/blog/netmiko-junos/">&lt;p&gt;Documenting the way I learned to use Netmiko with JUNOS device.&lt;/p&gt;
 
 &lt;p&gt;Required imports to start with:&lt;/p&gt;
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;netmiko&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;juniper&lt;/span&gt;
@@ -529,525 +768,4 @@ Jan 19 17:18:04  R1 mgd[15886]: UI_CMDLINE_READ_LINE: User 'lab', command 'show 
 Jan 19 17:18:14  R1 mgd[15886]: UI_LOGOUT_EVENT: User 'lab' logout   &amp;lt;&amp;lt;&amp;lt; closing connection
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Do you have any better idea or way to handle it?&lt;/p&gt;</content><author><name>Devang Patel</name></author><category term="NetOps" /><summary type="html">While working on Python program to connect to multiple lab devices and capture data, I faced the issue (due to bug in my program) where router was rejecting SSH connection request.</summary></entry><entry><title type="html">Learning Ansible automation to manage network devices in the lab</title><link href="http://0.0.0.0:4000/blog/ansible-learning/" rel="alternate" type="text/html" title="Learning Ansible automation to manage network devices in the lab" /><published>2020-01-03T00:00:00-08:00</published><updated>2020-01-02T21:00:01-08:00</updated><id>http://0.0.0.0:4000/blog/ansible-learning</id><content type="html" xml:base="http://0.0.0.0:4000/blog/ansible-learning/">&lt;p&gt;With so many tools available, I decided to try out the Ansible to see how it works and what can I do with it so documenting few things that I tried with it.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;my Ansible directory tree structure&lt;/li&gt;
-  &lt;li&gt;Ansible default config file and modification&lt;/li&gt;
-  &lt;li&gt;creating inventory&lt;/li&gt;
-  &lt;li&gt;defining variables in inventory as well as global variables, I decided to use username and password which I can supply to all my hosts in variable&lt;/li&gt;
-  &lt;li&gt;Different example of play books:
-    &lt;ul&gt;
-      &lt;li&gt;Capturing data using show commands&lt;/li&gt;
-      &lt;li&gt;Configure device using set commands in separate files&lt;/li&gt;
-      &lt;li&gt;How to pass username and password as variable&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;How to execute the play book and various options.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;my-ansible-dir-structure-looks-like-this&quot;&gt;My ansible dir structure looks like this:&lt;/h4&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ansible/
-|-- ansible.cfg
-|-- ansible_inventory
-|   |-- group_vars
-|   |   `-- all.yaml
-|   `-- inventory
-|-- ansible_playbooks
-|   |-- playbook_filter_file.yaml
-|   |-- playbook_lo0_desc.yaml
-|   |-- playbook_uptime_prompt.yaml
-|   `-- playbook_version_uptime.yaml
-|-- router_config
-|   `-- r1_filter.conf
-`-- uptime.yaml
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;ansible-config-file&quot;&gt;Ansible config file&lt;/h4&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root@ubuntu:~# cat ansible/ansible.cfg 
-[defaults]
-
-inventory = /home/lab/ansible/ansible_inventory/inventory
-host_key_checking = False
-
-[ssh_connection]
-scp_if_ssh=True
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;ansible-inventory-and-groups-variables&quot;&gt;Ansible inventory and groups variables:&lt;/h4&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root@ubuntu:~# cat ansible/ansible_inventory/group_vars/all.yaml 
-username: lab
-password: lab123
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root@ubuntu:~# cat ansible/ansible_inventory/inventory
-[lab]
-r1 ansible_host=10.1.1.1 device_role=router
-
-[routers:children]
-lab
-
-[all:vars]
-ansible_python_interpreter=/usr/bin/python3
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;example-playbook-file&quot;&gt;Example playbook file:&lt;/h4&gt;
-
-&lt;p&gt;In this example, we are going to configure the router with few filter terms using set commands. Configuration set commands are stored in separate file named &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;r1_filter.conf&lt;/code&gt;.&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root@ubuntu:~# cat ansible/ansible_playbooks/playbook_filter_file.yaml 
----
-- name: Filter config from file
-  hosts: 
-    - lab
-  roles:
-    - Juniper.junos
-  connection: local
-  gather_facts: no
-
-  tasks:
-  
-    - name: config firewall filter from file
-      juniper_junos_config:
-        load: set
-        src: /home/lab/ansible/router_config/r1_filter.conf
-        comment: configuring filter from file
-
-    - name: verify firewall
-      juniper_junos_command:
-        commands:
-          - &quot;show configuration firewall&quot;
-      register: junos_result
-
-    - name: Print response
-      debug:
-        var: junos_result
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;r1_filter.conf&lt;/code&gt; file content:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root@ubuntu:~# cat ansible/router_config/r1_filter.conf 
-set firewall family inet filter scale term 1 from destination-address 192.168.1.1
-set firewall family inet filter scale term 1 then accept
-set firewall family inet filter scale term 2 from destination-address 192.168.1.2
-set firewall family inet filter scale term 2 then accept
-set firewall family inet filter scale term 3 from destination-address 192.168.1.3
-set firewall family inet filter scale term 3 then accept
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Another example playbook file where we are just reading the show commands and supplying username and password from variable file:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root@ubuntu:~# cat ansible/ansible_playbooks/playbook_version_uptime.yaml 
----
-- name: Get device information
-  hosts: 
-    - lab
-  roles:
-    - Juniper.junos
-  connection: local
-  gather_facts: no
-
-  tasks:
-    - name: Get software and uptime information
-      juniper_junos_command:        
-        user: &quot;&quot;
-        passwd: &quot;&quot;
-        commands: 
-          - &quot;show system uptime&quot;
-      register: junos_result
-
-    - name: Print response
-      debug:
-        var: junos_result
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Complete output of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;playbook_version_uptime.yaml&lt;/code&gt; playbook execution:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-root@ubuntu:~/ansible# ansible-playbook playbook_version_uptime.yaml 
-
-PLAY [Get device information] ***************************************************************************************************************************************************************************************
-
-TASK [Get software and uptime information] **************************************************************************************************************************************************************************
-ok: [r1]
-
-TASK [Print response] ***********************************************************************************************************************************************************************************************
-ok: [r1] =&amp;gt; {
-    &quot;junos_result&quot;: {
-        &quot;changed&quot;: false,
-        &quot;command&quot;: &quot;show system uptime&quot;,
-        &quot;failed&quot;: false,
-        &quot;format&quot;: &quot;text&quot;,
-        &quot;msg&quot;: &quot;The command executed successfully.&quot;,
-        &quot;stdout&quot;: &quot;\nCurrent time: 2020-01-03 11:08:04 PST\nTime Source:  NTP CLOCK \nSystem booted: 2019-11-20 13:39:36 PST (6w1d 21:28 ago)\nProtocols started: 2019-12-19 10:17:01 PST (2w1d 00:51 ago)\nLast configured: 2020-01-03 10:38:36 PST (00:29:28 ago) by lab\n11:08AM  up 43 days, 21:28, 1 users, load averages: 4.54, 4.33, 4.28\n&quot;,
-        &quot;stdout_lines&quot;: [
-            &quot;&quot;,
-            &quot;Current time: 2020-01-03 11:08:04 PST&quot;,
-            &quot;Time Source:  NTP CLOCK &quot;,
-            &quot;System booted: 2019-11-20 13:39:36 PST (6w1d 21:28 ago)&quot;,
-            &quot;Protocols started: 2019-12-19 10:17:01 PST (2w1d 00:51 ago)&quot;,
-            &quot;Last configured: 2020-01-03 10:38:36 PST (00:29:28 ago) by lab&quot;,
-            &quot;11:08AM  up 43 days, 21:28, 1 users, load averages: 4.54, 4.33, 4.28&quot;
-        ]
-    }
-}
-
-PLAY RECAP **********************************************************************************************************************************************************************************************************
-r1                         : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
-
-root@ubuntu:~/ansible# 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Few more ways to execute the playbook where you supply the username and password separately:
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2010  ansible-playbook -i inventory playbook_filter_file.yaml -u labroot -k&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Documenting data for my own reference in future as well as to help others if they are looking for something and may find it useful.&lt;/p&gt;</content><author><name>Devang Patel</name></author><category term="NetOps" /><summary type="html">With so many tools available, I decided to try out the Ansible to see how it works and what can I do with it so documenting few things that I tried with it.</summary></entry><entry><title type="html">TextFSM with Nornir</title><link href="http://0.0.0.0:4000/blog/nornir-textfsm/" rel="alternate" type="text/html" title="TextFSM with Nornir" /><published>2020-01-01T00:00:00-08:00</published><updated>2011-12-31T21:00:01-08:00</updated><id>http://0.0.0.0:4000/blog/nornir-textfsm</id><content type="html" xml:base="http://0.0.0.0:4000/blog/nornir-textfsm/">&lt;p&gt;TextFSM has been useful in network automation when you have unstructured data or cli output and want to convert them into Python data structured formatted data.&lt;/p&gt;
-
-&lt;p&gt;By importing netmiko plugin in nornir we can use its capability of parsing the unstructured data using TextFsm.&lt;/p&gt;
-
-&lt;p&gt;In this example, we will try to extract the OSPF neighbor details from Juniper router and read it in TextFSM formatted data model/structure. I am using existing &lt;a href=&quot;https://github.com/networktocode/ntc-templates&quot; target=&quot;_blank&quot;&gt;TextFsm template defined here&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Router r1’s OSPF neighbor output in plain text is as follow:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;lab@r1&amp;gt; show ospf neighbor 
-Address          Interface              State     ID               Pri  Dead
-1.1.13.2         xe-0/1/0.0             Full      192.168.1.3      128    39
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Telling netmiko where to look for textFSM templates: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;export NET_TEXTFSM=/home/user/ntc-templates/templates/&lt;/code&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#Required imports
-&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;nornir&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;InitNornir&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;nornir.plugins.tasks.networking&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;netmiko_send_command&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;nornir.plugins.tasks.networking&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;napalm_get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;napalm_cli&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;nornir.plugins.functions.text&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;print_result&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pprint&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pprint&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pprint&lt;/span&gt;
-
-&lt;span class=&quot;s&quot;&gt;'''
-Create nornir object which will use the hosts.yaml and 
-groups.yaml files to 
-'''&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;nr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;InitNornir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;netmiko_send_command&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;command_string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;show ospf neighbor&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;use_textfsm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;print_result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;      
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;textfsm-parse-output&quot;&gt;TextFSM parse output:&lt;/h4&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;netmiko_send_command************************************************************
-* r1 ** changed : False ********************************************************
-vvvv netmiko_send_command ** changed : False vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv INFO
-[ { 'address': '1.1.13.2',
-    'dead_time': '33',
-    'interface': 'xe-0/1/0.0',
-    'neighbor_id': '192.168.1.3',
-    'priority': '128',
-    'state': 'Full'}]
-^^^^ END netmiko_send_command ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;If we remove &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;use_textfsm=True&lt;/code&gt; from the script:&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;netmiko_send_command&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;command_string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;show ospf neighbor&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;print_result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;output-of-script-without-textfsm-usage-it-looks-like-a-plain-text-output&quot;&gt;Output of script without TextFSM usage, it looks like a plain text output:&lt;/h4&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;netmiko_send_command************************************************************
-* r1 ** changed : False ********************************************************
-vvvv netmiko_send_command ** changed : False vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv INFO
-
-Address          Interface              State     ID               Pri  Dead
-1.1.13.2         xe-0/1/0.0             Full      192.168.1.3      128    33
-
-^^^^ END netmiko_send_command ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Devang Patel</name></author><category term="NetOps" /><summary type="html">TextFSM has been useful in network automation when you have unstructured data or cli output and want to convert them into Python data structured formatted data.</summary></entry><entry><title type="html">CSV Network device stats calculation and top talkers</title><link href="http://0.0.0.0:4000/blog/csv-stats/" rel="alternate" type="text/html" title="CSV Network device stats calculation and top talkers" /><published>2019-12-31T00:00:00-08:00</published><updated>2016-12-30T21:00:02-08:00</updated><id>http://0.0.0.0:4000/blog/csv-stats</id><content type="html" xml:base="http://0.0.0.0:4000/blog/csv-stats/">&lt;p&gt;Given a CSV file with stats, we might have to perform following tasks:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;How would you calculate the traffic stats?&lt;/li&gt;
-  &lt;li&gt;Who are the top talkers based on input or output or total?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This is what I am trying to document:&lt;/p&gt;
-
-&lt;p&gt;My CSV file looks like:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;device,intf,input,output
-r1,et1,blah,110
-r1,et2,102,112
-r1,et3,103,113
-r2,et1,200,210
-r2,et2,202,212
-r2,et3,203,213
-r3,et1,300,blah
-r3,et2,302,312
-r3,et3,303,313
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;'''
-Reading CSV and cleaning the value
-'''&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;csv&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;collections&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;defaultdict&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pprint&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pprint&lt;/span&gt;
-
-
-&lt;span class=&quot;n&quot;&gt;total_input&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;total_output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;top_talkers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;devices&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;defaultdict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'stats.csv'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'r'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;csv_reader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;csv&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;DictReader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-     
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sw&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;csv_reader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'output'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isnumeric&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;sw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'output'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-            
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'input'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isnumeric&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;sw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'input'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-        
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'device'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;devices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;devices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'device'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-        
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'device'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;devices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;devices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'device'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;devices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'device'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'input'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;devices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'device'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;devices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'device'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'output'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-        
-	&lt;span class=&quot;n&quot;&gt;top_talkers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;appen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Top talkers devices based on input traffic:'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;pprint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;top_talkers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'input'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;reverse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
-
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Total traffic per device:'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;device&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;traffic&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;devices&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;device&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;traffic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Total traffic on {device} is {traffic[0]+traffic[1]}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Output:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Top talkers devices based on input traffic:
-[{'device': 'r1', 'input': 0, 'intf': 'et1', 'output': '110'},
- {'device': 'r1', 'input': '102', 'intf': 'et2', 'output': '112'},
- {'device': 'r1', 'input': '103', 'intf': 'et3', 'output': '113'},
- {'device': 'r2', 'input': '200', 'intf': 'et1', 'output': '210'},
- {'device': 'r2', 'input': '202', 'intf': 'et2', 'output': '212'},
- {'device': 'r2', 'input': '203', 'intf': 'et3', 'output': '213'},
- {'device': 'r3', 'input': '300', 'intf': 'et1', 'output': 0},
- {'device': 'r3', 'input': '302', 'intf': 'et2', 'output': '312'},
- {'device': 'r3', 'input': '303', 'intf': 'et3', 'output': '313'}]
-
- Total traffic per device:
-r1 [205, 335]
-Total traffic on r1 is 540
-r2 [605, 635]
-Total traffic on r2 is 1240
-r3 [905, 625]
-Total traffic on r3 is 1530
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Is there a better way?&lt;/p&gt;</content><author><name>Devang Patel</name></author><category term="NetOps" /><summary type="html">Given a CSV file with stats, we might have to perform following tasks: How would you calculate the traffic stats? Who are the top talkers based on input or output or total?</summary></entry><entry><title type="html">Trying out Nornir automation</title><link href="http://0.0.0.0:4000/blog/nornir-learning/" rel="alternate" type="text/html" title="Trying out Nornir automation" /><published>2019-12-29T00:00:00-08:00</published><updated>2016-12-29T14:00:00-08:00</updated><id>http://0.0.0.0:4000/blog/nornir-learning</id><content type="html" xml:base="http://0.0.0.0:4000/blog/nornir-learning/">&lt;ul&gt;
-  &lt;li&gt;Trying out the NORNIR network automation and documenting few way to capture data from networking devices.&lt;/li&gt;
-  &lt;li&gt;I like the way we can import its different module into the python program that you might already be working on.&lt;/li&gt;
-  &lt;li&gt;Nornir is supported with Python 3.6 version and above.&lt;/li&gt;
-  &lt;li&gt;Using Nornir, we can call netmiko module to capture data from router using command, we can also use napalm module as well for same task.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#Required imports
-&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;nornir&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;InitNornir&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;nornir.plugins.tasks.networking&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;netmiko_send_command&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;nornir.plugins.tasks.networking&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;napalm_get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;napalm_cli&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;nornir.plugins.functions.text&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;print_result&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pprint&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pprint&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pprint&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;'''
-Create nornir object which will use the hosts.yaml and 
-groups.yaml files to 
-'''&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;nr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;InitNornir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inventory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hosts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inventory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;groups&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Output:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{'r1': Host: r1}
-{'mylab': Group: mylab}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Output:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{'r1': Host: r1}
-{'mylab': Group: mylab}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Using netmiko module in nornir to capture BGP summary output:&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;netmiko_send_command&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;command_string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;show bgp summary&quot;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;print_result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;      
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Output:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-Output:
-
-  
-	netmiko_send_command************************************************************
-	* r1 ** changed : False ********************************************************
-	vvvv netmiko_send_command ** changed : False vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv INFO
-
-	Groups: 4 Peers: 5 Down peers: 3
-	Table          Tot Paths  Act Paths Suppressed    History Damp State    Pending
-	inet.0               
-						   0          0          0          0          0          0
-	bgp.l3vpn.0          
-						   2          2          0          0          0          0
-    ...
-	Peer                     AS      InPkt     OutPkt    OutQ   Flaps Last Up/Dwn State|#Active/Received/Accepted/Damped...
-	1.1.11.2                200          0          0       0       0 1w3d 8:25:11 Idle  
-	2.1.1.2                 200          0          0       0       0 1w3d 8:25:11 Idle  
-	192.168.1.2             100     102189     102311       0       2  3d 5:04:01 Establ
-	  inet.0: 0/0/0/0
-	  bgp.l3vpn.0: 1/1/1/0
-	  bgp.l2vpn.0: 0/0/0/0
-	  bgp.evpn.0: 0/0/0/0
-	  bgp.mvpn.0: 0/0/0/0
-	  bgp.mdt.0: 0/0/0/0
-	  mvpn.inet.0: 1/1/1/0
-	192.168.200.1           100     103606     103169       0       1  3d 5:42:45 Establ
-	  inet.0: 0/0/0/0
-	  bgp.l3vpn.0: 1/1/1/0
-	  bgp.l2vpn.0: 0/0/0/0
-	  bgp.evpn.0: 0/0/0/0
-	  bgp.mvpn.0: 0/0/0/0
-	  bgp.mdt.0: 0/0/0/0
-	  mvpn.inet.0: 1/1/1/0
-	2001:1:1::1               1          0          0       0       0 1w3d 8:25:11 Idle  
-
-	^^^^ END netmiko_send_command ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Using napalm in nornir to execult the JUNOS cli command:&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-             &lt;span class=&quot;n&quot;&gt;napalm_cli&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-             &lt;span class=&quot;n&quot;&gt;commands&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'show system processes extensive | match rpd'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'show system processes extensive | match mem'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;print_result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Output:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;=======
- 
-	napalm_cli**********************************************************************
-	* r1 ** changed : False ********************************************************
-	vvvv napalm_cli ** changed : False vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv INFO
-	{ 'show system processes extensive | match mem': 'Mem: 146M Active, 3462M '
-													 'Inact, 927M Wired, 530M Buf, '
-													 '11G Free',
-	  'show system processes extensive | match rpd': '96074 root      20    0  '
-													 '1152M   176M kqread  1   '
-													 '7:58   0.00% rpd{rpd}\n'
-													 '96074 root      20    0  '
-													 '1152M   176M kqread  0   '
-													 '7:37   0.00% '
-													 'rpd{TraceThread}\n'
-													 '96074 root      20    0  '
-													 '1152M   176M kqread  1   '
-													 '1:27   0.00% rpd{rsvp-io}\n'
-													 '96074 root      20    0  '
-													 '1152M   176M kqread  1   '
-													 '1:11   0.00% '
-													 'rpd{bgpio-0-th}\n'
-													 '96074 root      20    0  '
-													 '1152M   176M kqread  0   '
-													 '0:09   0.00% rpd{krtio-th}'}
-	^^^^ END napalm_cli ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;=======&lt;/p&gt;
-
-&lt;p&gt;Identify type of result to read output further:&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Output:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;class 'nornir.core.task.AggregatedResult'&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Using napalm getters in nornir:&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;cmd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;show version&quot;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-             &lt;span class=&quot;n&quot;&gt;napalm_get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-             &lt;span class=&quot;n&quot;&gt;getters&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'bgp_neighbors'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;print_result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Output:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;=======
-
- 
-	napalm_get**********************************************************************
-	* r1 ** changed : False ********************************************************
-	vvvv napalm_get ** changed : False vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv INFO
-	{ 'bgp_neighbors': { 'global': { 'peers': { '1.1.11.2': { 'address_family': { 'ipv4': { 'accepted_prefixes': -1,
-																							'received_prefixes': -1,
-    ...
-															  'local_as': 100,
-															  'remote_as': 200,
-															  'remote_id': '',
-															  'uptime': 894325},
-    ...
-									 'router_id': ''},
-						 'mvpn': { 'peers': { '2.1.1.2': { 'address_family': { 'ipv4': { 'accepted_prefixes': -1,
-																						 'received_prefixes': -1,
-    ...
-														   'local_as': 100,
-														   'remote_as': 200,
-														   'remote_id': '',
-														   'uptime': 894325}},
-								   'router_id': ''}}}
-	^^^^ END napalm_get ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Output:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;AggregatedResult (napalm_get): {'r1': MultiResult: [Result: &quot;napalm_get&quot;]}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Pythonic way to extract the specific details of BGP neighbor:&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'r1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'r1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'bgp_neighbors'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;pprint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'r1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'bgp_neighbors'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'mvpn'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Output:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;=======
-
-
-	&amp;lt;class 'dict'&amp;gt;
-	dict_keys(['global', 'mvpn'])
-	{'peers': {'2.1.1.2': {'address_family': {'ipv4': {'accepted_prefixes': -1,
-													   'received_prefixes': -1,
-    ...
-						   'local_as': 100,
-						   'remote_as': 200,
-						   'remote_id': '',
-						   'uptime': 894325}},
-	 'router_id': ''}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Devang Patel</name></author><category term="Networking" /><category term="NetOps" /><summary type="html">Trying out the NORNIR network automation and documenting few way to capture data from networking devices. I like the way we can import its different module into the python program that you might already be working on. Nornir is supported with Python 3.6 version and above. Using Nornir, we can call netmiko module to capture data from router using command, we can also use napalm module as well for same task.</summary></entry></feed>
+&lt;p&gt;Do you have any better idea or way to handle it?&lt;/p&gt;</content><author><name>Devang Patel</name></author><category term="NetOps" /><summary type="html">While working on Python program to connect to multiple lab devices and capture data, I faced the issue (due to bug in my program) where router was rejecting SSH connection request.</summary></entry></feed>

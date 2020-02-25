@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>DNS name resolution using Python - Devang Patel</title>
-<meta name="description" content="Script I used to resolve DNS name to IP.">
+<!-- begin _includes/seo.html --><title>BGP route reflector reflection in picture - Devang Patel</title>
+<meta name="description" content="When you have a route reflector, we always have many questions like:  What is a purpose of it?  Which route will it reflect?  What will it do with the update from non-client?  Will it send update to the non-client?">
 
 
   <meta name="author" content="Devang Patel">
@@ -19,28 +19,28 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Devang Patel">
-<meta property="og:title" content="DNS name resolution using Python">
-<meta property="og:url" content="http://0.0.0.0:4000/blog/dns-name/">
+<meta property="og:title" content="BGP route reflector reflection in picture">
+<meta property="og:url" content="http://0.0.0.0:4000/blog/bgp-rr-update/">
 
 
-  <meta property="og:description" content="Script I used to resolve DNS name to IP.">
-
-
-
+  <meta property="og:description" content="When you have a route reflector, we always have many questions like:  What is a purpose of it?  Which route will it reflect?  What will it do with the update from non-client?  Will it send update to the non-client?">
 
 
 
 
-  <meta property="article:published_time" content="2019-12-13T00:00:00-08:00">
 
 
 
-  <meta property="article:modified_time" content="2016-12-13T13:20:02-08:00">
+  <meta property="article:published_time" content="2020-02-25T00:00:00-08:00">
+
+
+
+  <meta property="article:modified_time" content="2020-02-24T21:00:01-08:00">
 
 
 
 
-<link rel="canonical" href="http://0.0.0.0:4000/blog/dns-name/">
+<link rel="canonical" href="http://0.0.0.0:4000/blog/bgp-rr-update/">
 
 
 
@@ -270,15 +270,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="DNS name resolution using Python">
-    <meta itemprop="description" content="Script I used to resolve DNS name to IP.">
-    <meta itemprop="datePublished" content="2019-12-13T00:00:00-08:00">
-    <meta itemprop="dateModified" content="2016-12-13T13:20:02-08:00">
+    <meta itemprop="headline" content="BGP route reflector reflection in picture">
+    <meta itemprop="description" content="When you have a route reflector, we always have many questions like:  What is a purpose of it?  Which route will it reflect?  What will it do with the update from non-client?  Will it send update to the non-client?">
+    <meta itemprop="datePublished" content="2020-02-25T00:00:00-08:00">
+    <meta itemprop="dateModified" content="2020-02-24T21:00:01-08:00">
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">DNS name resolution using Python
+          <h1 id="page-title" class="page__title" itemprop="headline">BGP route reflector reflection in picture
 </h1>
           
             <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
@@ -295,27 +295,17 @@
 
       <section class="page__content" itemprop="text">
         
-        <p>Script I used to resolve DNS name to IP.</p>
+        <p>When you have a route reflector, we always have many questions like:</p>
+<ul>
+  <li>What is a purpose of it?</li>
+  <li>Which route will it reflect?</li>
+  <li>What will it do with the update from non-client?</li>
+  <li>Will it send update to the non-client?</li>
+</ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">'''
-NetOps
-Given url find out the IP address of it
-Devang Patel
-'''</span>
-<span class="kn">import</span> <span class="nn">socket</span>
-<span class="n">ip_add</span> <span class="o">=</span> <span class="s">'Not a valid name'</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">ip_add</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">gethostbyname</span><span class="p">(</span><span class="s">'www.google.com'</span><span class="p">)</span>
-<span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">gaierror</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">ip_add</span><span class="p">)</span>
-
-</code></pre></div></div>
-<p>Output:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>172.217.6.68
-</code></pre></div></div>
-
+<p><img src="/assets/images/RR1.jpg" alt="Route reflection 1" />
+<img src="/assets/images/RR2.jpg" alt="Route reflection 2" />
+<img src="/assets/images/rr3.jpg" alt="Route reflection 3" /></p>
 
         
       </section>
@@ -336,7 +326,7 @@ Devang Patel
     
       
       
-      <a href="/tags/#netops" class="page__taxonomy-item" rel="tag">NetOps</a><span class="sep">, </span>
+      <a href="/tags/#junos" class="page__taxonomy-item" rel="tag">JUNOS</a><span class="sep">, </span>
     
       
       
@@ -368,29 +358,29 @@ Devang Patel
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2016-12-13">December 13, 2016</time></p>
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-24">February 24, 2020</time></p>
         
       </footer>
 
       <section class="page__share">
   
 
-  <a href="https://twitter.com/intent/tweet?text=DNS+name+resolution+using+Python%20http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fdns-name%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=BGP+route+reflector+reflection+in+picture%20http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fbgp-rr-update%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fdns-name%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fbgp-rr-update%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fdns-name%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2F0.0.0.0%3A4000%2Fblog%2Fbgp-rr-update%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/blog/welcome-to-jekyll/" class="pagination--pager" title="Welcome to Jekyll!
+      <a href="/blog/bgp-multipath/" class="pagination--pager" title="BGP Multipath in Junos - IPv4 routes
 ">Previous</a>
     
     
-      <a href="/blog/scale-config/" class="pagination--pager" title="JUNOS scale config
+      <a href="/blog/the-router-asiknow/" class="pagination--pager" title="The Router I know
 ">Next</a>
     
   </nav>
@@ -432,38 +422,6 @@ Devang Patel
     <p class="archive__item-excerpt" itemprop="description">Tried to picturize the router as I know, at least the Juniper router with control and forwarding plane traffic.
 
 </p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/blog/bgp-rr-update/" rel="permalink">BGP route reflector reflection in picture
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  less than 1 minute read
-
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">When you have a route reflector, we always have many questions like:
-
-  What is a purpose of it?
-  Which route will it reflect?
-  What will it do with the up...</p>
   </article>
 </div>
 
@@ -520,6 +478,34 @@ Devang Patel
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Working with files and directories is everyday work so how can we create, rename, traverse through different level of directories and files is what I am tryi...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/netmiko-multithreading/" rel="permalink">Netmiko multithreading with Junos devices
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Automation of networking is always comes with scale requirement, manage or connect or capture data from so many devices, create reports of each device in sep...</p>
   </article>
 </div>
 

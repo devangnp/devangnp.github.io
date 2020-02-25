@@ -68,4 +68,24 @@ var store = [{
         "excerpt":"Automation of networking is always comes with scale requirement, manage or connect or capture data from so many devices, create reports of each device in separate files etc. Such requirements demands for multithreading or multiprocessing. Since connecting to routers or capturing data, storing collected data to the different files has...","categories": ["Blog"],
         "tags": ["NetOps"],
         "url": "http://0.0.0.0:4000/blog/netmiko-multithreading/",
+        "teaser":null},{
+        "title": "Working with files in Python",
+        "excerpt":"Working with files and directories is everyday work so how can we create, rename, traverse through different level of directories and files is what I am trying to learn and document in this blog post. In [3]: import os In [4]: import sys In [5]: import glob How do I...","categories": ["Blog"],
+        "tags": ["NetOps"],
+        "url": "http://0.0.0.0:4000/blog/files-rename/",
+        "teaser":null},{
+        "title": "BGP Multipath in Junos - IPv4 routes",
+        "excerpt":"Optimizing network resources is ongoing improvement process in any network deployment. Networks are deployed with redundant links, line cards, devices, CPU etc. to cover the failover, quick migration or adding capacity or introducing new feature or upgrading device to new software release related scenarios. In this blog post we will...","categories": ["Blog"],
+        "tags": ["Networking","JUNOS"],
+        "url": "http://0.0.0.0:4000/blog/bgp-multipath/",
+        "teaser":null},{
+        "title": "BGP route reflector reflection in picture",
+        "excerpt":"When you have a route reflector, we always have many questions like:     What is a purpose of it?   Which route will it reflect?   What will it do with the update from non-client?   Will it send update to the non-client?       ","categories": ["Blog"],
+        "tags": ["Networking","JUNOS"],
+        "url": "http://0.0.0.0:4000/blog/bgp-rr-update/",
+        "teaser":null},{
+        "title": "The Router I know",
+        "excerpt":"Tried to picturize the router as I know, at least the Juniper router with control and forwarding plane traffic. I have also highlighted the traffic flow and try to show which traffic is known as transit and host traffic. Picture shows one control plane or in Juniper terms its Routing-Engine(RE)...","categories": ["Blog"],
+        "tags": ["Networking","JUNOS"],
+        "url": "http://0.0.0.0:4000/blog/the-router-asiknow/",
         "teaser":null}]
