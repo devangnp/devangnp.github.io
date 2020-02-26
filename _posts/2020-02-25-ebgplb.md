@@ -9,5 +9,6 @@ tags:
 
 ![Ways to EBGP LB](/assets/images/ebgp_lb.jpg)
 
+Previous blog of IGP lb and iBGP multipath [BGP Multipath in Junos - IPv4 routes](https://devangnp.github.io/blog/bgp-multipath/){:target="_blank"}
 
 

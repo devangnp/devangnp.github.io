@@ -181,3 +181,4 @@ As we can see in above output, we have programmed both the PNHs and its IGP/labe
 
 Next post I will cover the multipath with L3VPN routes. 
 
+Ways to EBGP loadbalance [Ways to EBGP loadbalance](https://devangnp.github.io/blog/ebgplb/){:target="_blank"}

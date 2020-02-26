@@ -85,7 +85,7 @@ var store = [{
         "url": "http://0.0.0.0:4000/blog/bgp-rr-update/",
         "teaser":null},{
         "title": "Ways to EBGP loadbalance",
-        "excerpt":"   ","categories": ["Blog"],
+        "excerpt":"   Previous blog of IGP lb and iBGP multipath BGP Multipath in Junos - IPv4 routes   ","categories": ["Blog"],
         "tags": ["Networking","JUNOS"],
         "url": "http://0.0.0.0:4000/blog/ebgplb/",
         "teaser":null},{

@@ -1,10 +1,10 @@
 ---
-title: "Let it snow!"
-last_modified_at: 2016-12-16T00:00:01-05:00
+title: "Ways to EBGP loadbalance"
+last_modified_at: 2020-02-25T00:00:03-05:00
 categories:
   - Blog
 tags:
-  - - Anish
+  - - [Networking, JUNOS]
 ---
 
 Script I used to resolve DNS name to IP.
