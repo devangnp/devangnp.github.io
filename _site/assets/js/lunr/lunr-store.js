@@ -84,6 +84,11 @@ var store = [{
         "tags": ["Networking","JUNOS"],
         "url": "http://0.0.0.0:4000/blog/bgp-rr-update/",
         "teaser":null},{
+        "title": "Ways to EBGP loadbalance",
+        "excerpt":"   ","categories": ["Blog"],
+        "tags": ["Networking","JUNOS"],
+        "url": "http://0.0.0.0:4000/blog/ebgplb/",
+        "teaser":null},{
         "title": "The Router I know",
         "excerpt":"Tried to picturize the router as I know, at least the Juniper router with control and forwarding plane traffic. I have also highlighted the traffic flow and try to show which traffic is known as transit and host traffic. Picture shows one control plane or in Juniper terms its Routing-Engine(RE)...","categories": ["Blog"],
         "tags": ["Networking","JUNOS"],

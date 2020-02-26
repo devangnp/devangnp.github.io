@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2020-02-25T15:54:08-08:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Devang Patel</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>Devang Patel</name></author><entry><title type="html">BGP route reflector reflection in picture</title><link href="http://0.0.0.0:4000/blog/bgp-rr-update/" rel="alternate" type="text/html" title="BGP route reflector reflection in picture" /><published>2020-02-25T00:00:00-08:00</published><updated>2020-02-24T21:00:01-08:00</updated><id>http://0.0.0.0:4000/blog/bgp-rr-update</id><content type="html" xml:base="http://0.0.0.0:4000/blog/bgp-rr-update/">&lt;p&gt;When you have a route reflector, we always have many questions like:&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2020-02-25T16:01:42-08:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Devang Patel</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>Devang Patel</name></author><entry><title type="html">BGP route reflector reflection in picture</title><link href="http://0.0.0.0:4000/blog/bgp-rr-update/" rel="alternate" type="text/html" title="BGP route reflector reflection in picture" /><published>2020-02-25T00:00:00-08:00</published><updated>2020-02-24T21:00:01-08:00</updated><id>http://0.0.0.0:4000/blog/bgp-rr-update</id><content type="html" xml:base="http://0.0.0.0:4000/blog/bgp-rr-update/">&lt;p&gt;When you have a route reflector, we always have many questions like:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;What is a purpose of it?&lt;/li&gt;
   &lt;li&gt;Which route will it reflect?&lt;/li&gt;
@@ -8,7 +8,7 @@
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/RR1.jpg&quot; alt=&quot;Route reflection 1&quot; /&gt;
 &lt;img src=&quot;/assets/images/RR2.jpg&quot; alt=&quot;Route reflection 2&quot; /&gt;
-&lt;img src=&quot;/assets/images/rr3.jpg&quot; alt=&quot;Route reflection 3&quot; /&gt;&lt;/p&gt;</content><author><name>Devang Patel</name></author><category term="Networking" /><category term="JUNOS" /><summary type="html">When you have a route reflector, we always have many questions like: What is a purpose of it? Which route will it reflect? What will it do with the update from non-client? Will it send update to the non-client?</summary></entry><entry><title type="html">The Router I know</title><link href="http://0.0.0.0:4000/blog/the-router-asiknow/" rel="alternate" type="text/html" title="The Router I know" /><published>2020-02-25T00:00:00-08:00</published><updated>2020-02-24T21:00:02-08:00</updated><id>http://0.0.0.0:4000/blog/the-router-asiknow</id><content type="html" xml:base="http://0.0.0.0:4000/blog/the-router-asiknow/">&lt;p&gt;Tried to picturize the router as I know, at least the Juniper router with control and forwarding plane traffic.&lt;/p&gt;
+&lt;img src=&quot;/assets/images/rr3.jpg&quot; alt=&quot;Route reflection 3&quot; /&gt;&lt;/p&gt;</content><author><name>Devang Patel</name></author><category term="Networking" /><category term="JUNOS" /><summary type="html">When you have a route reflector, we always have many questions like: What is a purpose of it? Which route will it reflect? What will it do with the update from non-client? Will it send update to the non-client?</summary></entry><entry><title type="html">Ways to EBGP loadbalance</title><link href="http://0.0.0.0:4000/blog/ebgplb/" rel="alternate" type="text/html" title="Ways to EBGP loadbalance" /><published>2020-02-25T00:00:00-08:00</published><updated>2020-02-24T21:00:03-08:00</updated><id>http://0.0.0.0:4000/blog/ebgplb</id><content type="html" xml:base="http://0.0.0.0:4000/blog/ebgplb/">&lt;p&gt;&lt;img src=&quot;/assets/images/ebgp_lb.jpg&quot; alt=&quot;Ways to EBGP LB&quot; /&gt;&lt;/p&gt;</content><author><name>Devang Patel</name></author><category term="Networking" /><category term="JUNOS" /><summary type="html"></summary></entry><entry><title type="html">The Router I know</title><link href="http://0.0.0.0:4000/blog/the-router-asiknow/" rel="alternate" type="text/html" title="The Router I know" /><published>2020-02-25T00:00:00-08:00</published><updated>2020-02-24T21:00:02-08:00</updated><id>http://0.0.0.0:4000/blog/the-router-asiknow</id><content type="html" xml:base="http://0.0.0.0:4000/blog/the-router-asiknow/">&lt;p&gt;Tried to picturize the router as I know, at least the Juniper router with control and forwarding plane traffic.&lt;/p&gt;
 
 &lt;p&gt;I have also highlighted the traffic flow and try to show which traffic is known as transit and host traffic.&lt;/p&gt;
 
@@ -710,62 +710,4 @@ Is 123 valid IPv6 add?: False
      &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'device'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'r3'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'input'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'303'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'intf'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'et3'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'output'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'313'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Do you have any better idea or way to handle it?&lt;/p&gt;</content><author><name>Devang Patel</name></author><category term="NetOps" /><summary type="html">Documenting the learning on itemgetter and itertools module for network stats analysis.</summary></entry><entry><title type="html">Netmiko SSH connection handling using with statement</title><link href="http://0.0.0.0:4000/blog/ssh-netmiko-cntxmngr/" rel="alternate" type="text/html" title="Netmiko SSH connection handling using with statement" /><published>2020-01-19T00:00:00-08:00</published><updated>2020-01-18T21:00:01-08:00</updated><id>http://0.0.0.0:4000/blog/ssh-netmiko-cntxmngr</id><content type="html" xml:base="http://0.0.0.0:4000/blog/ssh-netmiko-cntxmngr/">&lt;p&gt;While working on Python program to connect to multiple lab devices and capture data, I faced the issue (due to bug in my program) where router was rejecting SSH connection request.&lt;/p&gt;
-
-&lt;p&gt;As one might have guessed, it was issue due to the number of SSH connection limit reached! Upon investigation, I saw so many user logins were left stale on router due to my experiment of writing script and testing it again and again.&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;lab@R1&amp;gt; show system users  
-lab  pts/15   10.0.0.132                    8:39AM     23 -cl           
-lab  pts/16   10.0.0.132                    8:42AM     20 -cl           
-lab  pts/17   10.0.0.132                    8:43AM     19 -cl           
-lab  pts/18   10.0.0.132                    8:45AM     17 -cl           
-lab  pts/19   10.0.0.132                    8:47AM     16 -cl           
-lab  pts/20   10.0.0.132                    8:48AM     15 -cl           
-lab  pts/21   10.0.0.132                    8:48AM     14 -cl           
-lab  pts/22   10.0.0.132                    8:49AM     13 -cl           
-lab  pts/23   10.0.0.132                    8:50AM     12 -cl           
-lab  pts/24   10.0.0.132                    8:53AM      9 -cl           
-lab  pts/25   10.0.0.132                    8:55AM      7 -cl           
-lab  pts/26   10.0.0.132                    8:56AM      6 -cl           
-lab  pts/27   10.0.0.132                    8:57AM      5 -cl           
-lab  pts/28   10.0.0.132                    8:58AM      4 -cl           
-lab  pts/29   10.0.0.132                    9:01AM      1 -cl
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Good part is, it was easy to isolate and identify this problem.&lt;/p&gt;
-
-&lt;p&gt;In script, I was doing opening connection, capturing data and script just ends with out closing the connections.&lt;/p&gt;
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; 
-   &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;     &lt;span class=&quot;n&quot;&gt;ssh_conn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ConnectHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
-   &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;      
-   &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; 
-   &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
-   &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;                      
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Adding simple statement to disconnect the session resolved the issue. However I started looking at how to handle it better.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;24&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ssh_conn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;disconnect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;I ended up with following way to manage it better. Using context manager, it will open connection and once we are done with data collection, it will automatically close or disconnect the connection as well.&lt;/p&gt;
-
-&lt;p&gt;Disadvantage is that we have to execute the command capture code inside the with context manager or you can use earlier mentioned mathod and just close the session at the end once you are done capturing command.&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;In [25]: try: 
-    ...:     with ConnectHandler(**R1) as ssh_conn: 
-    ...:         output = ssh_conn.send_command('show rsvp interface') 
-    ...:         import time 
-    ...:         time.sleep(10) 
-    ...: except Exception as err: 
-    ...:     print(err) 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Router logs:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Jan 19 17:17:59  R1 mgd[15886]: UI_LOGIN_EVENT: User 'lab' login, class 'j-super-user' [15886], ssh-connection '10.0.0.132 57238 10.0.0.1 22', client-mode 'cli'   &amp;lt;&amp;lt;&amp;lt; opening ssh connection
-Jan 19 17:18:03  R1 mgd[15886]: UI_CMDLINE_READ_LINE: User 'lab', command 'set cli screen-length 0 '
-Jan 19 17:18:03  R1 mgd[15886]: UI_CMDLINE_READ_LINE: User 'lab', command 'set cli screen-width 511 '
-Jan 19 17:18:04  R1 mgd[15886]: UI_CMDLINE_READ_LINE: User 'lab', command 'show rsvp interface '  &amp;lt;&amp;lt;&amp;lt; collecting the data
-Jan 19 17:18:14  R1 mgd[15886]: UI_LOGOUT_EVENT: User 'lab' logout   &amp;lt;&amp;lt;&amp;lt; closing connection
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Do you have any better idea or way to handle it?&lt;/p&gt;</content><author><name>Devang Patel</name></author><category term="NetOps" /><summary type="html">While working on Python program to connect to multiple lab devices and capture data, I faced the issue (due to bug in my program) where router was rejecting SSH connection request.</summary></entry></feed>
+&lt;p&gt;Do you have any better idea or way to handle it?&lt;/p&gt;</content><author><name>Devang Patel</name></author><category term="NetOps" /><summary type="html">Documenting the learning on itemgetter and itertools module for network stats analysis.</summary></entry></feed>
