@@ -166,4 +166,8 @@ Out[34]:
  ('using', 1),
  ('best', 1)]
 ```
-
+If you want to sort the words based on the alphabetical order then you can use ```count_word[0]``` with tuple element location 0 with out reverse keyword on sorted function. 
+```python
+In [4]: sorted(count_words.items(), key=lambda count_words: count_words[0])                                                                           
+Out[4]: [('is', 1), ('the', 7)]
+```
