@@ -63,20 +63,21 @@ Out[49]: collections.Counter
 ### We took care of data cleaning, conversion and formating, now  its time to play around with few resulting tasks:
 
 ### How can I list top 5 talkers?
-	- We can use the Counter with most_common keyword with argument to list the top N talkers. 
+We can use the Counter with most_common keyword with argument to list the top N talkers. 
 ```python
 In [37]: Counter(mytext_words).most_common(5)                                                                                                         
 Out[37]: [('the', 7), ('to', 5), ('anycast', 5), ('will', 5), ('or', 5)]
 ```
 
 ### How many times a specific word showed up in the text?
-	- Few list method we can use to report how many time a specific word showed up:
+Few list method we can use to report how many time a specific word showed up:
+
 ```python
 In [40]: mytext_words.count('anycast')                                                                                                                
 Out[40]: 5
 ```
 ### How many total words are there in the text?
-	- Once we have build the list of words, we can use len function to find out the total number of words text has.
+Once we have build the list of words, we can use len function to find out the total number of words text has.
 ```python
 In [41]: len(mytext_words)                                                                                                                            
 Out[41]: 123
