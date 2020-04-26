@@ -70,21 +70,26 @@ Out[37]: [('the', 7), ('to', 5), ('anycast', 5), ('will', 5), ('or', 5)]
 ```
 
 ### How many times a specific word showed up in the text?
-Few list method we can use to report how many time a specific word showed up:
-
+Few list method we can use to report how many time a specific word showed up, here I want to see how many time word 'anycast' showed up in the text:
 ```python
 In [40]: mytext_words.count('anycast')                                                                                                                
 Out[40]: 5
 ```
 ### How many total words are there in the text?
-Once we have build the list of words, we can use len function to find out the total number of words text has.
+Once we have build the list of words, we can use ```len``` to find out the total number of words text has:
 ```python
 In [41]: len(mytext_words)                                                                                                                            
 Out[41]: 123
 ```
 
 ### How can I list all the words based on their count in descending order? 
+Note the usage of ```reverse``` keyword in sorted method. In ```count_words[1]```, 1 specifies the index of tuple item to be used as key by sorted function. Here we are looking to list the words which are appeared most based on the count, hence we are using the count element of the tuple.
+
+
+
 ```python
+In [3]: count_words.items()                                                                                                                           
+Out[3]: dict_items([('the', 7)])
 
 In [34]: sorted(count_words.items(), key=lambda count_words: count_words[1], reverse = True)                                                          
 Out[34]: 
