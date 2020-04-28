@@ -284,7 +284,7 @@ The interesting observation is about the __```224.0.0.2,*```__ entry, I can see 
 
 Flow detective device can work mechanically and push such update, however we can take an extra precaution to safeguard and block such updates on router itself and the policy we used ```my_flowspec_policy``` will come to rescue. 
 
-#### Safeguarding the from 224.0.0.2 perspective:
+#### Safeguarding the router from 224.0.0.2 perspective:
 In the lab we will insert one more term to reject the ```224.0.0.2``` in flowspec update:
 ```
 lab@r1-re0# show policy-options policy-statement my_flowspec_policy 
