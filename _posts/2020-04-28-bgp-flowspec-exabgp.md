@@ -241,7 +241,7 @@ inetflow.0: 4 destinations, 4 routes (3 active, 0 holddown, 1 hidden)
                 Via: 0.0.0.0/0, Active
                 Localpref: 100
                 Router ID: 1.1.102.1
-                Hidden reason: Flow-route fails validation
+                Hidden reason: Flow-route fails validation   <<<<<<<<<<
 ```				
 Here is the policy configuration which is blocking the ```172.16.2.1``` prefix.
 ```
