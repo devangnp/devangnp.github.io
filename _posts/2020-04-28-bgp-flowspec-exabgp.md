@@ -12,7 +12,7 @@ Recently I worked on the scenario where the specific protocol on multiple router
 - Is there some kind of DDOS to congest specific host bound queue?
 - Is there a unknown TLV or update specific protocol receiving and advertising it to all neighbor before its going down?
 
-One more scenario that I learn during this troubleshooting was related to flowspec was detecting the attack and generating the flowspec filter related to 224.0.0.2 address which was causing the protocol to flap, after some time monitoring device will no longer consider it as a attacking traffic and it will remove the programing flowspec filter and protocol adjacency would come back up. 
+One more scenario that I learn during this troubleshooting was related to flowspec was detecting the attack and generating the flowspec filter related to ```224.0.0.2``` address which was causing the protocol to flap, after some time monitoring device will no longer consider it as a attacking traffic and it will remove the programing flowspec filter and protocol adjacency would come back up. 
 
 Learning based on this debugging is to be more careful what you generate and send as flowspec filter and safeguard the router as well to avoid programing such route. 
 
@@ -89,7 +89,7 @@ root@ubuntu:~/exabgp# exabgp ./conf3.ini
 ```
 Router configuration to establish the BGP with exabgp:
 ```
-labroot@lisbon-re0# show protocols bgp group server                       
+lab@r1-re0# show protocols bgp group server                       
 neighbor 1.1.102.1 {
     family inet {
         unicast;
@@ -102,15 +102,15 @@ neighbor 1.1.102.1 {
 ```
 In configuration we see the policy ```my_flowspec_policy``` and we will talk about it later. Let’s first verify the BGP neighbor state and route status on the router. 
 
-BGP is up and running. Note the special table inetflow.0 is created and populated with routes, we are receiving total of 4 routes, out of 4 we have 3 active routes:
+BGP is up and running. Note the special table ```inetflow.0``` is created and populated with routes, we are receiving total of 4 routes, out of 4 we have 3 active routes:
 ```
-labroot@lisbon-re0# run show bgp summary 
+lab@r1-re0# run show bgp summary 
 ...
 1.1.102.1               200         68         64       0      23        2:51 Establ
   inet.0: 3/3/3/0
   inetflow.0: 3/4/3/0
 
-labroot@lisbon-re0# run show bgp neighbor 1.1.102.1 | match NLRI            
+lab@r1-re0# run show bgp neighbor 1.1.102.1 | match NLRI            
   NLRI inet-flow: No-validate [ everything ] 
   NLRI for restart configured on peer: inet-unicast inet-flow
   NLRI advertised by peer: inet-unicast inet-multicast inet-vpn-unicast inet6-unicast inet6-multicast l2vpn inet-labeled-unicast inet6-labeled-unicast inet6-vpn-unicast route-target inet-flow inet-vpn-flow inet6-flow inet6-vpn-flow evpn te-unicast
@@ -119,7 +119,7 @@ labroot@lisbon-re0# run show bgp neighbor 1.1.102.1 | match NLRI
 
 Routes we received from ExaBGP server:
 ```  
-labroot@lisbon-re0# run show route receive-protocol bgp 1.1.102.1   
+lab@r1-re0# run show route receive-protocol bgp 1.1.102.1   
 
 inetflow.0: 4 destinations, 4 routes (3 active, 0 holddown, 1 hidden)
   Prefix                  Nexthop              MED     Lclpref    AS path
@@ -130,7 +130,7 @@ inetflow.0: 4 destinations, 4 routes (3 active, 0 holddown, 1 hidden)
   *,172.16.1.1/term:3                
 *                                                                 200 I
 
-labroot@lisbon-re0# run show route receive-protocol bgp 1.1.102.1 extensive 
+lab@r1-re0# run show route receive-protocol bgp 1.1.102.1 extensive 
 inetflow.0: 4 destinations, 4 routes (3 active, 0 holddown, 1 hidden)
 
 * 172.16.4.1,172.16.3.1,proto=6/term:1 (1 entry, 1 announced)
@@ -153,7 +153,7 @@ inetflow.0: 4 destinations, 4 routes (3 active, 0 holddown, 1 hidden)
 ```	 
 Let's verify the routes in the routing table:
 ```	 
-labroot@lisbon-re0# run show route table inetflow.0 extensive 
+lab@r1-re0# run show route table inetflow.0 extensive 
 
 inetflow.0: 4 destinations, 4 routes (3 active, 0 holddown, 1 hidden)
 172.16.4.1,172.16.3.1,proto=6/term:1 (1 entry, 1 announced)
@@ -221,7 +221,7 @@ Action(s): discard,count
 ```
 There is one hidden route as well and that is due to the policy that we have created. 
 ```
-labroot@lisbon-re0# run show route table inetflow.0 extensive hidden 
+lab@r1-re0# run show route table inetflow.0 extensive hidden 
 
 inetflow.0: 4 destinations, 4 routes (3 active, 0 holddown, 1 hidden)
 172.16.2.1,*/term:N/A (1 entry, 0 announced)
@@ -243,9 +243,9 @@ inetflow.0: 4 destinations, 4 routes (3 active, 0 holddown, 1 hidden)
                 Router ID: 1.1.102.1
                 Hidden reason: Flow-route fails validation
 ```				
-Here is the policy configuration which is blocking the 172.16.2.1 prefix.
+Here is the policy configuration which is blocking the ```172.16.2.1``` prefix.
 ```
-labroot@lisbon-re0# show policy-options policy-statement my_flowspec_policy 
+lab@r1-re0# show policy-options policy-statement my_flowspec_policy 
 term 1 {
     from {
         route-filter 172.16.2.1/32 exact;
@@ -259,7 +259,7 @@ term 2 {
 
 With all above, our flowspec filter is programming looks like this:
 ```
-labroot@lisbon-re0# run show firewall filter __flowspec_default_inet__ 
+lab@r1-re0# run show firewall filter __flowspec_default_inet__ 
 
 Filter: __flowspec_default_inet__                              
 Counters:
@@ -269,7 +269,7 @@ Name                                                Bytes              Packets
 224.0.0.2,*                                          2590                   37
 
 
-labroot@lisbon-re0# run show firewall filter __flowspec_default_inet__    
+lab@r1-re0# run show firewall filter __flowspec_default_inet__    
 
 Filter: __flowspec_default_inet__                              
 Counters:
@@ -278,7 +278,7 @@ Name                                                Bytes              Packets
 172.16.4.1,172.16.3.1,proto=6                           0                    0
 224.0.0.2,*                                          2660                   38				
 ```
-In above output, you can see we have programmed the three combination to drop various kind of traffic and 172.16.2.1 is not program as filter term due to the policy which is blocking. 
+In above output, you can see we have programmed the three combination to drop various kind of traffic and ```172.16.2.1``` is not program as filter term due to the policy which is blocking. 
 
 The interesting observation is about the ```224.0.0.2,*``` entry, I can see the counter is incrementing. ```224.0.0.2``` is reserved address for all router multicast address and used by many protocol to send the keep alive so if I advertise the flowspec route to block that address, some of the control protocol traffic will be drop and adjacency will time out so we need to be very careful.
 
@@ -286,7 +286,7 @@ Flow detective device can work mechanically and push such update, however we can
 
 In the lab we will insert one more term to reject the ```224.0.0.2``` in flowspec update:
 ```
-labroot@lisbon-re0# show policy-options policy-statement my_flowspec_policy 
+lab@r1-re0# show policy-options policy-statement my_flowspec_policy 
 term 1 {
     from {
         route-filter 172.16.2.1/32 exact;
@@ -306,7 +306,7 @@ term 3 {
 After modifying the policy, we can see that we are not installing the ```224.0.0.2``` flowspec route in ```inetflow.0``` table as well as we are not programing the term in flowspec filter. 
 ```
 [edit]
-labroot@lisbon-re0# run show route table inetflow.0                            
+lab@r1-re0# run show route table inetflow.0                            
 
 inetflow.0: 4 destinations, 4 routes (2 active, 0 holddown, 2 hidden)
 + = Active Route, - = Last Active, * = Both
@@ -321,7 +321,7 @@ inetflow.0: 4 destinations, 4 routes (2 active, 0 holddown, 2 hidden)
                       Fictitious
 
 [edit]
-labroot@lisbon-re0# run show firewall filter __flowspec_default_inet__ 
+lab@r1-re0# run show firewall filter __flowspec_default_inet__ 
 
 Filter: __flowspec_default_inet__                              
 Counters:
