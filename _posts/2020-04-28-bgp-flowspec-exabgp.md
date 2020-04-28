@@ -280,10 +280,11 @@ Name                                                Bytes              Packets
 ```
 In above output, you can see we have programmed the three combination to drop various kind of traffic and ```172.16.2.1``` is not program as filter term due to the policy which is blocking. 
 
-The interesting observation is about the ```224.0.0.2,*``` entry, I can see the counter is incrementing. ```224.0.0.2``` is reserved address for all router multicast address and used by many protocol to send the keep alive so if I advertise the flowspec route to block that address, some of the control protocol traffic will be drop and adjacency will time out so we need to be very careful.
+The interesting observation is about the __```224.0.0.2,*```__ entry, I can see the counter is incrementing. ```224.0.0.2``` is reserved address for all router multicast address and used by many protocol to send the keep alive so if I advertise the flowspec route to block that address, some of the control protocol traffic will be drop and adjacency will time out so we need to be very careful.
 
 Flow detective device can work mechanically and push such update, however we can take an extra precaution to safeguard and block such updates on router itself and the policy we used ```my_flowspec_policy``` will come to rescue. 
 
+#### Safeguarding the from 224.0.0.2 perspective:
 In the lab we will insert one more term to reject the ```224.0.0.2``` in flowspec update:
 ```
 lab@r1-re0# show policy-options policy-statement my_flowspec_policy 
