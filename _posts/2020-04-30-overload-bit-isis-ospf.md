@@ -302,7 +302,7 @@ root@r2>
 
 In my topology, I have enabled the redundant links so that LSP can reroute to next available path.
 
-For easy reference, displaying the topology again. 
+For easy reference, displaying the topology again and enabling the all the links so that we can have redundant paths in topology for LSP to reroute.  
 ![Lab Topology](/assets/images/2020-04-30-overload-bit.jpg)
 
 In steady state, I have LSP riding from R2 to R3 to R4 to R6, the blue path in topology is primary path. Second best path we have is R2 to R3 to R5 to R6, the green path in topology is backup path. 
