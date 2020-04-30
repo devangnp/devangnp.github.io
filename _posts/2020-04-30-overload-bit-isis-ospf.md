@@ -196,7 +196,7 @@ Apr 29 09:35:31
 inet.0: 28 destinations, 28 routes (28 active, 0 holddown, 0 hidden)
 + = Active Route, - = Last Active, * = Both
 
-192.168.1.6/32     *[IS-IS/18] 00:00:06, metric 16777244   <<<<<
+192.168.1.6/32     *[IS-IS/18] 00:00:06, metric 16777244   <<<<< route programmed with max metric
                     > to 1.1.23.2 via ge-0/0/1.23
 
 inet.3: 4 destinations, 4 routes (4 active, 0 holddown, 0 hidden)
@@ -206,7 +206,7 @@ inet.3: 4 destinations, 4 routes (4 active, 0 holddown, 0 hidden)
                     > to 1.1.23.2 via ge-0/0/1.23, Push 52
 ```					
 
-Traceroute or ping to R6 from R2 will be sucessful:					
+Traceroute or ping to R6 from R2 will be sucessful and showing the path R2 to R3 to R4 to R5 to R6:					
 ```					
 root@r2# run traceroute 192.168.1.6                   
 traceroute to 192.168.1.6 (192.168.1.6), 30 hops max, 52 byte packets
@@ -241,7 +241,7 @@ Ingress LSP: 1 sessions
     Flap Count: 0
     MBB Count: 0
     Computed ERO (S [L] denotes strict [loose] hops): (CSPF metric: 16777244)
- 1.1.23.2 S 1.1.34.2 S 1.1.45.2 S 1.1.56.2 S 
+ 1.1.23.2 S 1.1.34.2 S 1.1.45.2 S 1.1.56.2 S  <<<<< ERO shows R2 to R3 to R4 to R6
     Received RRO (ProtectionFlag 1=Available 2=InUse 4=B/W 8=Node 10=SoftPreempt 20=Node-ID):
           192.168.1.3(flag=0x20) 1.1.23.2(Label=50) 192.168.1.4(flag=0x20) 1.1.34.2(Label=33) 192.168.1.5(flag=0x20) 1.1.45.2(Label=65) 192.168.1.6(flag=0x20) 1.1.56.2(Label=3)
     6 Apr 29 09:33:51.113 CSPF: computation result ignored, new path no benefit[2 times]
@@ -273,7 +273,7 @@ Possible completions:
 Let's look at the OSPF database on R2:
 ```
 root@r2> show ospf database extensive | match metric | match 65535 
-    Topology count: 0, Default metric: 65535   <<<<<
+    Topology count: 0, Default metric: 65535   <<<<< OSPF Max metric
     Topology count: 0, Default metric: 65535   <<<<<
     Topology count: 0, Default metric: 65535   <<<<<
     Topology count: 0, Default metric: 65535   <<<<<
