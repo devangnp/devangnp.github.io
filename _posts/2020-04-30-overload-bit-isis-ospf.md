@@ -1,5 +1,5 @@
 ---
-title: "Overload bit OSPF and ISIS"
+title: "Overload bit in OSPF and ISIS and behavior on LSPs"
 last_modified_at: 2020-04-30T00:00:03-05:00
 categories:
   - Blog
@@ -361,7 +361,7 @@ Apr 29 10:50:50
 commit complete
 ```
 
-Verify if ISIS database on R2 is reflected with the olverload bit:
+Verify if ISIS database on R2 is reflected with the overload bit:
 ```
 [edit]
 root@r2# run show isis database extensive r4.00-00    
@@ -569,4 +569,3 @@ Possible completions:
 ### In summary:
 - with only overload bit in ISIS, route will go away and LSP will optimize right away or will go down if no alternate path available.
 - Overload bit in OSPF is same as overload bit with ```advertise-high-metrics``` where links are advertise with 16777214 in ISIS and 65535 in OSPF. Since both the metric is still a valid metric, routes via overloaded nodes will be reflected with higher metric and LSPs will need manual optimization on headend to move them away from the overloaded node. 
-   
