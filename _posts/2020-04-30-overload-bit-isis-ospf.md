@@ -17,6 +17,8 @@ We are going to use this topology:
 
 ![Lab Topology](/assets/images/2020-04-30-overload-bit.jpg)
 
+I have highlighted the important data or fields in the router show output with ```<<<<<```.
+
 For the first test, I have disabled few links in the topology so that the only path to reach R6 from R2 is R2 to R3 to R4 to R5 to R6. 
 
 I will start with the ISIS protocol first.
@@ -254,7 +256,7 @@ Total 1 displayed, Up 1, Down 0
 
 ### OSPF
 
-In OSPF there is no concept of overload bit but higher metric is implemented so functionality of it would be same as ISIS ```advertise-high-metrics``` scenario. 
+In OSPF there is no concept of overload bit but higher metric is implemented so functionality of it would be same as ISIS ```advertise-high-metrics``` scenario. As we can see the OSPF database is populated with max metric of 65535.
 ```  
 root@r4# set protocols ospf overload ?     
 Possible completions:
@@ -305,7 +307,7 @@ In my topology, I have enabled the redundant links so that LSP can reroute to ne
 For easy reference, displaying the topology again and enabling the all the links so that we can have redundant paths in topology for LSP to reroute.  
 ![Lab Topology](/assets/images/2020-04-30-overload-bit.jpg)
 
-In steady state, I have LSP riding from R2 to R3 to R4 to R6, the blue path in topology is primary path. Second best path we have is R2 to R3 to R5 to R6, the green path in topology is backup path. 
+In steady state, I have LSP riding from R2 to R3 to R4 to R6 as shown in ERO, the blue path in topology is primary path. Second best path we have is R2 to R3 to R5 to R6, the green path in topology is backup path. 
 
 ```
 [edit]
@@ -328,7 +330,7 @@ Ingress LSP: 1 sessions
     Flap Count: 0
     MBB Count: 0
     Computed ERO (S [L] denotes strict [loose] hops): (CSPF metric: 30)
- 1.1.23.2 S 1.1.34.2 S 1.1.46.2 S 
+ 1.1.23.2 S 1.1.34.2 S 1.1.46.2 S <<<<< ERO shows R2 to R3 to R4 to R6
     Received RRO (ProtectionFlag 1=Available 2=InUse 4=B/W 8=Node 10=SoftPreempt 20=Node-ID):
           192.168.1.3(flag=0x29) 1.1.23.2(flag=9 Label=57) 192.168.1.4(flag=0x21) 1.1.34.2(flag=1 Label=38) 192.168.1.6(flag=0x20) 1.1.46.2(Label=3)
     8 Apr 29 10:49:45.970 Record Route:  192.168.1.3(flag=0x29) 1.1.23.2(flag=9 Label=57) 192.168.1.4(flag=0x21) 1.1.34.2(flag=1 Label=38) 192.168.1.6(flag=0x20) 1.1.46.2(Label=3)
@@ -373,7 +375,7 @@ IS-IS level 2 link-state database:
 r4.00-00 Sequence: 0x8c9, Checksum: 0x4450, Lifetime: 1184 secs
 ...
   Packet: LSP ID: r4.00-00, Length: 397 bytes, Lifetime : 1196 secs
-    Checksum: 0x4450, Sequence: 0x8c9, Attributes: 0x7 <L1 L2 Overload>   <<<<<
+    Checksum: 0x4450, Sequence: 0x8c9, Attributes: 0x7 <L1 L2 Overload>   <<<<< OVERLOAD bit set 
     NLPID: 0x83, Fixed length: 27 bytes, Version: 1, Sysid length: 0 bytes
     Packet type: 20, Packet version: 1, Max area: 0
 ```
@@ -402,7 +404,7 @@ Ingress LSP: 1 sessions
     Flap Count: 0
     MBB Count: 1
     Computed ERO (S [L] denotes strict [loose] hops): (CSPF metric: 30)
- 1.1.23.2 S 1.1.35.2 S 1.1.56.2 S 
+ 1.1.23.2 S 1.1.35.2 S 1.1.56.2 S  <<<<< ERO shows R2 to R3 to R5 to R6
     Received RRO (ProtectionFlag 1=Available 2=InUse 4=B/W 8=Node 10=SoftPreempt 20=Node-ID):
           192.168.1.3(flag=0x29) 1.1.23.2(flag=9 Label=58) 192.168.1.5(flag=0x21) 1.1.35.2(flag=1 Label=74) 192.168.1.6(flag=0x20) 1.1.56.2(Label=3)
    16 Apr 29 10:50:53.030 Make-before-break: Switched to new instance
@@ -431,7 +433,7 @@ Transit LSP: 0 sessions
 Total 0 displayed, Up 0, Down 0
 ```
 
-In above output we can see the r2-to-r6 LSP is rerouted immediately from R4 to R5, there wasn't any need of manual clear or aggressive-optimize-aggressive. 
+In above output we can see in the LSP ERO the r2-to-r6 LSP is rerouted immediately from R4 to R5, there wasn't any need of manual clear or aggressive-optimize-aggressive. 
 
 However in case of overload with ```advertise-high-metrics``` in ISIS or overload in OPSF will need the manual optimize-aggressive or need configuration of optimize-aggressive under MPLS on all ingress node. 
 
@@ -457,7 +459,7 @@ Ingress LSP: 1 sessions
     Flap Count: 2
     MBB Count: 0
     Computed ERO (S [L] denotes strict [loose] hops): (CSPF metric: 30)
- 1.1.23.2 S 1.1.34.2 S 1.1.46.2 S 
+ 1.1.23.2 S 1.1.34.2 S 1.1.46.2 S   <<<<< ERO shows R2 to R3 to R4 to R6
     Received RRO (ProtectionFlag 1=Available 2=InUse 4=B/W 8=Node 10=SoftPreempt 20=Node-ID):
           192.168.1.3(flag=0x29) 1.1.23.2(flag=9 Label=61) 192.168.1.4(flag=0x21) 1.1.34.2(flag=1 Label=39) 192.168.1.6(flag=0x20) 1.1.46.2(Label=3)
    25 Apr 29 10:52:52.975 Record Route:  192.168.1.3(flag=0x29) 1.1.23.2(flag=9 Label=61) 192.168.1.4(flag=0x21) 1.1.34.2(flag=1 Label=39) 192.168.1.6(flag=0x20) 1.1.46.2(Label=3)
@@ -472,11 +474,11 @@ IS-IS level 1 link-state database:
 IS-IS level 2 link-state database:
 
 r4.00-00 Sequence: 0x8cb, Checksum: 0x11a6, Lifetime: 1182 secs
-   IS neighbor: r4.02                         Metric: 16777214
+   IS neighbor: r4.02                         Metric: 16777214   <<<<<
      Two-way fragment: r4.02-00, Two-way first fragment: r4.02-00
-   IS neighbor: r4.03                         Metric: 16777214
+   IS neighbor: r4.03                         Metric: 16777214   <<<<<
      Two-way fragment: r4.03-00, Two-way first fragment: r4.03-00
-   IS neighbor: r3.02                         Metric: 16777214
+   IS neighbor: r3.02                         Metric: 16777214   <<<<<
      Two-way fragment: r3.02-00, Two-way first fragment: r3.02-00
    IP prefix: 1.1.24.0/24                     Metric:       10 Internal Up
    IP prefix: 1.1.34.0/24                     Metric:       10 Internal Up
@@ -507,13 +509,13 @@ Ingress LSP: 1 sessions
   ActivePath:  (primary)
   ...
     Computed ERO (S [L] denotes strict [loose] hops): (CSPF metric: 30)
- 1.1.23.2 S 1.1.34.2 S 1.1.46.2 S 
+ 1.1.23.2 S 1.1.34.2 S 1.1.46.2 S    <<<<< ERO shows R2 to R3 to R4 to R6
     Received RRO (ProtectionFlag 1=Available 2=InUse 4=B/W 8=Node 10=SoftPreempt 20=Node-ID):
           192.168.1.3(flag=0x29) 1.1.23.2(flag=9 Label=61) 192.168.1.4(flag=0x21) 1.1.34.2(flag=1 Label=39) 192.168.1.6(flag=0x20) 1.1.46.2(Label=3)
    25 Apr 29 10:52:52.975 Record Route:  192.168.1.3(flag=0x29) 1.1.23.2(flag=9 Label=61) 192.168.1.4(flag=0x21) 1.1.34.2(flag=1 Label=39) 192.168.1.6(flag=0x20) 1.1.46.2(Label=3)
 ```
 
-As we can see above, even after the database is updated with the higher metric, LSP is still riding on the old path via R4. We need to optimize manually using ```optimize-aggressive```.
+As we can see above in MPLS LSP ERO, even after the database is updated with the higher metric, LSP is still riding on the old path via R4. We need to optimize manually using ```optimize-aggressive```.
 ```   
 root@r2# run clear mpls lsp optimize-aggressive all 
 Apr 29 10:54:17
@@ -541,7 +543,7 @@ Ingress LSP: 1 sessions
     Flap Count: 2
     MBB Count: 1
     Computed ERO (S [L] denotes strict [loose] hops): (CSPF metric: 30)
- 1.1.23.2 S 1.1.35.2 S 1.1.56.2 S 
+ 1.1.23.2 S 1.1.35.2 S 1.1.56.2 S    <<<<< ERO shows R2 to R3 to R5 to R6 
     Received RRO (ProtectionFlag 1=Available 2=InUse 4=B/W 8=Node 10=SoftPreempt 20=Node-ID):
           192.168.1.3(flag=0x29) 1.1.23.2(flag=9 Label=62) 192.168.1.5(flag=0x21) 1.1.35.2(flag=1 Label=77) 192.168.1.6(flag=0x20) 1.1.56.2(Label=3)
    33 Apr 29 10:54:19.179 Make-before-break: Switched to new instance
