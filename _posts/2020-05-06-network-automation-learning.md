@@ -43,3 +43,5 @@ Looking at me learning, my few colleagues also were asking me the same question 
 - Nornir
 - SaltStack
 
+#### Next journey to create the web page to display nicely: 
+- How can I integrate the Flask with Python tool I have built?
