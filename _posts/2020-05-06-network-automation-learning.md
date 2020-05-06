@@ -7,7 +7,9 @@ tags:
   - - [NetOps]
 ---
 
-I had trouble identifying, where to start with my automation journey being network engineer who spend most of the time on routers and network debugging, lab replication etc. Looking at me learning, my few colleagues also were asking me the same question so I thought of documenting this blog post which is more of the questions or task one should start with.
+I had trouble identifying where to start with my automation journey being network engineer who spend most of the time on routers, network debugging, lab replication etc. 
+
+Looking at me learning, my few colleagues also were asking me the same question so I thought of documenting this blog post which is more of the questions or task one should start with.
 
 #### Let's start with Python and explore: 
 - Pick your favorite networking vendor
