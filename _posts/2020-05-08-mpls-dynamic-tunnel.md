@@ -164,7 +164,7 @@ Ingress RSVP: 2 sessions
 192.168.1.6
   From: 192.168.1.2, LSPstate: Up, ActiveRoute: 0
   LSPname: 192.168.1.6:dt-rsvp-my-dynamic-tunnel, LSPpath: Primary
-  LSPtype: Dynamic Configured    <<<<<
+  LSPtype: Dynamic Configured    <<<<< indicates dynamically configured
   Suggested label received: -, Suggested label sent: -
   Recovery label received: -, Recovery label sent: 16867
   Resv style: 1 SE, Label in: -, Label out: 16867
@@ -185,7 +185,7 @@ Ingress RSVP: 2 sessions
 192.168.1.6
   From: 192.168.1.2, LSPstate: Up, ActiveRoute: 0
   LSPname: 192.168.1.6:dt-rsvp-my-dynamic-tunnel1, LSPpath: Primary
-  LSPtype: Dynamic Configured    <<<<<
+  LSPtype: Dynamic Configured    <<<<< indicates dynamically configured
   Suggested label received: -, Suggested label sent: -
   Recovery label received: -, Recovery label sent: 16868
   Resv style: 1 SE, Label in: -, Label out: 16868
@@ -212,7 +212,7 @@ Ingress LSP: 2 sessions
 192.168.1.6
   From: 192.168.1.2, State: Up, ActiveRoute: 0, LSPname: 192.168.1.6:dt-rsvp-my-dynamic-tunnel
   ActivePath:  (primary)
-  LSPtype: Dynamic Configured, Penultimate hop popping
+  LSPtype: Dynamic Configured, Penultimate hop popping    <<<<< indicates dynamically configured
   LoadBalance: Random
   Follow destination IGP metric
   Encoding type: Packet, Switching type: Packet, GPID: IPv4
@@ -246,7 +246,7 @@ Ingress LSP: 2 sessions
 192.168.1.6
   From: 192.168.1.2, State: Up, ActiveRoute: 0, LSPname: 192.168.1.6:dt-rsvp-my-dynamic-tunnel1
   ActivePath:  (primary)
-  LSPtype: Dynamic Configured, Penultimate hop popping
+  LSPtype: Dynamic Configured, Penultimate hop popping    <<<<< indicates dynamically configured
   LoadBalance: Random
   Follow destination IGP metric
   Encoding type: Packet, Switching type: Packet, GPID: IPv4
