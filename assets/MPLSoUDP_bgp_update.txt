@@ -1,0 +1,219 @@
+No.     Time           Time Diff                     Source                Destination           Protocol Length Info
+      1 0.000000       2020-05-11 21:49:46.000000    192.168.1.2           192.168.1.6           BGP      254    UPDATE Message
+
+Frame 1: 254 bytes on wire (2032 bits), 254 bytes captured (2032 bits)
+    Encapsulation type: Ethernet (1)
+    Arrival Time: May 11, 2020 17:49:46.000000000 Eastern Daylight Time
+    [Time shift for this packet: 0.000000000 seconds]
+    Epoch Time: 1589233786.000000000 seconds
+    [Time delta from previous captured frame: 0.000000000 seconds]
+    [Time delta from previous displayed frame: 0.000000000 seconds]
+    [Time since reference or first frame: 0.000000000 seconds]
+    Frame Number: 1
+    Frame Length: 254 bytes (2032 bits)
+    Capture Length: 254 bytes (2032 bits)
+    [Frame is marked: False]
+    [Frame is ignored: False]
+    [Protocols in frame: eth:ethertype:vlan:ethertype:ip:tcp:bgp]
+    [Coloring Rule Name: Routing]
+    [Coloring Rule String: hsrp || eigrp || ospf || bgp || cdp || vrrp || carp || gvrp || igmp || ismp]
+Ethernet II, Src: 56:68:a3:1e:28:f7 (56:68:a3:1e:28:f7), Dst: 56:68:a3:1e:0e:24 (56:68:a3:1e:0e:24)
+    Destination: 56:68:a3:1e:0e:24 (56:68:a3:1e:0e:24)
+        Address: 56:68:a3:1e:0e:24 (56:68:a3:1e:0e:24)
+        .... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Source: 56:68:a3:1e:28:f7 (56:68:a3:1e:28:f7)
+        Address: 56:68:a3:1e:28:f7 (56:68:a3:1e:28:f7)
+        .... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+    Type: 802.1Q Virtual LAN (0x8100)
+802.1Q Virtual LAN, PRI: 0, DEI: 0, ID: 46
+    000. .... .... .... = Priority: Best Effort (default) (0)
+    ...0 .... .... .... = DEI: Ineligible
+    .... 0000 0010 1110 = ID: 46
+    Type: IPv4 (0x0800)
+Internet Protocol Version 4, Src: 192.168.1.2, Dst: 192.168.1.6
+    0100 .... = Version: 4
+    .... 0101 = Header Length: 20 bytes (5)
+    Differentiated Services Field: 0xc0 (DSCP: CS6, ECN: Not-ECT)
+        1100 00.. = Differentiated Services Codepoint: Class Selector 6 (48)
+        .... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+    Total Length: 421
+        [Expert Info (Error/Protocol): IPv4 total length exceeds packet length (236 bytes)]
+            [IPv4 total length exceeds packet length (236 bytes)]
+            [Severity level: Error]
+            [Group: Protocol]
+    Identification: 0x781c (30748)
+    Flags: 0x0000
+        0... .... .... .... = Reserved bit: Not set
+        .0.. .... .... .... = Don't fragment: Not set
+        ..0. .... .... .... = More fragments: Not set
+    Fragment offset: 0
+    Time to live: 63
+    Protocol: TCP (6)
+    Header checksum: 0x7e1e [validation disabled]
+    [Header checksum status: Unverified]
+    Source: 192.168.1.2
+    Destination: 192.168.1.6
+Transmission Control Protocol, Src Port: 54028, Dst Port: 179, Seq: 1, Ack: 1, Len: 184
+    Source Port: 54028
+    Destination Port: 179
+    [Stream index: 0]
+    [TCP Segment Len: 184]
+    Sequence number: 1    (relative sequence number)
+    Sequence number (raw): 2048645651
+    [Next sequence number: 185    (relative sequence number)]
+    Acknowledgment number: 1    (relative ack number)
+    Acknowledgment number (raw): 1902933182
+    1000 .... = Header Length: 32 bytes (8)
+    Flags: 0x018 (PSH, ACK)
+        000. .... .... = Reserved: Not set
+        ...0 .... .... = Nonce: Not set
+        .... 0... .... = Congestion Window Reduced (CWR): Not set
+        .... .0.. .... = ECN-Echo: Not set
+        .... ..0. .... = Urgent: Not set
+        .... ...1 .... = Acknowledgment: Set
+        .... .... 1... = Push: Set
+        .... .... .0.. = Reset: Not set
+        .... .... ..0. = Syn: Not set
+        .... .... ...0 = Fin: Not set
+        [TCP Flags: ·······AP···]
+    Window size value: 16418
+    [Calculated window size: 16418]
+    [Window size scaling factor: -1 (unknown)]
+    Checksum: 0x3631 [unverified]
+    [Checksum Status: Unverified]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+        TCP Option - No-Operation (NOP)
+            Kind: No-Operation (1)
+        TCP Option - No-Operation (NOP)
+            Kind: No-Operation (1)
+        TCP Option - Timestamps: TSval 2288527831, TSecr 2288532675
+            Kind: Time Stamp Option (8)
+            Length: 10
+            Timestamp value: 2288527831
+            Timestamp echo reply: 2288532675
+    [SEQ/ACK analysis]
+        [Bytes in flight: 184]
+        [Bytes sent since last PSH flag: 184]
+    [Timestamps]
+        [Time since first frame in this TCP stream: 0.000000000 seconds]
+        [Time since previous frame in this TCP stream: 0.000000000 seconds]
+    TCP payload (184 bytes)
+    TCP segment data (77 bytes)
+Border Gateway Protocol - UPDATE Message
+    Marker: ffffffffffffffffffffffffffffffff
+    Length: 107
+    Type: UPDATE Message (2)
+    Withdrawn Routes Length: 0
+    Total Path Attribute Length: 84
+    Path attributes
+        Path Attribute - ORIGIN: IGP
+            Flags: 0x40, Transitive, Well-known, Complete
+                0... .... = Optional: Not set
+                .1.. .... = Transitive: Set
+                ..0. .... = Partial: Not set
+                ...0 .... = Extended-Length: Not set
+                .... 0000 = Unused: 0x0
+            Type Code: ORIGIN (1)
+            Length: 1
+            Origin: IGP (0)
+        Path Attribute - AS_PATH: empty
+            Flags: 0x40, Transitive, Well-known, Complete
+                0... .... = Optional: Not set
+                .1.. .... = Transitive: Set
+                ..0. .... = Partial: Not set
+                ...0 .... = Extended-Length: Not set
+                .... 0000 = Unused: 0x0
+            Type Code: AS_PATH (2)
+            Length: 0
+        Path Attribute - MULTI_EXIT_DISC: 2
+            Flags: 0x80, Optional, Non-transitive, Complete
+                1... .... = Optional: Set
+                .0.. .... = Transitive: Not set
+                ..0. .... = Partial: Not set
+                ...0 .... = Extended-Length: Not set
+                .... 0000 = Unused: 0x0
+            Type Code: MULTI_EXIT_DISC (4)
+            Length: 4
+            Multiple exit discriminator: 2
+        Path Attribute - LOCAL_PREF: 100
+            Flags: 0x40, Transitive, Well-known, Complete
+                0... .... = Optional: Not set
+                .1.. .... = Transitive: Set
+                ..0. .... = Partial: Not set
+                ...0 .... = Extended-Length: Not set
+                .... 0000 = Unused: 0x0
+            Type Code: LOCAL_PREF (5)
+            Length: 4
+            Local preference: 100
+        Path Attribute - EXTENDED_COMMUNITIES
+            Flags: 0xc0, Optional, Transitive, Complete
+                1... .... = Optional: Set
+                .1.. .... = Transitive: Set
+                ..0. .... = Partial: Not set
+                ...0 .... = Extended-Length: Not set
+                .... 0000 = Unused: 0x0
+            Type Code: EXTENDED_COMMUNITIES (16)
+            Length: 24
+            Carried extended communities: (3 communities)
+                Route Target: 1:2 [Transitive 2-Octet AS-Specific]
+                    Type: Transitive 2-Octet AS-Specific (0x00)
+                        0... .... = IANA Authority: Allocated on Standard Action, Early Allocation or Experimental Basis
+                        .0.. .... = Transitive across AS: Transitive
+                    Subtype (AS2): Route Target (0x02)
+                    2-Octet AS: 1
+                    4-Octet AN: 2
+                OSPF Route Type: Area: 0.0.0.0, Type: Router [Transitive Opaque]
+                    Type: Transitive Opaque (0x03)
+                        0... .... = IANA Authority: Allocated on Standard Action, Early Allocation or Experimental Basis
+                        .0.. .... = Transitive across AS: Transitive
+                    Subtype (Opaque): OSPF Route Type (0x06)
+                    Area ID: 0.0.0.0
+                    Route type: Router (1)
+                    Options: 0x00 (Metric: Type-1)
+                        .... ...0 = Metric type: Type-1
+                Encapsulation: MPLS in UDP Encapsulation [Transitive Opaque]
+                    Type: Transitive Opaque (0x03)
+                        0... .... = IANA Authority: Allocated on Standard Action, Early Allocation or Experimental Basis
+                        .0.. .... = Transitive across AS: Transitive
+                    Subtype (Opaque): Encapsulation (0x0c)
+                    Tunnel type: MPLS in UDP Encapsulation (13)
+        Path Attribute - MP_REACH_NLRI
+            Flags: 0x90, Optional, Extended-Length, Non-transitive, Complete
+                1... .... = Optional: Set
+                .0.. .... = Transitive: Not set
+                ..0. .... = Partial: Not set
+                ...1 .... = Extended-Length: Set
+                .... 0000 = Unused: 0x0
+            Type Code: MP_REACH_NLRI (14)
+            Length: 32
+            Address family identifier (AFI): IPv4 (1)
+            Subsequent address family identifier (SAFI): Labeled VPN Unicast (128)
+            Next hop network address (12 bytes)
+                Next Hop: Empty Label Stack RD=0:0 IPv4=192.168.1.2
+            Number of Subnetwork points of attachment (SNPA): 0
+            Network layer reachability information (15 bytes)
+                BGP Prefix
+                    Prefix Length: 112
+                    Label Stack: 16 (bottom)
+                    Route Distinguisher: 2:2
+                    MP Reach NLRI IPv4 prefix: 1.1.13.0
+
+0000  56 68 a3 1e 0e 24 56 68 a3 1e 28 f7 81 00 00 2e   Vh...$Vh..(.....
+0010  08 00 45 c0 01 a5 78 1c 00 00 3f 06 7e 1e c0 a8   ..E...x...?.~...
+0020  01 02 c0 a8 01 06 d3 0c 00 b3 7a 1b da 13 71 6c   ..........z...ql
+0030  74 be 80 18 40 22 36 31 00 00 01 01 08 0a 88 68   t...@"61.......h
+0040  29 d7 88 68 3c c3 ff ff ff ff ff ff ff ff ff ff   )..h<...........
+0050  ff ff ff ff ff ff 00 6b 02 00 00 00 54 40 01 01   .......k....T@..
+0060  00 40 02 00 80 04 04 00 00 00 02 40 05 04 00 00   .@.........@....
+0070  00 64 c0 10 18 00 02 00 01 00 00 00 02 03 06 00   .d..............
+0080  00 00 00 01 00 03 0c 64 00 00 00 00 0d 90 0e 00   .......d........
+0090  20 00 01 80 0c 00 00 00 00 00 00 00 00 c0 a8 01    ...............
+00a0  02 00 70 00 01 01 00 00 00 02 00 00 00 02 01 01   ..p.............
+00b0  0d ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff   ................
+00c0  ff 00 7c 02 00 00 00 65 40 01 01 00 40 02 00 80   ..|....e@...@...
+00d0  04 04 00 00 00 01 40 05 04 00 00 00 64 c0 10 18   ......@.....d...
+00e0  00 02 00 01 00 00 00 02 03 06 00 00 00 00 01 00   ................
+00f0  03 0c 64 00 00 00 00 0d 90 0e 00 31 00 01         ..d........1..
