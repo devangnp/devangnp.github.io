@@ -1,5 +1,5 @@
 ---
-title: "Vagrant to bring up Cumulus Linx VMs topology"
+title: "Vagrant to bring up Cumulus Linux VMs topology"
 last_modified_at: 2020-05-25T00:00:03-05:00
 categories:
   - Blog
