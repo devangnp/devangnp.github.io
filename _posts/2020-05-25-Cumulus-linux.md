@@ -1,5 +1,5 @@
 ---
-title: "Vagrant to turn up Cumulus Linux"
+title: "Vagrant to bring up Cumulus Linx VMs topology"
 last_modified_at: 2020-05-25T00:00:03-05:00
 categories:
   - Blog
@@ -7,11 +7,9 @@ tags:
   - - [Networking, NetOps]
 ---
 
-Goal of this blog post to was learn Vagrant to turn up the multiple VMs. I was planning to explore Cumulus Linux for long time so I thought of combined learning of Vagrant to bring up two Cumulus Linux VM topology and bring up EBGP multipath between them.
+This blog post is part of learning Vagrant to turn up the multiple VMs. I was planning to explore Cumulus Linux for long time so I thought of combined learning of Vagrant to bring up two Cumulus Linux VM topology and bring up EBGP multipath between them.
 
 Vagrant can be used with VM providers, there are many including VirtualBox and KVM. We are going to use VirtualBox. VirtualBox is default choice of Vagrant so you don’t have to define it in Vagrant file. 
-
-Cumulus Linux site has related details on Vagrant usage as well as configuration/verification of protocols.
 
 You can create any folder and create Vagrant file in it, I have it located at:
 
@@ -215,7 +213,7 @@ net add bgp bestpath as-path multipath-relax
 ```
 net commit
 ```
-There are few configuration management commands similar to JUNOS are also available:
+There are few configuration management options similar to JUNOS are available:
 ```
 root@r1:mgmt:~#  net commit
     confirm      :  approve, acknowledge, etc
@@ -223,10 +221,12 @@ root@r1:mgmt:~#  net commit
     permanent    :  Duplicate address detection permanent freez
     verbose      :  show detailed output
     <ENTER>
+	
 root@r1:mgmt:~# net rollback
     <number>     :  any integer
     description  :  description
     last         :  the most recent 'net commit' snapshot
+
 root@r1:mgmt:~# net pending
     json  :  Print output in json
     <ENTER>
@@ -357,6 +357,17 @@ Static debugging status
 
 #### We can use Vagrant commands to stop, start, pause or reload the VMs we have provisioned:
 ```
+vagrant> vagrant destroy
+    r2: Are you sure you want to destroy the 'r2' VM? [y/N] y
+==> r2: Forcing shutdown of VM...
+==> r2: Destroying VM and associated drives...
+    r1: Are you sure you want to destroy the 'r1' VM? [y/N] y
+==> r1: Forcing shutdown of VM...
+==> r1: Destroying VM and associated drives...
+```
+
+#### Other vagrant options:
+```
 Usage: vagrant [options] <command> [<args>]
 
     -h, --help                       Print this help.
@@ -390,6 +401,7 @@ Common commands:
      winrm           executes commands on a machine via WinRM
      winrm-config    outputs WinRM configuration to connect to the machine
 ```
+
 Few references I used to learn about Cumulus Linux cli and Vagrant file Definition:
 - 	[Dinesh Dutt's Cloud native datacenter networking book topologies](https://github.com/ddutt/cloud-native-data-center-networking/tree/master/topologies/){:target="_blank"}
 -	[Cumulus Open Networking Certification book](https://cumulusnetworks.com/learn/resources/guides/cconp-exam-study-guide){:target="_blank"}
