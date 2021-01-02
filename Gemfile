@@ -3,7 +3,7 @@ source "https://rubygems.org"
 gem "github-pages", group: :jekyll_plugins
 #gem "github-pages", "~> 203", group: :jekyll_plugins
 gem "activesupport", ">= 6.0.3.1"
-gem "nokogiri", ">= 1.10.8"
+gem "nokogiri", ">= 1.11.0.rc4"
 gem "tzinfo-data"
 gem "wdm", "~> 0.1.0" if Gem.win_platform?
 gem "kramdown", ">= 2.3.0"
