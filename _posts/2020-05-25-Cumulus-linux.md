@@ -43,6 +43,7 @@ Vagrant.configure(2) do |config|
     r2.vm.network "private_network", virtualbox__intnet: "swp1", auto_config: false
     r2.vm.network "private_network", virtualbox__intnet: "swp2", auto_config: false
   end
+end
 ```
 In above config file, ```VX_BOX``` is like a variable which indicates which kind of VM you want to provision in your topology. In our adventure, we are looking to spin Cumulus Linux VM.  ```VX_BOX``` is reference in ```r1.vm.box``` and ```r2.vm.box``` so we are going to provision two Cumulus Linux VM name ```r1``` and ```r2```.
 
