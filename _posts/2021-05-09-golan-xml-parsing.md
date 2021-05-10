@@ -32,6 +32,7 @@ As a part of learning, I have used following XML data to parse and read out the 
 Example code to parse various tags:
 
 ```go
+package main
 
 import (
 	"encoding/json"
