@@ -13,6 +13,24 @@ However for the user perspective its not easy to deal with such data so there wa
 
 In this blog post, I am documenting the experimental golang XML parsing code.
 
+As a part of learning, I have used following XML data to parse and read out the specific field(s) and at the end we will try to pretty print using JSON format. 
+
+```
+        <a>
+            <b>Hi</b>
+            <c>How are you?</c>
+			<d>Devang</d>
+			<e>
+				<f>Patel</f>
+			</e>
+			<g>
+				<h>123</h>
+			</g>             
+        </a>
+```
+
+Example code to parse various tags:
+
 ```go
 
 import (
@@ -22,9 +40,11 @@ import (
 )
 
 func main() {
+    /*
 	type InnerResult struct {
 		Value string `xml:",innerxml"`
 	}
+    */
 
 	type E struct {
 		F string `xml:"f"`
