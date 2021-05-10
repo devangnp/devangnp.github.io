@@ -15,7 +15,7 @@ In this blog post, I am documenting the experimental golang XML parsing code.
 
 As a part of learning, I have used following XML data to parse and read out the specific field(s) and at the end we will try to pretty print using JSON format. 
 
-```
+```xml
         <a>
             <b>Hi</b>
             <c>How are you?</c>
