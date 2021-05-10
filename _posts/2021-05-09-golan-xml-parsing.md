@@ -19,13 +19,13 @@ As a part of learning, I have used following XML data to parse and read out the 
         <a>
             <b>Hi</b>
             <c>How are you?</c>
-			<d>Devang</d>
-			<e>
-				<f>Patel</f>
-			</e>
-			<g>
-				<h>123</h>
-			</g>             
+            <d>Devang</d>
+            <e>
+                <f>Patel</f>
+            </e>
+            <g>
+                <h>123</h>
+            </g>             
         </a>
 ```
 
