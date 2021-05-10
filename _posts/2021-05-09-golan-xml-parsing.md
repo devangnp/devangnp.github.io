@@ -1,5 +1,5 @@
 ---
-title: "golan XML parsing"
+title: "golang XML parsing"
 last_modified_at: 2021-05-09T00:00:03-05:00
 categories:
   - Blog
