@@ -1,5 +1,5 @@
 ---
-title: "golang XML parsing"
+title: "GO XML parsing"
 last_modified_at: 2021-05-09T00:00:03-05:00
 categories:
   - Blog
@@ -11,7 +11,7 @@ API calls are very common while working with modern networking devices. Recently
 
 However for the user perspective its not easy to deal with such data so there was an opportunity to learn and create XML parser to represent data in the user readable form.
 
-In this blog post, I am documenting the experimental code I was trying out to learn the XML parsing using GOLANG!
+In this blog post, I am documenting the experimental golang XML parsing code.
 
 ```go
 
