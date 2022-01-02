@@ -15,19 +15,19 @@ In this blog post we will explore the BGP Encapsulation extended community and U
 
 
 #### RFCs and related snippets:
-[RFC5512](https://tools.ietf.org/html/rfc5512){:target="_blank"} talks about The BGP Encapsulation Subsequent Address Family Identifier (SAFI) and the BGP Tunnel Encapsulation Attribute. [Draft The BGP Tunnel Encapsulation Attribute draft-ietf-idr-tunnel-encaps-15.txt](https://tools.ietf.org/html/draft-ietf-idr-tunnel-encaps-15){:target="_blank"} will obsolete the RFC5512 so this draft has more details on attributes. 
+-  [RFC5512](https://tools.ietf.org/html/rfc5512){:target="_blank"} talks about The BGP Encapsulation Subsequent Address Family Identifier (SAFI) and the BGP Tunnel Encapsulation Attribute. [Draft The BGP Tunnel Encapsulation Attribute draft-ietf-idr-tunnel-encaps-15.txt](https://tools.ietf.org/html/draft-ietf-idr-tunnel-encaps-15){:target="_blank"} will obsolete the RFC5512 so this draft has more details on attributes. 
 
-12.3.  Extended Communities
-IANA has previously assigned values from the "Transitive Opaque
-   Extended Community" type Registry to the "Color Extended Community"
-   (sub-type 0x0b), and to the "Encapsulation Extended
-   Community"(0x030c).  IANA is requested to add this document as a
-   reference for both assignments.
+-  12.3.  Extended Communities
+  IANA has previously assigned values from the "Transitive Opaque
+     Extended Community" type Registry to the "Color Extended Community"
+     (sub-type 0x0b), and to the "Encapsulation Extended
+     Community"(0x030c).  IANA is requested to add this document as a
+     reference for both assignments.
 
 
-[RFC7510](https://tools.ietf.org/html/rfc7510){:target="_blank"} talks about Encapsulating MPLS in UDP, the topic we are going to explore in this post.
+- [RFC7510](https://tools.ietf.org/html/rfc7510){:target="_blank"} talks about Encapsulating MPLS in UDP, the topic we are going to explore in this post.
 
-As usual, BGP comes to rescue. What a flexible and extendible protocol! 
+##### As usual, BGP comes to rescue. What a flexible and extendible protocol! 
 
 #### Encapsulation RFC 7510 Section 3.:
 ```	  
