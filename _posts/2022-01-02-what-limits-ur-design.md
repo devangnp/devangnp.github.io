@@ -5,7 +5,7 @@ last_modified_at: 2022-01-02T00:00:03-05:00
 categories:
   - Blog
 tags:
-  - - [Networking, JUNOS, Architecture]
+  - - [Networking, Architecture]
 ---
 
 ##### What limits your design or architectural decision?
