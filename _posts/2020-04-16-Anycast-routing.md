@@ -16,16 +16,23 @@ With anycast routing, redundancy and fail over to next available or next closest
 ### Now we will discuss few interesting scenarios to consider:
 
 #### Site failover:
-- Anycast routing design need careful design of site. If sites in specific regions were design to serve few customer and if such site fails.
+- Anycast routing design need careful design. If the sites are in the specific regions were it has to serve few customer and if such site fails.
 
-- All of the users will be routed to the next anycast site in the region but is that site now capable enough to handle the load it currently serving and the users coming from the site which failed? 
+- All of the users at failed site will be routed or rerouted to the next anycast site in the region but is that site is capable enough to handle the additional load on top of whatever it is currently serving.
 
 - If not then you may end up disabling or shutting down many such small sites so that users are reaching to small anycast sites can be diverted to bigger or scaled site which can manage many users.
 
 #### Routing dependency: 
-- Another scenario where you have anycast site in east coast connected to ISP-A  and one of the user or customer in east coast connected to the he ISP-B. 
+- Another scenario, you have anycast site in east coast connected to ISP-A  and one of the user or customer in east coast connected to the he ISP-B. 
 
-- To make scenario more interesting, your one of the anycast site connected to ISP-B in midwest then east coast user will be routed to the midwest anycast site instead of being connected or served via east caost site. 
+- To make it more interesting, your one of the anycast site connected to ISP-B in midwest then east coast user will be routed to the midwest anycast site instead of being connected or served via east coast site.
 
-- As east coast site is on longer AS path compare to the midwest site. 
+- As east coast site is on longer AS path compare to the midwest site.
 
+
+##### Example of few services which can be anycasted within organization. 
+- DHCP
+- DNS
+- RADIUS
+- TACACS
+- Web
