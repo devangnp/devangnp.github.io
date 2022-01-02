@@ -27,7 +27,7 @@ In this blog post we will explore the BGP Encapsulation extended community and U
 
 - [RFC7510](https://tools.ietf.org/html/rfc7510){:target="_blank"} talks about Encapsulating MPLS in UDP, the topic we are going to explore in this post.
 
-##### As usual, BGP comes to rescue. What a flexible and extendible protocol! 
+##### As usual, BGP comes to rescue! What a flexible and extendible protocol! 
 
 #### Encapsulation RFC 7510 Section 3.:
 ```	  
