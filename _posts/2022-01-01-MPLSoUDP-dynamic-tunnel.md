@@ -25,7 +25,9 @@ IANA has previously assigned values from the "Transitive Opaque
    reference for both assignments.
 
 
-[RFC7510](https://tools.ietf.org/html/rfc7510){:target="_blank"} talks about Encapsulating MPLS in UDP, the topic we are going to explore in this post. 
+[RFC7510](https://tools.ietf.org/html/rfc7510){:target="_blank"} talks about Encapsulating MPLS in UDP, the topic we are going to explore in this post.
+
+As usual, BGP comes to rescue. What a flexible and extendible protocol! 
 
 #### Encapsulation RFC 7510 Section 3.:
 ```	  
