@@ -7,9 +7,9 @@ tags:
   - - [Networking, JUNOS]
 ---
 
-Scaling is a biggest concern in could provider in terms of tunnel interfaces. Network devices also have to deal with lots of tunnel interfaces and related states building, maintaining and programing on to different levels and adds more complexity in implementation and eventually debugging. 
+Scaling is a biggest concern in could providers in terms of tunnel interfaces. Network devices also have to deal with lots of tunnel interfaces and related states building, maintaining and programing on to different levels and adds more complexity in implementation and eventually debugging.
 
-Next-hop based dynamic tunnel infrastructure helps in overcoming the states and complexicty challanges. It can support multiple different encapsulation like GRE or UDP or IP as per deployment scenario requirement and provide greater scalibilty on networking devices.
+Next-hop based dynamic tunnel infrastructure helps in overcoming the states and complexity challenges. It can support multiple different encapsulation like GRE or UDP or IP as per deployment scenario requirement and provide greater scalability on networking devices.
 
 In this blog post we will explore the BGP Encapsulation extended community and UDP based dynamic tunnel setup and verification on Juniper/JUNOS devices. 
 
@@ -119,8 +119,8 @@ protocols {
     }
 }
 ```
-Dynamic tunnel configuration requires the srouce address to be used, destination networks are the PE devices address to which local router wants to establish the UDP tunnel. 
-Configuration also indicates the encapsulation type to be used based on the BGP Encapsulation extended received in the route update. 
+Dynamic tunnels configuration requires the source address to be used, destination networks are the PE devices address to which local router wants to establish the UDP tunnel. 
+Configuration also indicates the encapsulation type to be used based on the BGP Encapsulation extended received in the route update.
 ```
 root@r6> show configuration routing-options     
 router-id 192.168.1.6;
@@ -192,7 +192,7 @@ Tunnel to: 192.168.1.2/32
       State: Up
 ```
 #### updates and route verification
-Take a note of the recevied and advertised route with the encapsulation extened community:
+Take a note of the received and advertised route with the encapsulation extended community:
 ```
 root@r6> show route advertising-protocol bgp 192.168.1.2 table mvpnr5.inet.0 
 
@@ -244,7 +244,7 @@ mvpnr5.inet.0: 9 destinations, 9 routes (9 active, 0 holddown, 0 hidden)
      Communities: target:1:2 rte-type:0.0.0.0:1:0 encapsulation:mpls-in-udp(0xd)    <<<<< route received with MPLSoUDP
 ```
 
-Verify the VPN route programing with tunnel next-hop as outgoing interfaces in RIB. Output with extensive keyword is documented at the end of the post. 
+Verify the VPN route programing with tunnel next-hop as outgoing interfaces in RIB. Output with extensive keyword is documented at the end of the post.
 ```
 root@r6> show route 192.168.1.1 table mvpnr5.inet.0 
 
