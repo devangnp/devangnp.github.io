@@ -36,3 +36,7 @@ With anycast routing, redundancy and fail over to next available or next closest
 - RADIUS
 - TACACS
 - Web
+
+##### DDOS perspective:
+- Anycast design helps in redistributing or keeping localized DDOS attacks to a specific region.
+- As a part of Anycast design, reserve the multiple IP addresses to use as Anycast IP, under existing IP attack situation, update the DNS record with new Anycast IP and continue monitoring for the DDOS activity.  
