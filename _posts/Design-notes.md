@@ -1,0 +1,23 @@
+---
+title: "400G Migration Notes"
+last_modified_at: 2022-12-11T00:00:03-05:00
+categories:
+  - Blog
+tags:
+  - - [Networking]
+---
+
+Ever growing data bandwidth requirement pushes the operators to constantly optimize traffic engineering to accommodate the growth with available resources. At point, the port density and TE optimization is no longer a viable options, it triggers the  migration to high port density and higher bandwidth devices or line cards. 400G migration is the result of such demands.
+
+400G Optics options:
+  - 400G FR to 400G FR
+  - 400G DR4+ to 4x100G FR for Z end 100G FR capable devices
+  - 400G ZR to 400G ZR for longer range
+
+- Using 100G LR4 on 400G port is wastage of 300G port bandwidth, consider migrating Z end to 400G or 100G FR capable device or software version or use vendor based 2x100G LR4 breakout config.
+- Routers or switches are ready or capable to support 400G, is 
+- transport capable to support 400G connection?
+- Z end devices in network restricts the migration or efficient port density utilization.
+- One might think, based on 400G interfaces line card, n numbers of line cards in enough to replace or migrate m number of legacy line cards but Z end devices only capable of 100G LR or 40G or 4x10G will end up eating more ports. e.g. current four 36x100G line cards can be replaced with one 36x400G line card provided all Z ends supports 400G or 100G FRs.
+- Upgrading to 400G capable line cards also needs the newer fabric cards to support the inter PFE/ASIC data transfer at line rate. Many time older fabric card supports the line card capacity upgrade but at the cost of losing fabric cards or fabric planes redundancy. 
+- It is always better to pick a upgrade where device has fault tolerance and availability. Great [article](https://www.freecodecamp.org/news/high-availability-fault-tolerance-and-disaster-recovery-explained/) on HA vs fault tolerance vs disaster recovery from Daniel.

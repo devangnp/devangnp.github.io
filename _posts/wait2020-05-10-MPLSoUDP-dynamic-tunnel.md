@@ -9,11 +9,30 @@ tags:
 
 Scaling is a biggest concern in could provider in terms of tunnel interfaces. Network devices also have to deal with lots of tunnel interfaces and related states building, maintaining and programing on to different levels and adds more complexity in implementation and eventually debugging. 
 
-Next-hop based dynamic tunnel infrastructure helps in overcoming the states and complexicty challanges. It can support multiple different encapsulation like GRE or UDP or IP as per deployment scenario requirement and provide greater scalibilty on networking devices.
+Next-hop based dynamic tunnel infrastructure helps in overcoming the states and complexity challenges. It can support multiple different encapsulation like GRE or UDP or IP as per deployment scenario requirement and provide greater scalability on networking devices.
 
 In this blog post we will explore the BGP Encapsulation extended community and UDP based dynamic tunnel setup and verification on Juniper/JUNOS devices. 
 
-
+ Things to consider:
+ - Configuration options to support line rate
+ - Configuration simplicity and scalability 
+ - Vendor implementation:
+  - Microcode based single pass
+  - Pipe line with loopback
+  - Pipe line with recirculation path
+  - Filter vs interface based lookup
+- Fragmentation and assembly 
+  - Same source/destination port used in UDP header for fragments of same packet of specific flow
+- COS Marking and TTL copy
+- On the fly tunnel destinations resizing with MBB or BBM
+- Capability to apply filter
+- Capability to capture packet
+- Error and drop counters
+- Scale 
+- How MTU is derived or option to configure MTU
+- BGP recursive lookup support
+- BGP IGP Metric transparency: AIGP
+- 
 #### RFCs and related snippets:
 [RFC5512](https://tools.ietf.org/html/rfc5512){:target="_blank"} talks about The BGP Encapsulation Subsequent Address Family Identifier (SAFI) and the BGP Tunnel Encapsulation Attribute. [Draft The BGP Tunnel Encapsulation Attribute draft-ietf-idr-tunnel-encaps-15.txt](https://tools.ietf.org/html/draft-ietf-idr-tunnel-encaps-15){:target="_blank"} will obsolete the RFC5512 so this draft has more details on attributes. 
 
@@ -727,4 +746,4 @@ Destination:  192.168.1.1/32
   Nexthop:  
   Next-hop type: composite             Index: 644      Reference: 2    
 ```  
-  
+
